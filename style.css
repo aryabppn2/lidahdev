@@ -1,0 +1,179 @@
+.wrapper-container{
+    background-color:lightblue
+   
+}
+
+*{
+    font-family:'Times New Roman', Times, serif;
+    background-color:whitesmoke;
+    color:blue
+
+    
+}
+
+.input-text-data{
+    width:85.2%;
+    height:46px;
+    margin-bottom: 12px;
+}
+
+.input-prg-data{
+    width:85.2%;
+    height:440px;
+
+}
+
+
+.account-bar{
+    width:48.6%;
+    height: 34px;
+    border:0px;
+
+}
+.open{
+    border:0px;
+    margin-bottom: 12px;
+}
+.flex{
+    width: 98.2%;
+    height:440px;
+    overflow-y: auto;
+}
+
+.bar-btn{
+
+   
+    border:0px;
+    color:blue;
+}
+
+
+.dat-nav{
+    margin:12px;
+}
+.search-container{
+    width:75.8%;
+    height: 34px;
+    border:0px;
+
+}
+.search-btn{
+    background-color: aqua;
+    border:0px;
+    color:orangered;
+    height:34px;
+}
+.dat-nav{
+    margin-top: 0px;
+    text-align: center;
+}
+.input-text-loggin{
+    width:87.8%;
+    height:34px;
+    margin:11px;
+    border-color:blue
+}
+.pass-container{
+    width:87.4%;
+    height:34px;
+    margin: 11px;
+    border-color:red;
+
+}
+.input-add-container{
+    border-color:green;
+    color:gray;
+    width:87.4%;
+    height: 90px;
+    margin-top:12px;
+}
+
+
+.btn-upload{
+    border-color:lightblue;
+    color:lightblue;
+    background-color: blueviolet;
+    width:56px;
+    height: 34px;
+    margin-left: 13px;
+    margin-top: 12px;
+}
+.dat-private{
+    height: 940px;
+    overflow-y: auto;
+}
+
+.private-menu{
+  margin-left: 19px;
+  height: 34px;
+  border:0px;
+  
+}
+.bar-menu{
+    margin-left: 19px;
+    border-color:aqua;
+    color:blue;
+    
+}
+.text-market{
+    margin:12px;
+    width:92.2%;
+    height: 45px;
+   border-color: aquamarine;
+}
+.num-input{
+    width: 46%;
+    height:45px;
+    border-color:antiquewhite;
+    margin-bottom:12px;
+}
+.input-text-market{
+    width:92.2%;
+    height: 45px;
+    border-color:aquamarine
+}
+.account-input-wrapper{
+    width:97.2%;
+    height:300px;
+}
+.money-container{
+    width:92.2%;
+    height: 34px;
+    margin-bottom: 12px;
+}
+
+
+.editor{
+    width:98.5%;
+    height:400px;
+    
+}
+.editor-bar{
+    margin-left: 100px;
+    border:0px;
+}
+.rditor-bar-post{
+    width:50%;
+    border:0px;
+    height:34px;
+    background-color: aqua;
+    color:blue
+}
+.sizing-border{
+    margin-left: 12px;
+}
+.chat-container{
+    width:270px;
+    height:34px;
+    border:0px;
+}
+.chat-wrapper{
+    height:400px;
+    overflow-y: auto;
+}
+.chat-input-container{
+    width:76.2%;
+    border:0;
+    color:blue;
+
+}
