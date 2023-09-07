@@ -17,47 +17,44 @@ function connect_loginPage(){
 function structure_accountHeader(){
     return'<fieldset id=data-field class=dat-private>'+
 '<div id=uploader-database ></div>'+  
-'<div id=mas-database></div>'+  
-'<div>'+
+'<div id=mas-database></div>'+ 
 
-'</fieldset>'
+'</fieldset><div id=groupt-database></div>'
+
     
 }
 function pmailAddress(address,pass){
     return'<select class=chat-container id=user-data>'+
-    '<option id=useraddress-output onclick=setting_account()>'+address+'</option>'+
+    '<option id=useraddress-output onclick=settinguseraddress()>'+address+'</option>'+
     '<option id=address>'+address+'Pmail.com</option>'+
-    '<option id=user-pass style=background-color:light-gray>'+pass+'</option>'+
+    '<option id=user-pass style=background-color:light-gray onclick=setPass()>'+pass+'</option>'+
+    '<option onclick=connect_toAddNews() style=color:red; class=private-menu>berita</option>'+
+'<option onclick= connect_toaddweb() class=private-menu style=color:blue>web</option>'+
+'<option onclick=loggin_out() class=btn-upload style=border-color:red; color:red>log out</option>'+
     '</select>'+
     '<select id=chat-recenly-list class=chat-container>'+
     '<option> barusan chat</option>'+
     '</select>'+
     '<select id=visitor-view class=chat-container style=color:green>'+
     '<option onclick=addFriendsChat()>teman</option>'+
+    '</select>'+
+    '<select id=groupt-list class=chat-container>'+
+    '<option onclick=connect_ruteGroupt() style=color:orange>grup</option>'+
     '</select>'
     
 
 }
 
 function chatFeature_structure(targetaddress){
-    return'<fieldset class=chat-wrapper id=chat-database>'+
+    return'<fieldset>'+
 '<legend style=color:purple onclick=restChat() id=target-address>'+targetaddress+'</legend>'+
-    '</fieldset>'+
-    '<div id=input-chat><textarea id=input-chat-value class=chat-input-container placeholder=ketikan-sesuatu></textarea>'+
-    '<button onclick=Sent_ChatData() classs=btn-upload>kirim</button></div>'
+'<div id=chat-database class=chat-wrapper></div>'+
+'<div id=input-chat><textarea id=input-chat-value class=chat-input-container placeholder=ketikan-sesuatu></textarea>'+
+    '<button onclick=Sent_ChatData() classs=btn-upload>kirim</button></div>'+
+'</fieldset>'
+
 }
 
-
-function structure_settAcount(username,pass){
-    return'<fieldset style=border-color:blue>'+
-'<fieldset style=boder-color:lightblue;color:blue onclick=settinguseraddress() class=sett-account id=sett-address>'+username+'</fieldset><br>'+
-'<fieldset style=border-color:orange;color:lightgray id=set-pass onclick=setPass()>'+pass+'</fieldset><br>'+
-'<button onclick=connect_toAddNews() style=color:red; class=private-menu>berita</button>'+
-'<button onclick= connect_toaddweb() class=private-menu style=color:blue>web</button>'+
-'<button onclick=connect_toaddProduct() class=private-menu style=color:orange>market</button><br>'+
-'<button onclick=loggin_out() class=btn-upload style=border-color:red; color:red>log out</button>'+
-    '</fieldset>'
-}
 
 function connect_toAddNews(){
 const address=document.getElementById('useraddress-output');
@@ -151,16 +148,76 @@ function runContainerColor(){
 }
 
 function runStylecol(){
-    const inputcolor=document.getElementById('input-sign-color').value;
-    const el=[document.getElementById('useraddress-output'),document.getElementById('bar-private'),document.getElementById('visitor-data'),document.getElementById('sett-address'),document.getElementById('username-addnews')]
-    for(var i=0; i<=el.length; i++){
-        el[i].style.color=inputcolor
-    }
+    const color=document.getElementById('input-sign-color').value;
+const confirmStyle=confirm('untuk tulisan/background')
 
+if(confirmStyle==true){
+    document.getElementById('user-data').style.color=color
+}
+else{
+    document.getElementById('user-data').style.backgroundColor=color
+}
     
 
 }
 
 
+function connect_ruteGroupt(){
+    const useraddress=document.getElementById('useraddress-output')
+    document.getElementById('data-input').innerHTML=route_grouptAdd(useraddress.innerHTML)
+}
 
-function
+function route_grouptAdd(address){
+    return '<fieldset>'+
+'<input type=text id=input-groupt-name class=groupt-text placeholder=nama-groupt><br>'+
+'<select id=input-member class=bar-groupt-container>'+
+'<option onclick=add_member()>anggota</option>'+
+'<option>'+address+'</option>'+
+'</select>'+
+'<button onclick=setting_grouptAdmin() class=bar-groupt-container id=admin>sett admin</button><br>'+
+'<button onclick=createGroupt() class=btn-upload>buat komunitas</button>'+
+    '</fieldset>'
+}
+
+function setting_grouptAdmin(){
+    const adminsett={
+        new:document.getElementById('input-member').value,
+        old:document.getElementById('admin')
+    }
+    adminsett.old.innerHTML=adminsett.new+'(admin)'
+}
+
+function add_member(){
+    const new_member=prompt('nama anggota');
+    const addMember={
+        opt:document.createElement('option'),
+        val:document.createTextNode(new_member)
+    }
+    document.getElementById('input-member').appendChild(addMember.opt);
+    addMember.opt.appendChild(addMember.val)
+}
+
+function connect_grouptDatabase(address,grouptmember,admin){
+    const database_connect=document.getElementById('groupt-database')
+     database_connect.innerHTML +=
+    '<div id=groupt-'+address+'>'+
+    '<fieldset>'+
+   '<legend id=grouptname-'+address+'>'+address+'</legend>'+
+   '<select id=member-'+address+' class=bar-groupt-container>'+grouptmember+'</select>'+
+    '<span id=admin-'+address+'>'+admin+'</span>'+
+   '</fieldset>'
+    '</div>'
+
+}
+
+function grouptdata_res(address){
+    const Route={
+        grupmember:document.getElementById('member-'+address),
+        admin:document.getElementById('admin-'+address)
+    }
+    return'<fieldset id=groupt-nav>'+
+    '<legend id=grouptname>'+address+'</legend>'+
+  '<select id=input-member class=bar-groupt-container>'+Route.grupmember.innerHTML+'</select>'+
+  '<button onclick=setting_grouptAdmin() class=bar-groupt-container id=admin>sett admin>'+Route.admin.innerHTML+'</button><br>'+
+    '</fieldset>'
+}

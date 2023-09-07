@@ -13,7 +13,11 @@ function Registered_account(){
    else{
     inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress)
      inputData.privateData.innerHTML=pmailAddress(inputData.useraddress,inputData.userpassword)
-    toBeranda()
+     console.log( 'username:'+inputData.useraddress+'Pmail.com')
+     console.log('pasword:'+inputData.userpassword)
+     console.log('success loggin')
+     toBeranda()
+   
    }
 }
 
@@ -35,20 +39,20 @@ function setting_account(){
 
 function settinguseraddress(){
     const settdata={
-        place:document.getElementById('sett-address'),
+        place:document.getElementById('useraddress-output'),
         new:prompt('username baru')
     }
     settdata.place.innerHTML=settdata.new
-    document.getElementById('useraddress-output').innerHTML=settdata.new
+    
     document.getElementById('address').innerHTML=settdata.new+'pmail.com'
 }
 function setPass(){
     const passdata={
         new:prompt('pasword baru'),
-        place:document.getElementById('set-pass')
+        place:document.getElementById('user-pass')
     }
    passdata.place.innerHTML=passdata.new
-    document.getElementById('user-pass').innerHTML=passdata.new
+    
 
 }
 

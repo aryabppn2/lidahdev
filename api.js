@@ -50,6 +50,7 @@ postData.field.appendChild(postData.title.el);
 postData.title.el.appendChild(postData.title.val);
 postData.field.appendChild(postData.contain.el);
 postData.contain.el.appendChild(postData.contain.val);
+database_connect(datainput.address.innerHTML,datainput.title)
 toBeranda()
 }
 
@@ -189,5 +190,41 @@ function restChat(){
     connect_database.datafield.appendChild(connect_database.chat_value.el);
     connect_database.chat_value.el.appendChild(connect_database.chat_value.value);
 }
+
+
+
+function createGroupt(){
+    const grouptDataInput={
+        address:document.getElementById('input-groupt-name').value,
+        member:document.getElementById('input-member'),
+        admin:document.getElementById('admin')
+        
+    }
+connect_grouptList(grouptDataInput.address)
+connect_grouptDatabase(grouptDataInput.address,grouptDataInput.member.innerHTML,grouptDataInput.admin.innerHTML)
+toBeranda()
+}
+
+function connect_grouptList(address){
+    const grouptList=document.getElementById('groupt-list')
+    const add_grouptList={
+       opt:document.createElement('option'),
+       val:document.createTextNode(address)
+    }
+    grouptList.appendChild(add_grouptList.opt);
+    add_grouptList.opt.appendChild(add_grouptList.val)
+    add_grouptList.opt.setAttribute('onclick','open_groupt()')
+}
+
+function open_groupt(){
+    const groupt_address={
+        address:document.getElementById('groupt-list').value,
+        res:document.getElementById('data-input')
+    }
+    
+    groupt_address.res.innerHTML=grouptdata_res(groupt_address.address)
+    
+}
+
 
 

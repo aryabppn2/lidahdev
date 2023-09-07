@@ -168,7 +168,7 @@
     border:0px;
 }
 .chat-wrapper{
-    height:400px;
+    height:350px;
     overflow-y: auto;
 }
 .chat-input-container{
@@ -176,4 +176,15 @@
     border:0;
     color:blue;
 
+}
+.groupt-text{
+    width:578px;
+    height:45px;
+    border:0px;
+
+}
+.bar-groupt-container{
+    width:289px;
+    height:45px;
+    border:0px;
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+   <button onclick='tambahData()'>tambah</button>
+
+
+<script type="text/javascript">
+	function tambahData(){
+		var arr=[];
+     var datainput={
+     	name:prompt('nama'),
+     	usia:parseInt(prompt('masukan nama')),
+     	karir:prompt('karir')
+     }
+
+     arr.push(
+{
+	nama:datainput.name,usia:datainput.usia,karir:datainput.karir
+}
+     	)
+     console.table(arr)
+     
+	}
+
+</script>
+</body>
+</html>
