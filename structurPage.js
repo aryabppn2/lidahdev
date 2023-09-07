@@ -41,7 +41,6 @@ function pmailAddress(address,pass){
     '<select id=groupt-list class=chat-container>'+
     '<option onclick=connect_ruteGroupt() style=color:orange>grup</option>'+
     '</select>'
-    
 
 }
 
@@ -160,8 +159,6 @@ else{
     
 
 }
-
-
 function connect_ruteGroupt(){
     const useraddress=document.getElementById('useraddress-output')
     document.getElementById('data-input').innerHTML=route_grouptAdd(useraddress.innerHTML)
@@ -221,3 +218,4 @@ function grouptdata_res(address){
   '<button onclick=setting_grouptAdmin() class=bar-groupt-container id=admin>sett admin>'+Route.admin.innerHTML+'</button><br>'+
     '</fieldset>'
 }
+

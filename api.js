@@ -30,6 +30,16 @@ function database_connect(){
         val:document.createTextNode(datainput.text)
     }  
 }
+const database1=[];
+database1.push(
+    {
+        id:datainput.title+'-'+datainput.address.innerHTML,
+        useraddress:datainput.address.innerHTML,
+        title:datainput.title,
+        txt:datainput.text
+    }
+)
+console.log(database1)
 // setting data id//
 postData.data_host.setAttribute('id',datainput.title+'-'+datainput.address.innerHTML)
 postData.contain.el.setAttribute('id','isi-'+datainput.title+'-'+datainput.address.innerHTML)
@@ -50,7 +60,6 @@ postData.field.appendChild(postData.title.el);
 postData.title.el.appendChild(postData.title.val);
 postData.field.appendChild(postData.contain.el);
 postData.contain.el.appendChild(postData.contain.val);
-database_connect(datainput.address.innerHTML,datainput.title)
 toBeranda()
 }
 
@@ -192,7 +201,6 @@ function restChat(){
 }
 
 
-
 function createGroupt(){
     const grouptDataInput={
         address:document.getElementById('input-groupt-name').value,
@@ -225,6 +233,9 @@ function open_groupt(){
     groupt_address.res.innerHTML=grouptdata_res(groupt_address.address)
     
 }
+
+
+
 
 
 

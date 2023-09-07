@@ -7,11 +7,13 @@
 </head>
 <body>
    <button onclick='tambahData()'>tambah</button>
+    <input type='text' id='searchdata'> <button onclick='search()'>cari</button>
 
 
 <script type="text/javascript">
+var arr=[];
 	function tambahData(){
-		var arr=[];
+
      var datainput={
      	name:prompt('nama'),
      	usia:parseInt(prompt('masukan nama')),
@@ -25,6 +27,12 @@
      	)
      console.table(arr)
      
+	}
+
+
+	function search(){
+		const data=document.getElementById('searchdata').value;
+		document.write(arr.filter(p=> p.nama.includes(data)))
 	}
 
 </script>

@@ -13,9 +13,14 @@ function Registered_account(){
    else{
     inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress)
      inputData.privateData.innerHTML=pmailAddress(inputData.useraddress,inputData.userpassword)
-     console.log( 'username:'+inputData.useraddress+'Pmail.com')
-     console.log('pasword:'+inputData.userpassword)
-     console.log('success loggin')
+     const database=[];
+     database.push(
+        {
+            username:inputData.useraddress,
+            pasword:inputData.userpassword
+        }
+     )
+     console.table(database)
      toBeranda()
    
    }
