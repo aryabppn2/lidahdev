@@ -16,18 +16,19 @@ function Registered_account(){
      const database=[];
      database.push(
         {
-            username:inputData.useraddress,
-            pasword:inputData.userpassword
+            useraddress:inputData.useraddress+'Pmail.com',
+            pasword:inputData.userpassword,
+            
         }
      )
-     console.table(database)
+     console.log(database)
      toBeranda()
    
    }
 }
 
 function toBeranda(){
-    const pageNull=[document.getElementById('search-container'),document.getElementById('data-input')]
+    const pageNull=[document.getElementById('groupt-bar'),document.getElementById('search-container'),document.getElementById('data-input')]
     for(var i=0; i<=pageNull.length; i++){
         pageNull[i].innerHTML=null
     }

@@ -40,7 +40,7 @@ function pmailAddress(address,pass){
     '</select>'+
     '<select id=groupt-list class=chat-container>'+
     '<option onclick=connect_ruteGroupt() style=color:orange>grup</option>'+
-    '</select>'
+    '</select>'+'<span id=groupt-bar></span>';
 
 }
 
@@ -62,12 +62,13 @@ document.getElementById('data-input').innerHTML=addNews_structure(address.innerH
 
 }
 function addNews_structure(address){
-    return'<fieldset style=border-color:blue>'+
-'<legend id=username-addnews>'+address+'</legend>'+
-'<input type=color id=input-signColor onclick=runTitileColor()><input type=color id=input-bordercolor onclick=runContainerColor()><br>'+
-'<input type=text id=input-title class=input-text-data placeholder=judul><br>'+
-'<textarea id=input-data-contain class=input-prg-data placeholder=isi></textarea><br>'+
-'<button onclick=database_connect() class=btn-upload style=color:orange>upload</button>'+
+    return '<fieldset>'+
+'<legend>'+address+'</legend>'+
+'<input type=text id=input-title class=input-text placeholder=judul-pengumuman><br>'+
+'<input type=text id=location-input class=input-set-text placeholder=dimana>'+
+'<input type=date id=input-date-release class=input-set-text><br>'+
+'<textarea id=input-text-value class=editor placeholder=isi-pembicaraan-'+address+'></textarea><br>'+
+'<button onclick=Post_news()>upload</button>'+
     '</fieldset>'
 }
 
@@ -171,7 +172,7 @@ function route_grouptAdd(address){
 '<option onclick=add_member()>anggota</option>'+
 '<option>'+address+'</option>'+
 '</select>'+
-'<button onclick=setting_grouptAdmin() class=bar-groupt-container id=admin>sett admin</button><br>'+
+'<span onclick=setting_grouptAdmin() class=bar-groupt-container id=admin>sett admin</span><br>'+
 '<button onclick=createGroupt() class=btn-upload>buat komunitas</button>'+
     '</fieldset>'
 }
@@ -212,10 +213,27 @@ function grouptdata_res(address){
         grupmember:document.getElementById('member-'+address),
         admin:document.getElementById('admin-'+address)
     }
-    return'<fieldset id=groupt-nav>'+
-    '<legend id=grouptname>'+address+'</legend>'+
-  '<select id=input-member class=bar-groupt-container>'+Route.grupmember.innerHTML+'</select>'+
-  '<button onclick=setting_grouptAdmin() class=bar-groupt-container id=admin>sett admin>'+Route.admin.innerHTML+'</button><br>'+
+    return'<select id=input-member class=bar-groupt-container>'+Route.grupmember.innerHTML+'</select>'+
+  '<select id=groupt-information class=bar-groupt-container>'+
+  '<option>'+Route.admin.innerHTML+'</option>'+
+   '<option onclick=chat_room() style=color:red>chat di'+address+'</option>'+
+    '<option onclick=call_accesRoom() style=color:green> buat pengumuman</option>'+
+  '</select><br>'+
+    '</fieldset>'
+}
+
+function chat_room(){
+    const address=document.getElementById('groupt-list').value;
+    document.getElementById('data-input').innerHTML=chat_groupt(address)
+}
+
+
+function chat_groupt(address){
+    return'<fieldset>'+
+   '<legend onclick=restChat()>'+address+'</legend>'+
+   '<div id=chat-groupt-database class=chat-wrapper></div>'+
+   '<textarea id=input-groupt-chat placeholder=chat-sesuatu class=chat-input-container></textarea>'+
+   '<button onclick=sentGrouptChat()>kirim</button>'+
     '</fieldset>'
 }
 

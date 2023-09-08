@@ -1,68 +1,14 @@
-function database_connect(){
-    const datainput={
+function Post_news(){
+    const dataInput={
         address:document.getElementById('useraddress-output'),
-        style:{
-            col:document.getElementById('input-signColor').value,
-            borderColor:document.getElementById('input-bordercolor').value,
-
-            privateVar:{
-                col:document.getElementById('input-sign-color').value,
-            }
-        },
         title:document.getElementById('input-title').value,
-        text:document.getElementById('input-data-contain').value
-
-    }
-  const postData={
-    database:document.getElementById('uploader-database'),
-    data_host:document.createElement('div'),
-    field:document.createElement('fieldset'),
-    useraddress:{
-        el:document.createElement('legend'),
-        val:document.createTextNode(datainput.address.innerHTML)
-    },
-    title:{
-        el:document.createElement('h2'),
-        val:document.createTextNode(datainput.title)
-    },
-    contain:{
-        el:document.createElement('fieldset'),
-        val:document.createTextNode(datainput.text)
-    }  
+        userlocation:document.getElementById('location-input').value,
+        time:document.getElementById('input-date-release').value,
+        textValue:document.getElementById('input-text-value').value
+    };
+    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue)
+    
 }
-const database1=[];
-database1.push(
-    {
-        id:datainput.title+'-'+datainput.address.innerHTML,
-        useraddress:datainput.address.innerHTML,
-        title:datainput.title,
-        txt:datainput.text
-    }
-)
-console.log(database1)
-// setting data id//
-postData.data_host.setAttribute('id',datainput.title+'-'+datainput.address.innerHTML)
-postData.contain.el.setAttribute('id','isi-'+datainput.title+'-'+datainput.address.innerHTML)
-postData.contain.el.setAttribute('class','flex')
-postData.data_host.style.margin='15px'
-//setting color style data//
-postData.field.style.borderColor='blue';
-postData.useraddress.el.style.color=datainput.style.privateVar.col;
-postData.title.el.style.color=datainput.style.col;
-postData.contain.el.style.borderColor=datainput.style.col;
-postData.contain.el.style.color=datainput.style.borderColor
-
-postData.database.appendChild(postData.data_host);
-postData.data_host.appendChild(postData.field);
-postData.field.appendChild(postData.useraddress.el);
-postData.useraddress.el.appendChild(postData.useraddress.val)
-postData.field.appendChild(postData.title.el);
-postData.title.el.appendChild(postData.title.val);
-postData.field.appendChild(postData.contain.el);
-postData.contain.el.appendChild(postData.contain.val);
-toBeranda()
-}
-
 
 function search(){
     const searchInput=document.getElementById('input-search-text').value
@@ -227,15 +173,74 @@ function connect_grouptList(address){
 function open_groupt(){
     const groupt_address={
         address:document.getElementById('groupt-list').value,
-        res:document.getElementById('data-input')
+        res:document.getElementById('groupt-bar')
     }
     
     groupt_address.res.innerHTML=grouptdata_res(groupt_address.address)
-    
 }
 
 
 
+function sentGrouptChat(){
+    const call_database=document.getElementById('chat-groupt-database')
+    const database=[]
+    const chat_input={
+        address:document.getElementById('useraddress-output'),
+        chat_value:document.getElementById('input-groupt-chat').value
+    };
+ database_connect(chat_input.address.innerHTML,chat_input.chat_value)
+  chat_conecting(chat_input.address.innerHTML,chat_input.chat_value,call_database,'green','left','textarea')
+
+    
+}
+function restChat(){
+    const call_database=document.getElementById('chat-groupt-database')
+    const chat_input={
+        address:document.getElementById('input-member').value,
+        chat_value:document.getElementById('input-groupt-chat').value
+    };
+    const color=['red','blue','purple','orange']
+    const math_color=Math.floor(Math.random()*color.length)
+ database_connect(chat_input.address,chat_input.chat_value)
+  chat_conecting(chat_input.address,chat_input.chat_value,call_database,math_color[color],'right','span')
+}
+
+function database_connect(address,value){
+    const database=[]
+    database.push(
+        {
+            useraddress:address,
+            userChat:value
+        }
+       )
+    console.log(database)  
+    
+}
+
+function chat_conecting(address,val,database,color,position,el){
+    const dataChat_sent={
+        field:document.createElement('fieldset'),
+        useraddress:{
+            el:document.createElement('legend'),
+            val:document.createTextNode(address)
+        },
+       chatValue:{
+        el:document.createElement(el),
+        val:document.createTextNode(val)
+       }
+    };
+    //setting color//
+    dataChat_sent.field.style.borderColor=color;
+    dataChat_sent.chatValue.el.style.color=color;
+    dataChat_sent.field.style.textAlign=position;
+    dataChat_sent.useraddress.el.style.color=color;
+   //sent chat
+    database.appendChild(dataChat_sent.field);
+    dataChat_sent.field.appendChild(dataChat_sent.useraddress.el);
+    dataChat_sent.useraddress.el.appendChild(dataChat_sent.useraddress.val);
+    dataChat_sent.field.appendChild(dataChat_sent.chatValue.el);
+    dataChat_sent.chatValue.el.appendChild(dataChat_sent.chatValue.val)
+}
 
 
 
