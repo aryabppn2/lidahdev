@@ -20,26 +20,7 @@ function search(){
 }
 
 
-function post_web(){
-    const database_connect=document.getElementById('mas-database');
-    const inputData={
-        useraddress:document.getElementById('useraddress-output'),
-        address:document.getElementById('input-webname').value,
-       data:document.getElementById('run-editor-place'),
-       stylecol:document.getElementById('input-border-color'),
-    };
-    database_connect.innerHTML +='<div id='+inputData.address+'-mas-'+inputData.useraddress.innerHTML+'>'+
-    '<fieldset style=border-color:blue>'+
-    '<legend>'+inputData.useraddress.innerHTML+'</legend>'+
-    '<b style=color:'+inputData.style+'>'+inputData.address+'</b>'+
-    '<fieldset>'+
-     inputData.data.innerHTML+
-    '</fieldset>'+
-    '</fieldset>'+
-    '</div>'
 
-toBeranda()
-}
 
 
 function addFriendsChat(){

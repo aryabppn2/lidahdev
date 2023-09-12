@@ -29,7 +29,6 @@ function pmailAddress(address,pass){
     '<option id=address>'+address+'Pmail.com</option>'+
     '<option id=user-pass style=background-color:light-gray onclick=setPass()>'+pass+'</option>'+
     '<option onclick=connect_toAddNews() style=color:red; class=private-menu>berita</option>'+
-'<option onclick= connect_toaddweb() class=private-menu style=color:blue>web</option>'+
 '<option onclick=loggin_out() class=btn-upload style=border-color:red; color:red>log out</option>'+
     '</select>'+
     '<select id=chat-recenly-list class=chat-container>'+
@@ -68,79 +67,15 @@ function addNews_structure(address){
 '<input type=text id=location-input class=input-set-text placeholder=dimana>'+
 '<input type=date id=input-date-release class=input-set-text><br>'+
 '<textarea id=input-text-value class=editor placeholder=isi-pembicaraan-'+address+'></textarea><br>'+
-'<button onclick=Post_news() id=btn-add-news>upload</button>'+
+'<'
+'<button onclick=Post_news() id=btn-private-news class=private-btn>private</button>'+
+'<button onclick=Post_news() id=btn-add-news class=public-news>upload</button>'+
     '</fieldset>'
 }
 
-function texteditor_structure(address){
-    return'<fieldset style=border-color:blue>'+
-'<legend onclick=showhtmlTemplate()>'+address+'</legend>'+
-'<input type=text id=input-webname placeholder=nama-mas>'+
-'<input type=color id=input-border-color onclick=runBorderStyle() class=sizing-borderstyle=margin-left:100pz><br>'+
-'<ul class=editor_text-wrapper>'+
-'<textarea id=input-text-edit placeholder=tulis-sesuatu class=editor></textarea>'+
-'<button onclick=run() class=editor-bar style=background-color:green;color:whitesmoke>run</button>'+
-'<fieldset>'+
-'<legend>'+address+'</legend>'+
-'<b id=web-address>'+
-'<span id=web-name></span>-mas-'+address+
-'</b>'+
- '<fieldset id=run-editor-place class=editor></fieldset>'+
-'<button onclick=post_web() class=editor-bar-post>posting</button>'+
-    '</fieldset>'
-}
-
-function runBorderStyle(){
-    const inputColor=document.getElementById('input-border-color').value
-    document.getElementById('web-address').style.color=inputColor;
-    document.getElementById('web-address').style.borderColor=inputColor
-}
-
-function showhtmlTemplate(){
-  const address={
-    user:document.getElementById('useraddress-output'),
-    color:document.getElementById('input-border-color').value
-  }
-  document.getElementById('input-text-edit').innerHTML=html(address.user.innerHTML,address.color)
-}
-
-
-function html(address,color){
-    return'<html>'+
-    '<body>'+
-    '<h1 style=color:'+color+'>hallo '+address+'</h1>'+
-    '</body>'+
-    '</html>'
-}
-
-function run(){
-    const dataInput={
-        address:document.getElementById('input-webname').value,
-        data:document.getElementById('input-text-edit').value,
-        color:document.getElementById('input-border-color').value
-    }
-    document.getElementById('web-name').innerHTML=dataInput.address;
-    document.getElementById('web-name').style.color=dataInput.color
-    document.getElementById('run-editor-place').innerHTML=dataInput.data;
-
-}
 
 
 
-function connect_toaddweb(){
-    const address=document.getElementById('useraddress-output');
-    const dataInput=document.getElementById('data-input')
-    dataInput.innerHTML=texteditor_structure(address.innerHTML)
-}
-
-
-
-
-function runTitileColor(){
-    const inpuColor=document.getElementById('input-signColor').value
-    document.getElementById('input-title').style.color=inpuColor;
-    document.getElementById('input-data-contain').style.borderColor=inpuColor
-}
 
 function runContainerColor(){
     const inputColor=document.getElementById('input-bordercolor').value;
@@ -292,10 +227,8 @@ function record_off(){
     SystemOn(sett_screenRecord.system,sett_screenRecord.color,'screen_record_on()')
 }
 
-function style_data(select,title,location,time){
+function style_data(select){
  select.setAttribute('class','select_dataInformation');
- title.style.color='black';
- location.style.color='green';
- time.style,color='orange'  
+   
 
 }

@@ -29,6 +29,11 @@ function connect_uploaderDatabase(useraddress,dataaddress,location,time,value){
         val:document.createTextNode(value)
      }
   };
+call_uploaderDataBase.dataadress.location.el.addEventListener('click',function(){
+  const new_loc=prompt('lokasi terbarunya');
+  call_uploaderDataBase.dataadress.location.el.innerHTML=new_loc
+})
+
 call_uploaderDataBase.Host.setAttribute('id',dataaddress);
 call_uploaderDataBase.textValue.el.setAttribute('id','isi-'+dataaddress)
 call_uploaderDataBase.dataadress.select.setAttribute('id','status-'+dataaddress);
@@ -52,7 +57,7 @@ call_uploaderDataBase.field.appendChild(call_uploaderDataBase.dataadress.dis);
 call_uploaderDataBase.field.appendChild(call_uploaderDataBase.textValue.el);
 call_uploaderDataBase.textValue.el.appendChild(call_uploaderDataBase.textValue.val)
 
-style_data(call_uploaderDataBase.dataadress.select,call_uploaderDataBase.dataadress.location.el,call_uploaderDataBase.dataadress.time.el)
+style_data(call_uploaderDataBase.dataadress.select)
 
   
 
