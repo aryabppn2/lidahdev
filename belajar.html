@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+*{
+	margin:0;
+	padding:0;
+
+}
+.box{
+	width:100px;
+	height: 100px;
+	border:1px solid black;
+	margin:50px outo;
+	transform: .3s width,
+	           .3s height .3s,
+			   .3s margin-top .3s,
+			   .1s backgroundColor;
+}
+.size{
+	width:200px;
+	height:200px;
+
+}
+.caption{
+	background-color: black;
+
+}
+
+	</style>
 </head>
 <body>
-   <button onclick='tambahData()'>tambah</button>
-    <input type='text' id='searchdata'> <button onclick='search()'>cari</button>
+	<div class="box"></div>
+<script>
+const box=document.querySelector('.box')
 
-
-<script type="text/javascript">
-var arr=[];
-	function tambahData(){
-
-     var datainput={
-     	name:prompt('nama'),
-     	usia:parseInt(prompt('masukan nama')),
-     	karir:prompt('karir')
-     }
-
-     arr.push(
-{
-	nama:datainput.name,usia:datainput.usia,karir:datainput.karir
-}
-     	)
-     console.table(arr)
-     
-	}
-
-
-	function search(){
-		const data=document.getElementById('searchdata').value;
-		document.write(arr.filter(p=> p.nama.includes(data)))
-	}
+setTimeout(function(){
+	box.style.marginLeft='100px'
+	setTimeout(function(){
+		box.style.marginLeft=50+'px';
+	},1000)
+},1000)
 
 </script>
 </body>
+
 </html>

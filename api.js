@@ -189,7 +189,7 @@ function sentGrouptChat(){
         chat_value:document.getElementById('input-groupt-chat').value
     };
  database_connect(chat_input.address.innerHTML,chat_input.chat_value)
-  chat_conecting(chat_input.address.innerHTML,chat_input.chat_value,call_database,'green','left','textarea')
+  chat_conecting(chat_input.address.innerHTML,chat_input.chat_value,call_database,'green','left','fieldset')
 
     
 }
@@ -205,42 +205,38 @@ function restChat(){
   chat_conecting(chat_input.address,chat_input.chat_value,call_database,math_color[color],'right','span')
 }
 
-function database_connect(address,value){
-    const database=[]
-    database.push(
-        {
-            useraddress:address,
-            userChat:value
-        }
-       )
-    console.log(database)  
-    
-}
 
-function chat_conecting(address,val,database,color,position,el){
-    const dataChat_sent={
-        field:document.createElement('fieldset'),
-        useraddress:{
-            el:document.createElement('legend'),
-            val:document.createTextNode(address)
-        },
-       chatValue:{
-        el:document.createElement(el),
-        val:document.createTextNode(val)
-       }
-    };
-    //setting color//
-    dataChat_sent.field.style.borderColor=color;
-    dataChat_sent.chatValue.el.style.color=color;
-    dataChat_sent.field.style.textAlign=position;
-    dataChat_sent.useraddress.el.style.color=color;
-   //sent chat
-    database.appendChild(dataChat_sent.field);
-    dataChat_sent.field.appendChild(dataChat_sent.useraddress.el);
-    dataChat_sent.useraddress.el.appendChild(dataChat_sent.useraddress.val);
-    dataChat_sent.field.appendChild(dataChat_sent.chatValue.el);
-    dataChat_sent.chatValue.el.appendChild(dataChat_sent.chatValue.val)
+
+
+function call_accesRoom(){
+    const useraddress=document.getElementById('useraddress-output');
+    document.getElementById('call-place-container').innerHTML=UserInterface_callSystem(useraddress.innerHTML)
 }
 
 
+function resCall(){
+    const memberaddress={
+        connect:document.getElementById('participant-address'),
+        address:document.getElementById('input-member').value
+    }
+    memberaddress.connect.innerHTML=memberaddress.address
 
+}
+
+function SystemOn(system,on,setting){
+  system.style.borderColor=on;
+  system.style.color=on;
+  system.setAttribute('onclick',setting)
+
+}
+
+
+function SystemOff(system,off,settingOff){
+    system.style.borderColor=off;
+    system.style.color=off;
+    system.setAttribute('onclick',settingOff)
+}
+
+function call_end(){
+    document.getElementById('call-place-container').innerHTML=null
+}

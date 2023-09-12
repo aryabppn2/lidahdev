@@ -68,7 +68,7 @@ function addNews_structure(address){
 '<input type=text id=location-input class=input-set-text placeholder=dimana>'+
 '<input type=date id=input-date-release class=input-set-text><br>'+
 '<textarea id=input-text-value class=editor placeholder=isi-pembicaraan-'+address+'></textarea><br>'+
-'<button onclick=Post_news()>upload</button>'+
+'<button onclick=Post_news() id=btn-add-news>upload</button>'+
     '</fieldset>'
 }
 
@@ -217,14 +217,16 @@ function grouptdata_res(address){
   '<select id=groupt-information class=bar-groupt-container>'+
   '<option>'+Route.admin.innerHTML+'</option>'+
    '<option onclick=chat_room() style=color:red>chat di'+address+'</option>'+
-    '<option onclick=call_accesRoom() style=color:green> buat pengumuman</option>'+
+    '<option onclick=call_accesRoom() style=color:green>panggil</option>'+
   '</select><br>'+
-    '</fieldset>'
+  '<div id=call-place-container></div>'+
+  '<div id=chat-place-container></div>'
+    
 }
 
 function chat_room(){
     const address=document.getElementById('groupt-list').value;
-    document.getElementById('data-input').innerHTML=chat_groupt(address)
+    document.getElementById('chat-place-container').innerHTML=chat_groupt(address)
 }
 
 
@@ -237,3 +239,63 @@ function chat_groupt(address){
     '</fieldset>'
 }
 
+function UserInterface_callSystem(useraddress){
+    return'<div class=call-room>'+
+    '<fieldset id=participant-address class=call-address onclick=resCall()></fieldset>'+
+    '<fieldset class=call-address style=color:lightgreen>'+useraddress+'</fieldset>'+
+    '</div>'+
+    '<div id=call-set-wrapper>'+
+    '<button onclick=sound_on() class=call-bar style=color:green;border-color:green id=mic-setting>mic</button>'+
+    '<button onclick=call_end() class=call-bar style=color:red;border-color:red>akhiri</button>'+
+    '<button onclick=screen_record_on() class=call-bar id=screen-record style=border-color:green;color:green>rekam layar</button>'+
+    '</div>'
+}
+
+
+
+function sound_on(){
+    const sett_sound={
+        color:'red',
+        system:document.getElementById('mic-setting'),
+    
+    }
+    SystemOn(sett_sound.system,sett_sound.color,'mic_off()')
+}
+
+
+function mic_off(){
+    const sett_sound={
+        color:'green',
+        system:document.getElementById('mic-setting'),
+    
+    }
+    SystemOn(sett_sound.system,sett_sound.color,'sound_on()')
+}
+
+
+function screen_record_on(){
+    const sett_screenRecord={
+        color:'red',
+        system:document.getElementById('screen-record'),
+    
+    }
+    SystemOn(sett_screenRecord.system,sett_screenRecord.color,'record_off()')
+}
+
+
+function record_off(){
+    const sett_screenRecord={
+        color:'green',
+        system:document.getElementById('screen-record'),
+    
+    }
+    SystemOn(sett_screenRecord.system,sett_screenRecord.color,'screen_record_on()')
+}
+
+function style_data(select,title,location,time){
+ select.setAttribute('class','select_dataInformation');
+ title.style.color='black';
+ location.style.color='green';
+ time.style,color='orange'  
+
+}
