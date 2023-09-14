@@ -1,7 +1,18 @@
-function connect_uploaderDatabase(useraddress,dataaddress,location,time,value){
+function connect_pmailDatabase(address){
+ const  pmaildatabase=[];
+ pmaildatabase.push({
+  username:address,
+  address:address+'tmail.com'
+ })
+
+ console.log(pmaildatabase)
+}
+
+
+function connect_uploaderDatabase(useraddress,dataaddress,location,time,value,database){
   
   const call_uploaderDataBase={
-    database:document.getElementById('uploader-database'),
+  
       Host:document.createElement('div'),
       field:document.createElement('fieldset'),
       useraddress:{
@@ -29,18 +40,17 @@ function connect_uploaderDatabase(useraddress,dataaddress,location,time,value){
         val:document.createTextNode(value)
      }
   };
-call_uploaderDataBase.dataadress.location.el.addEventListener('click',function(){
-  const new_loc=prompt('lokasi terbarunya');
-  call_uploaderDataBase.dataadress.location.el.innerHTML=new_loc
-})
+  call_uploaderDataBase.dataadress.location.el.addEventListener('click',function(){
+    const new_loc=prompt('lokasi terbarunya');
+    call_uploaderDataBase.dataadress.location.el.innerHTML=new_loc
+  })
 
 call_uploaderDataBase.Host.setAttribute('id',dataaddress);
 call_uploaderDataBase.textValue.el.setAttribute('id','isi-'+dataaddress)
 call_uploaderDataBase.dataadress.select.setAttribute('id','status-'+dataaddress);
 call_uploaderDataBase.dataadress.location.el.setAttribute('id','lokasi-'+dataaddress);
 call_uploaderDataBase.dataadress.time.el.setAttribute('id','waktu-'+dataaddress);
-
-call_uploaderDataBase.database.appendChild(call_uploaderDataBase.Host);
+database.appendChild(call_uploaderDataBase.Host);
 call_uploaderDataBase.Host.appendChild(call_uploaderDataBase.field);
 call_uploaderDataBase.field.appendChild(call_uploaderDataBase.useraddress.el);
 call_uploaderDataBase.useraddress.el.appendChild(call_uploaderDataBase.useraddress.val);
@@ -58,33 +68,36 @@ call_uploaderDataBase.field.appendChild(call_uploaderDataBase.textValue.el);
 call_uploaderDataBase.textValue.el.appendChild(call_uploaderDataBase.textValue.val)
 
 style_data(call_uploaderDataBase.dataadress.select)
+const Txtdatabase=[]
+Txtdatabase.push(
+  {
+    useraddress:useraddress+'tmal.com',
+    title:dataaddress,
+    location:location,
+    time:time,
+    value:value
+  }
+)
+console.log(Txtdatabase)
 
-  
 
-    const database=[];
-    database.push(
-        {
-            host:dataaddress+'-'+useraddress,
-            useraddress:useraddress,
-            title:dataaddress,
-            location:location,
-            time:time,
-            value:value
-        }
-    )
- console.log(database)
- toBeranda()
 }
-function database_connect(address,value){
-  const database=[]
-  database.push(
-      {
-          useraddress:address,
-          userChat:value
-      } 
-     )
-  console.log(database)  
-  
+
+
+function connect_toMarketDatabase(useraddress,productname,price,description,database,type,btnset){
+ connect_toMarket(useraddress,productname,price,description,database,type,btnset)
+  const markeDatabase=[];
+  markeDatabase.push(
+ {
+  useraddress:useraddress+'tmail.com',
+  productname:productname,
+  type:type,
+  price:price,
+  des:description
+ }
+
+  )
+  console.log(markeDatabase)
 }
 
 function chat_conecting(address,val,database,color,position,el){

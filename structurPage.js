@@ -2,9 +2,8 @@ function logiageStructure(){
     return'<h2 style=color:lightblue>login sekarang</h2> '+
 '<input type=text id=input-useraddress class=input-text-loggin placeholder=username><br>'+
 '<input type=password id=input-user-pass class=pass-container placeholder=password style=color:red><br>'+
-'<button onclick=Registered_account() class=btn-upload>daftar</button>'+
-'<button onclick=loggin_account() class=btn-upload style=background-color:green>login</button>'
-
+'<textarea id=business-loc style=width=87%;height=300px;border=0px;border-color:green;color:green;placeholder=lokasi></textarea>'+
+'<br><button onclick=Registered_account() class=btn-upload>daftar</button>'
 
 }
 
@@ -17,17 +16,18 @@ function connect_loginPage(){
 function structure_accountHeader(){
     return'<fieldset id=data-field class=dat-private>'+
 '<div id=uploader-database ></div>'+  
-'<div id=mas-database></div>'+ 
+'<div id=market-database></div>'+ 
 
 '</fieldset><div id=groupt-database></div>'
 
     
 }
-function pmailAddress(address,pass){
+function pmailAddress(address,pass,location){
     return'<select class=chat-container id=user-data>'+
     '<option id=useraddress-output onclick=settinguseraddress()>'+address+'</option>'+
     '<option id=address>'+address+'Pmail.com</option>'+
     '<option id=user-pass style=background-color:light-gray onclick=setPass()>'+pass+'</option>'+
+    '<option id=location style=color:light-green onclick=setLoc()>'+location+'</option>'+
     '<option onclick=connect_toAddNews() style=color:red; class=private-menu>berita</option>'+
 '<option onclick=loggin_out() class=btn-upload style=border-color:red; color:red>log out</option>'+
     '</select>'+
@@ -38,8 +38,9 @@ function pmailAddress(address,pass){
     '<option onclick=addFriendsChat()>teman</option>'+
     '</select>'+
     '<select id=groupt-list class=chat-container>'+
-    '<option onclick=connect_ruteGroupt() style=color:orange>grup</option>'+
-    '</select>'+'<span id=groupt-bar></span>';
+      '<option onclick=connect_ruteGroupt()>group</option>'+
+    '</select>'+
+    '<div id=groupt-bar></div>'
 
 }
 
@@ -67,9 +68,9 @@ function addNews_structure(address){
 '<input type=text id=location-input class=input-set-text placeholder=dimana>'+
 '<input type=date id=input-date-release class=input-set-text><br>'+
 '<textarea id=input-text-value class=editor placeholder=isi-pembicaraan-'+address+'></textarea><br>'+
-'<'
+'<div class= news-uploader-wrapper>'+
 '<button onclick=Post_news() id=btn-private-news class=private-btn>private</button>'+
-'<button onclick=Post_news() id=btn-add-news class=public-news>upload</button>'+
+   '</div>'+ 
     '</fieldset>'
 }
 
@@ -95,6 +96,15 @@ else{
     
 
 }
+
+
+
+function style_data(select){
+ select.setAttribute('class','select_dataInformation');
+   
+
+}
+
 function connect_ruteGroupt(){
     const useraddress=document.getElementById('useraddress-output')
     document.getElementById('data-input').innerHTML=route_grouptAdd(useraddress.innerHTML)

@@ -4,6 +4,7 @@ function Registered_account(){
        datainput:document.getElementById('private-database'),
         useraddress:document.getElementById('input-useraddress').value,
         userpassword:document.getElementById('input-user-pass').value,
+        userlocation:document.getElementById('business-loc').value
         
     }
    if(inputData.datainput=="" ||inputData.useraddress=="" || inputData.userpassword==""){
@@ -12,23 +13,14 @@ function Registered_account(){
    }
    else{
     inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress)
-     inputData.privateData.innerHTML=pmailAddress(inputData.useraddress,inputData.userpassword)
-     const database=[];
-     database.push(
-        {
-            useraddress:inputData.useraddress+'Pmail.com',
-            pasword:inputData.userpassword,
-            
-        }
-     )
-     console.log(database)
+     inputData.privateData.innerHTML=pmailAddress(inputData.useraddress,inputData.userpassword,inputData.userlocation)
      toBeranda()
    
    }
 }
 
 function toBeranda(){
-    const pageNull=[document.getElementById('groupt-bar'),document.getElementById('search-container'),document.getElementById('data-input')]
+    const pageNull=[document.getElementById('search-container'),document.getElementById('data-input')]
     for(var i=0; i<=pageNull.length; i++){
         pageNull[i].innerHTML=null
     }
@@ -81,7 +73,8 @@ function loggin_out(){
    '<fieldset style=border-color:'+dataUser.style.borderColor+' class=private-database>'+
   '<legend style=color:'+dataUser.style.color+' onclick=followMore()>'+dataUser.dataaadrees.innerHTML+'</legend>'+
     dataUser.dataupload.innerHTML
-'</fieldset>'
+'</fieldset>';
+ connect_pmailDatabase(dataUser.dataaadrees)
 
 }
 

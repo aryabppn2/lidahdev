@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎭masker</title>
+    <title>🚽 toilet</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
         <div class="wrapper-container">
-    <img src="masker.jpeg" width="17px"; height="17px" onclick="toBeranda()" >
-         <input type="text" id="input-search-text" placeholder="cari apa" class="search-container">
-         <button class="search-btn" onclick="search()">cari</button>
-        </div>
-        <div style="background-color:aliceblue">
-        <button onclick="connect_loginPage()" class="bar-menu" style="color:green;border:0">login</button>
-        <button onclick="toBeranda()" style="color:blueviolet;border:0" class="bar-menu">home</button>
-        <button class="bar-menu" style="color:gray;border:0" onclick="showAll()">beranda</button>
+            <logo onclick='toBeranda()' style="background-color: lightblue;">🚽</logo>
+         <input type="text" id="input-search-text" placeholder="🚽cari apa" class="search-container" onkeyup="search()">
+         <select name="bar-data-type" class="menu-contain" style="border:0px">
+            <option onclick="toBeranda()">🏠</option>
+            <option  style="color:gray;border:0" onclick="showAll()">beranda</option>
+            <option  style="color:green" onclick="presonPost()">text</option>
+            <option  style="color:blue" onclick="grouptPerson()">jasa</option>
+            <option onclick="connect_loginPage()"  style='color:red;'>login</option>
+           
+        </select>
         <input type=color id=input-sign-color onclick=runStylecol()>
         <span id="private-wrapper"></span>
         </div>

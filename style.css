@@ -5,10 +5,16 @@
 
 *{
     font-family:'Times New Roman', Times, serif;
-    background-color:whitesmoke;
-    color:blue
+    background-color:rgb(11, 28, 49);
+    color:aqua
 
     
+}
+.menu-contain{
+    background-color: lightblue;
+    color:blue;
+    border: 0px;
+
 }
 
 .input-text{
@@ -16,12 +22,14 @@
     height:46px;
     margin-bottom: 12px;
     background-color: aliceblue;
+    color:blue;
     border:0px;
 }
 .input-set-text{
     width:42.6%;
     height:46px;
-    background-color:lightgreen;
+    border-color:lightgreen;
+    color:greenyellow;
     border:0px;
 }
 
@@ -62,7 +70,9 @@
 .search-container{
     width:75.8%;
     height: 34px;
-    border:0px;
+    border:9px;
+    border-color: blue;
+    
 
 }
 .search-btn{
@@ -217,4 +227,12 @@
     height: 45px;
     border:0px;
 
+}
+.name-container{
+    width:85.2%;
+    height:46px;
+}
+.number-container{
+    width:42.6%;
+    height:46px;
 }

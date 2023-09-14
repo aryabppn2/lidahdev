@@ -1,4 +1,5 @@
 function Post_news(){
+    const database=document.getElementById('uploader-database');
     const dataInput={
         address:document.getElementById('useraddress-output'),
         title:document.getElementById('input-title').value,
@@ -6,20 +7,29 @@ function Post_news(){
         time:document.getElementById('input-date-release').value,
         textValue:document.getElementById('input-text-value').value
     };
-    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue)
-    
+    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue,database)
+    toBeranda()
 }
+
+
+
 
 function search(){
     const searchInput=document.getElementById('input-search-text').value
-    const dataRes=document.getElementById(searchInput);
-    document.getElementById('search-container').innerHTML=dataRes.innerHTML
-     document.getElementById('data-input').innerHTML=null
-     
+    document.getElementById('search-container').innerHTML=
+    document.getElementById(searchInput).innerHTML
+
+
 
 }
 
-
+function setLoc(){
+    const location={
+        new:prompt('lokasi terkini'),
+        old:document.getElementById('location')
+    }
+    location.old.innerHTML=location.new
+}
 
 
 
@@ -63,6 +73,7 @@ document.getElementById('chat-recenly-list').appendChild(connect_recently_chat.o
 connect_recently_chat.opt.appendChild(connect_recently_chat.val)
 connect_recently_chat.opt.setAttribute('onclick','open_chatRecenly()')
 }
+
 
 
 
