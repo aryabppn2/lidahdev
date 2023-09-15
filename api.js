@@ -94,10 +94,10 @@ function Sent_ChatData(){
             value:document.createTextNode(data_value.chat_value)
          }
     };
-    connect_database.datafield.style.borderColor='green';
-    connect_database.chat_value.el.style.color='green';
+    connect_database.datafield.style.borderColor='lightgreen';
+    connect_database.chat_value.el.style.color='lightgreen';
     connect_database.datafield.style.textAlign='left'
-    connect_database.usernameaddress.el.style.color='green';
+    connect_database.usernameaddress.el.style.color='lightgreen';
     connect_database.database.appendChild(connect_database.datafield);
     connect_database.datafield.appendChild(connect_database.usernameaddress.el);
     connect_database.usernameaddress.el.appendChild(connect_database.usernameaddress.value);
@@ -109,7 +109,7 @@ function Sent_ChatData(){
 }
 
 
-function restChat(){
+function restPrivateChat(){
     const data_value={
         address:document.getElementById('target-address'),
         chat_value:document.getElementById('input-chat-value').value
@@ -126,11 +126,11 @@ function restChat(){
             value:document.createTextNode(data_value.chat_value)
          }
     };
-    connect_database.datafield.style.borderColor='blue';
-    connect_database.chat_value.el.style.color='blue';
+    connect_database.datafield.style.borderColor='lightblue';
+    connect_database.chat_value.el.style.color='lightblue';
     connect_database.datafield.style.textAlign='right '
     connect_database.usernameaddress.el.style.textAlign='right'
-    connect_database.usernameaddress.el.style.color='blue';
+    connect_database.usernameaddress.el.style.color='lightblue';
     connect_database.database.appendChild(connect_database.datafield);
     connect_database.datafield.appendChild(connect_database.usernameaddress.el);
     connect_database.usernameaddress.el.appendChild(connect_database.usernameaddress.value);
@@ -180,8 +180,7 @@ function sentGrouptChat(){
         address:document.getElementById('useraddress-output'),
         chat_value:document.getElementById('input-groupt-chat').value
     };
- database_connect(chat_input.address.innerHTML,chat_input.chat_value)
-  chat_conecting(chat_input.address.innerHTML,chat_input.chat_value,call_database,'green','left','fieldset')
+  chat_conecting(chat_input.address.innerHTML,chat_input.chat_value,call_database,'lightgreen','left','textarea')
 
     
 }
@@ -191,10 +190,7 @@ function restChat(){
         address:document.getElementById('input-member').value,
         chat_value:document.getElementById('input-groupt-chat').value
     };
-    const color=['red','blue','purple','orange']
-    const math_color=Math.floor(Math.random()*color.length)
- database_connect(chat_input.address,chat_input.chat_value)
-  chat_conecting(chat_input.address,chat_input.chat_value,call_database,math_color[color],'right','span')
+  chat_conecting(chat_input.address,chat_input.chat_value,call_database,'lightblue','right','span')
 }
 
 

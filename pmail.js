@@ -7,7 +7,7 @@ function Registered_account(){
         userlocation:document.getElementById('business-loc').value
         
     }
-   if(inputData.datainput=="" ||inputData.useraddress=="" || inputData.userpassword==""){
+   if(inputData.datainput=="" ||inputData.useraddress=="" || inputData.userpassword=="" || inputData.userlocation==""){
     alert("mohon data dilengkapi")
     console.log('registerd failet')
    }
@@ -20,7 +20,7 @@ function Registered_account(){
 }
 
 function toBeranda(){
-    const pageNull=[document.getElementById('search-container'),document.getElementById('data-input')]
+    const pageNull=[document.getElementById('search-container'),document.getElementById('data-input'),document.getElementById('groupt-bar')]
     for(var i=0; i<=pageNull.length; i++){
         pageNull[i].innerHTML=null
     }

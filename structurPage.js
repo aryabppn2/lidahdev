@@ -2,7 +2,7 @@ function logiageStructure(){
     return'<h2 style=color:lightblue>login sekarang</h2> '+
 '<input type=text id=input-useraddress class=input-text-loggin placeholder=username><br>'+
 '<input type=password id=input-user-pass class=pass-container placeholder=password style=color:red><br>'+
-'<textarea id=business-loc style=width=87%;height=300px;border=0px;border-color:green;color:green;placeholder=lokasi></textarea>'+
+'<textarea id=business-loc class=txt-loc placeholder=lokasi></textarea>'+
 '<br><button onclick=Registered_account() class=btn-upload>daftar</button>'
 
 }
@@ -13,8 +13,9 @@ function connect_loginPage(){
     
 }
 
-function structure_accountHeader(){
+function structure_accountHeader(address){
     return'<fieldset id=data-field class=dat-private>'+
+    '<legend id=useraddress-output onclick=settinguseraddress()>'+address+'</legend>'+
 '<div id=uploader-database ></div>'+  
 '<div id=market-database></div>'+ 
 
@@ -24,7 +25,6 @@ function structure_accountHeader(){
 }
 function pmailAddress(address,pass,location){
     return'<select class=chat-container id=user-data>'+
-    '<option id=useraddress-output onclick=settinguseraddress()>'+address+'</option>'+
     '<option id=address>'+address+'Pmail.com</option>'+
     '<option id=user-pass style=background-color:light-gray onclick=setPass()>'+pass+'</option>'+
     '<option id=location style=color:light-green onclick=setLoc()>'+location+'</option>'+
@@ -46,7 +46,7 @@ function pmailAddress(address,pass,location){
 
 function chatFeature_structure(targetaddress){
     return'<fieldset>'+
-'<legend style=color:purple onclick=restChat() id=target-address>'+targetaddress+'</legend>'+
+'<legend style=color:lightblue onclick=restPrivateChat()() id=target-address>'+targetaddress+'</legend>'+
 '<div id=chat-database class=chat-wrapper></div>'+
 '<div id=input-chat><textarea id=input-chat-value class=chat-input-container placeholder=ketikan-sesuatu></textarea>'+
     '<button onclick=Sent_ChatData() classs=btn-upload>kirim</button></div>'+
@@ -62,7 +62,7 @@ document.getElementById('data-input').innerHTML=addNews_structure(address.innerH
 
 }
 function addNews_structure(address){
-    return '<fieldset>'+
+    return '<fieldset >'+
 '<legend>'+address+'</legend>'+
 '<input type=text id=input-title class=input-text placeholder=judul-pengumuman><br>'+
 '<input type=text id=location-input class=input-set-text placeholder=dimana>'+
@@ -78,20 +78,16 @@ function addNews_structure(address){
 
 
 
-function runContainerColor(){
-    const inputColor=document.getElementById('input-bordercolor').value;
-    document.getElementById('input-data-contain').style.color=inputColor
-}
 
 function runStylecol(){
     const color=document.getElementById('input-sign-color').value;
 const confirmStyle=confirm('untuk tulisan/background')
 
 if(confirmStyle==true){
-    document.getElementById('user-data').style.color=color
+    document.getElementById('useraddress-output').style.color=color
 }
 else{
-    document.getElementById('user-data').style.backgroundColor=color
+    document.getElementById('data-field').style.backgroundColor=color;
 }
     
 
@@ -163,11 +159,15 @@ function grouptdata_res(address){
   '<option>'+Route.admin.innerHTML+'</option>'+
    '<option onclick=chat_room() style=color:red>chat di'+address+'</option>'+
     '<option onclick=call_accesRoom() style=color:green>panggil</option>'+
+    '<option onclick=add_groupNews()>news</option>'+
   '</select><br>'+
   '<div id=call-place-container></div>'+
-  '<div id=chat-place-container></div>'
+  '<div id=chat-place-container></div>'+
+  '<div id=groupt-news- input></div>'
     
 }
+
+
 
 function chat_room(){
     const address=document.getElementById('groupt-list').value;
@@ -195,6 +195,7 @@ function UserInterface_callSystem(useraddress){
     '<button onclick=screen_record_on() class=call-bar id=screen-record style=border-color:green;color:green>rekam layar</button>'+
     '</div>'
 }
+
 
 
 
@@ -242,3 +243,5 @@ function style_data(select){
    
 
 }
+
+

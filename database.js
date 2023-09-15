@@ -50,6 +50,7 @@ call_uploaderDataBase.textValue.el.setAttribute('id','isi-'+dataaddress)
 call_uploaderDataBase.dataadress.select.setAttribute('id','status-'+dataaddress);
 call_uploaderDataBase.dataadress.location.el.setAttribute('id','lokasi-'+dataaddress);
 call_uploaderDataBase.dataadress.time.el.setAttribute('id','waktu-'+dataaddress);
+call_uploaderDataBase.field.classList='dat-post'
 database.appendChild(call_uploaderDataBase.Host);
 call_uploaderDataBase.Host.appendChild(call_uploaderDataBase.field);
 call_uploaderDataBase.field.appendChild(call_uploaderDataBase.useraddress.el);
@@ -84,21 +85,6 @@ console.log(Txtdatabase)
 }
 
 
-function connect_toMarketDatabase(useraddress,productname,price,description,database,type,btnset){
- connect_toMarket(useraddress,productname,price,description,database,type,btnset)
-  const markeDatabase=[];
-  markeDatabase.push(
- {
-  useraddress:useraddress+'tmail.com',
-  productname:productname,
-  type:type,
-  price:price,
-  des:description
- }
-
-  )
-  console.log(markeDatabase)
-}
 
 function chat_conecting(address,val,database,color,position,el){
   const dataChat_sent={
