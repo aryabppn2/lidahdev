@@ -1,5 +1,6 @@
+const Txtdatabase=[]
 function connect_pmailDatabase(address){
- const  pmaildatabase=[];
+ const  pmaildatabase=[ ];
  pmaildatabase.push({
   username:address,
   address:address+'tmail.com'
@@ -8,8 +9,22 @@ function connect_pmailDatabase(address){
  console.log(pmaildatabase)
 }
 
+function connect_database(useraddress,dataaddress,location,time,value){
+  Txtdatabase.push(
+    {
+      useraddress:useraddress+'tmal.com',
+      title:dataaddress,
+      location:location,
+      time:time,
+      value:value
+    }
+  )
+  console.log(Txtdatabase)
+}
+
 
 function connect_uploaderDatabase(useraddress,dataaddress,location,time,value,database){
+
   
   const call_uploaderDataBase={
   
@@ -69,18 +84,6 @@ call_uploaderDataBase.field.appendChild(call_uploaderDataBase.textValue.el);
 call_uploaderDataBase.textValue.el.appendChild(call_uploaderDataBase.textValue.val)
 
 style_data(call_uploaderDataBase.dataadress.select)
-const Txtdatabase=[]
-Txtdatabase.push(
-  {
-    useraddress:useraddress+'tmal.com',
-    title:dataaddress,
-    location:location,
-    time:time,
-    value:value
-  }
-)
-console.log(Txtdatabase)
-
 
 }
 

@@ -17,9 +17,8 @@ function structure_accountHeader(address){
     return'<fieldset id=data-field class=dat-private>'+
     '<legend id=useraddress-output onclick=settinguseraddress()>'+address+'</legend>'+
 '<div id=uploader-database ></div>'+  
-'<div id=market-database></div>'+ 
-
-'</fieldset><div id=groupt-database></div>'
+'<div id=public-news></div>'+
+'</fieldset><div id=groupt-database-private></div>';
 
     
 }
@@ -34,8 +33,8 @@ function pmailAddress(address,pass,location){
     '<select id=chat-recenly-list class=chat-container>'+
     '<option> barusan chat</option>'+
     '</select>'+
-    '<select id=visitor-view class=chat-container style=color:green>'+
-    '<option onclick=addFriendsChat()>teman</option>'+
+    '<select id=visitor-view class=chat-container style=color:lightgreen>'+
+    '<option onclick=addFriendsChat()>kenalan</option>'+
     '</select>'+
     '<select id=groupt-list class=chat-container>'+
       '<option onclick=connect_ruteGroupt()>group</option>'+
@@ -61,6 +60,13 @@ document.getElementById('data-input').innerHTML=addNews_structure(address.innerH
 
 
 }
+function connect_grouptNews(){
+    const grouptaddress=document.getElementById('grouptaddress-output');
+    document.getElementById('groupt-news-input').innerHTML=addNews_structure(grouptaddress.innerHTML)
+    document.getElementById('btn-private-news').setAttribute('onclick','Post_private_groupt()');
+    document.getElementById('btn-public-news').setAttribute('onclick','Post_public_group()')
+}
+
 function addNews_structure(address){
     return '<fieldset >'+
 '<legend>'+address+'</legend>'+
@@ -70,6 +76,7 @@ function addNews_structure(address){
 '<textarea id=input-text-value class=editor placeholder=isi-pembicaraan-'+address+'></textarea><br>'+
 '<div class= news-uploader-wrapper>'+
 '<button onclick=Post_news() id=btn-private-news class=private-btn>private</button>'+
+'<button onclick=Post_PublicNews() id=btn-public-news  class=private-btn>publlic</button>'+
    '</div>'+ 
     '</fieldset>'
 }
@@ -103,6 +110,7 @@ function style_data(select){
 
 function connect_ruteGroupt(){
     const useraddress=document.getElementById('useraddress-output')
+
     document.getElementById('data-input').innerHTML=route_grouptAdd(useraddress.innerHTML)
 }
 
@@ -137,7 +145,7 @@ function add_member(){
 }
 
 function connect_grouptDatabase(address,grouptmember,admin){
-    const database_connect=document.getElementById('groupt-database')
+    const database_connect=document.getElementById('groupt-database-private')
      database_connect.innerHTML +=
     '<div id=groupt-'+address+'>'+
     '<fieldset>'+
@@ -156,14 +164,15 @@ function grouptdata_res(address){
     }
     return'<select id=input-member class=bar-groupt-container>'+Route.grupmember.innerHTML+'</select>'+
   '<select id=groupt-information class=bar-groupt-container>'+
+  '<option id=grouptaddress-output>'+address+'</option>'+
   '<option>'+Route.admin.innerHTML+'</option>'+
-   '<option onclick=chat_room() style=color:red>chat di'+address+'</option>'+
+   '<option onclick=chat_room() style=color:red id=groupt-address>chat di'+address+'</option>'+
     '<option onclick=call_accesRoom() style=color:green>panggil</option>'+
-    '<option onclick=add_groupNews()>news</option>'+
+    '<option onclick=connect_grouptNews()>news</option>'+
   '</select><br>'+
   '<div id=call-place-container></div>'+
   '<div id=chat-place-container></div>'+
-  '<div id=groupt-news- input></div>'
+  '<div id=groupt-news-input></div>'
     
 }
 
@@ -245,3 +254,24 @@ function style_data(select){
 }
 
 
+
+
+function route_search(data1,data2,data3){
+document.getElementById('search-conntainer').innerHTML=
+'<fieldset>'+
+
+'</fieldset>'+
+'<fieldset>'+
+
+
+'</fieldset>'
+
+
+
+
+
+
+
+
+
+}

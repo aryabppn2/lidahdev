@@ -59,7 +59,6 @@ function setPass(){
 function loggin_out(){
     const dataUser={
         databefore:document.getElementById('private-database'),
-        dataupload:document.getElementById('uploader-database'),
         dataaadrees:document.getElementById('useraddress-output'),
        databaseaddress:document.getElementById('public-database/192.168.120.189'),
        style:{
@@ -72,7 +71,6 @@ function loggin_out(){
    dataUser.databaseaddress.innerHTML +='<div id='+dataUser.dataaadrees.innerHTML+'@pmail>'+
    '<fieldset style=border-color:'+dataUser.style.borderColor+' class=private-database>'+
   '<legend style=color:'+dataUser.style.color+' onclick=followMore()>'+dataUser.dataaadrees.innerHTML+'</legend>'+
-    dataUser.dataupload.innerHTML
 '</fieldset>';
  connect_pmailDatabase(dataUser.dataaadrees)
 

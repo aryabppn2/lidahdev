@@ -12,7 +12,48 @@ function Post_news(){
 }
 
 
+function Post_PublicNews(){
+    const database=document.getElementById('public-database/192.168.120.189');
+    const dataInput={
+        address:document.getElementById('useraddress-output'),
+        title:document.getElementById('input-title').value,
+        userlocation:document.getElementById('location-input').value,
+        time:document.getElementById('input-date-release').value,
+        textValue:document.getElementById('input-text-value').value
+    };
+    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue,database)
+    connect_database(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue)
+    toBeranda()
+}
 
+
+function Post_private_groupt(){
+    const databasee_call=document.getElementById('groupt-database-private');
+    const dataInput={
+        address:document.getElementById('grouptaddress-output'),
+        title:document.getElementById('input-title').value,
+        grouptLocation:document.getElementById('location-input').value,
+        time:document.getElementById('input-date-release').value,
+        textValue:document.getElementById('input-text-value').value
+    };
+    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.grouptLocation,
+        dataInput.time,dataInput.textValue,databasee_call)
+    toBeranda()
+}
+
+function Post_public_group(){
+    const database=document.getElementById('public-database/192.168.120.189');
+    const dataInput={
+        address:document.getElementById('grouptaddress-output'),
+        title:document.getElementById('input-title').value,
+        userlocation:document.getElementById('location-input').value,
+        time:document.getElementById('input-date-release').value,
+        textValue:document.getElementById('input-text-value').value
+    };
+    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue,database)
+    connect_database(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue)
+    toBeranda()
+}
 
 function search(){
     const searchInput=document.getElementById('input-search-text').value
@@ -169,6 +210,7 @@ function open_groupt(){
     }
     
     groupt_address.res.innerHTML=grouptdata_res(groupt_address.address)
+    
 }
 
 
