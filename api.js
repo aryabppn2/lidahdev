@@ -1,3 +1,4 @@
+const Txtdatabase=[]
 function Post_news(){
     const database=document.getElementById('uploader-database');
     const dataInput={
@@ -60,9 +61,12 @@ function search(){
     document.getElementById('search-container').innerHTML=
     document.getElementById(searchInput).innerHTML
 
-
-
+   
 }
+
+
+
+
 
 function setLoc(){
     const location={

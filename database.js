@@ -1,4 +1,4 @@
-const Txtdatabase=[]
+
 function connect_pmailDatabase(address){
  const  pmaildatabase=[ ];
  pmaildatabase.push({

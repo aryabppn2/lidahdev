@@ -247,3 +247,9 @@
     height: 400px;
     overflow-y:outo;
 }
+.private-btn{
+    width:98px;
+    height: 34px;
+    border-color: cadetblue;
+    color:aqua;
+}

@@ -256,22 +256,3 @@ function style_data(select){
 
 
 
-function route_search(data1,data2,data3){
-document.getElementById('search-conntainer').innerHTML=
-'<fieldset>'+
-
-'</fieldset>'+
-'<fieldset>'+
-
-
-'</fieldset>'
-
-
-
-
-
-
-
-
-
-}
