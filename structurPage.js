@@ -3,7 +3,8 @@ function logiageStructure(){
 '<input type=text id=input-useraddress class=input-text-loggin placeholder=username><br>'+
 '<input type=password id=input-user-pass class=pass-container placeholder=password style=color:red><br>'+
 '<textarea id=business-loc class=txt-loc placeholder=lokasi></textarea>'+
-'<br><button onclick=Registered_account() class=btn-upload>daftar</button>'
+'<br><button onclick=Registered_account() class=btn-upload>daftar</button>'+
+'<button onclick=Register_bussiness_account() class=btn-upload>bisnis</button>'
 
 }
 
@@ -22,6 +23,8 @@ function structure_accountHeader(address){
 
     
 }
+
+
 function pmailAddress(address,pass,location){
     return'<select class=chat-container id=user-data>'+
     '<option id=address>'+address+'Pmail.com</option>'+
