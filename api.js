@@ -1,5 +1,6 @@
-const Txtdatabase=[]
-function Post_news(){
+
+
+function Post_PublicNews(){
     const database=document.getElementById('uploader-database');
     const dataInput={
         address:document.getElementById('useraddress-output'),
@@ -9,74 +10,24 @@ function Post_news(){
         textValue:document.getElementById('input-text-value').value
     };
     connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue,database)
-    toBeranda()
-}
-
-
-function Post_PublicNews(){
-    const database=document.getElementById('public-database/192.168.120.189');
-    const dataInput={
-        address:document.getElementById('useraddress-output'),
-        title:document.getElementById('input-title').value,
-        userlocation:document.getElementById('location-input').value,
-        time:document.getElementById('input-date-release').value,
-        textValue:document.getElementById('input-text-value').value
-    };
-    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue,database)
     connect_database(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue)
     toBeranda()
 }
 
 
-function Post_private_groupt(){
-    const databasee_call=document.getElementById('groupt-database-private');
-    const dataInput={
-        address:document.getElementById('grouptaddress-output'),
-        title:document.getElementById('input-title').value,
-        grouptLocation:document.getElementById('location-input').value,
-        time:document.getElementById('input-date-release').value,
-        textValue:document.getElementById('input-text-value').value
-    };
-    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.grouptLocation,
-        dataInput.time,dataInput.textValue,databasee_call)
-    toBeranda()
-}
 
-function Post_public_group(){
-    const database=document.getElementById('public-database/192.168.120.189');
-    const dataInput={
-        address:document.getElementById('grouptaddress-output'),
-        title:document.getElementById('input-title').value,
-        userlocation:document.getElementById('location-input').value,
-        time:document.getElementById('input-date-release').value,
-        textValue:document.getElementById('input-text-value').value
-    };
-    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue,database)
-    connect_database(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,dataInput.textValue)
-    toBeranda()
-}
 
 function search(){
     const searchInput=document.getElementById('input-search-text').value
-    document.getElementById('search-container').innerHTML=
-    document.getElementById(searchInput).innerHTML
+    const dataFilter=Array.from(Txtdatabase.filter(data=>data.title.includes(searchInput)));
+   for(var i=0; i<=dataFilter.length;i++){
+        document.getElementById('search-container').innerHTML=
+    dataRespont(dataFilter[i].useraddress,dataFilter[i].title,
+        dataFilter[i].location,dataFilter[i].time,dataFilter[i].value);
+        
+   }
 
-   
 }
-
-
-
-
-
-function setLoc(){
-    const location={
-        new:prompt('lokasi terkini'),
-        old:document.getElementById('location')
-    }
-    location.old.innerHTML=location.new
-}
-
-
 
 function addFriendsChat(){
     const friends_databaseConnect=document.getElementById('visitor-view')
@@ -93,33 +44,14 @@ function addFriendsChat(){
 }
 
 
-function connect_toFriends(){
-    const address=document.getElementById('visitor-view').value
-    const dataCall=document.getElementById('data-input');
-    dataCall.innerHTML=chatFeature_structure(address)
 
-    const connect_recently_chat={
-        opt:document.createElement('option'),
-        val:document.createTextNode(address)
-    };
-document.getElementById('chat-recenly-list').appendChild(connect_recently_chat.opt);
-connect_recently_chat.opt.appendChild(connect_recently_chat.val)
-connect_recently_chat.opt.setAttribute('onclick','open_chatRecenly()')
+function setLoc(){
+    const location={
+        new:prompt('lokasi terkini'),
+        old:document.getElementById('location')
+    }
+    location.old.innerHTML=location.new
 }
-function open_chatRecenly(){
-    const  address_connect=document.getElementById('chat-recenly-list').value;
-    const  address_res=document.getElementById('data-input');
-    address_res.innerHTML=chatFeature_structure(address_connect);
-    const connect_recently_chat={
-        opt:document.createElement('option'),
-        val:document.createTextNode(address_connect)
-    };
-document.getElementById('chat-recenly-list').appendChild(connect_recently_chat.opt);
-connect_recently_chat.opt.appendChild(connect_recently_chat.val)
-connect_recently_chat.opt.setAttribute('onclick','open_chatRecenly()')
-}
-
-
 
 
 function Sent_ChatData(){
@@ -135,7 +67,7 @@ function Sent_ChatData(){
             value:document.createTextNode(data_value.address.innerHTML)
          },
          chat_value:{
-            el:document.createElement('span'),
+            el:document.createElement('textarea'),
             value:document.createTextNode(data_value.chat_value)
          }
     };
@@ -182,95 +114,29 @@ function restPrivateChat(){
     connect_database.datafield.appendChild(connect_database.chat_value.el);
     connect_database.chat_value.el.appendChild(connect_database.chat_value.value);
 }
+function connect_toFriends(){
+    const address=document.getElementById('visitor-view').value
+    const dataCall=document.getElementById('data-input');
+    dataCall.innerHTML=chatFeature_structure(address)
 
-
-function createGroupt(){
-    const grouptDataInput={
-        address:document.getElementById('input-groupt-name').value,
-        member:document.getElementById('input-member'),
-        admin:document.getElementById('admin')
-        
-    }
-connect_grouptList(grouptDataInput.address)
-connect_grouptDatabase(grouptDataInput.address,grouptDataInput.member.innerHTML,grouptDataInput.admin.innerHTML)
-toBeranda()
-}
-
-function connect_grouptList(address){
-    const grouptList=document.getElementById('groupt-list')
-    const add_grouptList={
-       opt:document.createElement('option'),
-       val:document.createTextNode(address)
-    }
-    grouptList.appendChild(add_grouptList.opt);
-    add_grouptList.opt.appendChild(add_grouptList.val)
-    add_grouptList.opt.setAttribute('onclick','open_groupt()')
-}
-
-function open_groupt(){
-    const groupt_address={
-        address:document.getElementById('groupt-list').value,
-        res:document.getElementById('groupt-bar')
-    }
-    
-    groupt_address.res.innerHTML=grouptdata_res(groupt_address.address)
-    
-}
-
-
-
-function sentGrouptChat(){
-    const call_database=document.getElementById('chat-groupt-database')
-    const database=[]
-    const chat_input={
-        address:document.getElementById('useraddress-output'),
-        chat_value:document.getElementById('input-groupt-chat').value
+    const connect_recently_chat={
+        opt:document.createElement('option'),
+        val:document.createTextNode(address)
     };
-  chat_conecting(chat_input.address.innerHTML,chat_input.chat_value,call_database,'lightgreen','left','textarea')
-
-    
+document.getElementById('chat-recenly-list').appendChild(connect_recently_chat.opt);
+connect_recently_chat.opt.appendChild(connect_recently_chat.val)
+connect_recently_chat.opt.setAttribute('onclick','open_chatRecenly()')
 }
-function restChat(){
-    const call_database=document.getElementById('chat-groupt-database')
-    const chat_input={
-        address:document.getElementById('input-member').value,
-        chat_value:document.getElementById('input-groupt-chat').value
+function open_chatRecenly(){
+    const  address_connect=document.getElementById('chat-recenly-list').value;
+    const  address_res=document.getElementById('data-input');
+    address_res.innerHTML=chatFeature_structure(address_connect);
+    const connect_recently_chat={
+        opt:document.createElement('option'),
+        val:document.createTextNode(address_connect)
     };
-  chat_conecting(chat_input.address,chat_input.chat_value,call_database,'lightblue','right','span')
+document.getElementById('chat-recenly-list').appendChild(connect_recently_chat.opt);
+connect_recently_chat.opt.appendChild(connect_recently_chat.val)
+connect_recently_chat.opt.setAttribute('onclick','open_chatRecenly()')
 }
 
-
-
-
-function call_accesRoom(){
-    const useraddress=document.getElementById('useraddress-output');
-    document.getElementById('call-place-container').innerHTML=UserInterface_callSystem(useraddress.innerHTML)
-}
-
-
-function resCall(){
-    const memberaddress={
-        connect:document.getElementById('participant-address'),
-        address:document.getElementById('input-member').value
-    }
-    memberaddress.connect.innerHTML=memberaddress.address
-
-}
-
-function SystemOn(system,on,setting){
-  system.style.borderColor=on;
-  system.style.color=on;
-  system.setAttribute('onclick',setting)
-
-}
-
-
-function SystemOff(system,off,settingOff){
-    system.style.borderColor=off;
-    system.style.color=off;
-    system.setAttribute('onclick',settingOff)
-}
-
-function call_end(){
-    document.getElementById('call-place-container').innerHTML=null
-}

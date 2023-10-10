@@ -12,20 +12,12 @@
             <img src="lidah.jpg"width='20px' height="20px">
             </logo>
          <input type="text" id="input-search-text" placeholder="cari apa" class="search-container" onkeyup="search()">
-         <select name="bar-data-type" class="menu-contain" style="border:0px">
-            <option onclick="toBeranda()">🏠</option>
-            <option  style="color:gray;border:0" onclick="showAll()">beranda</option>
-            <option  style="color:green" onclick="presonPost()">text</option>
-            <option  style="color:blue" onclick="grouptGravity()">gravity</option>
-            <option onclick="connect_loginPage()"  style='color:red;'>login</option>
-           
-        </select>
-        <input type=color id=input-sign-color onclick=runStylecol()>
+        <button onclick="connect_loginPage()" style="background-color: lightblue;color:blue;width:100px;height:34px;border:0px">login</button>
         <span id="private-wrapper"></span>
         </div>
         <div class="dat-nav" id="data-input"></div>
-        <div id="private-search" class="dat-nav"></div>
         <div id="search-container"></div>
+        <div id="search-eigine"></div>
         <div class="dat-nav" id="private-database"></div>
         <div id="grup-wrapper" class="dat-nav"></div>
         <div id="public-database/192.168.120.189"></div>
@@ -33,6 +25,7 @@
     <script src="Pmail.js"></script>
     <script src="api.js"></script>
     <script src="database.js"></script>
+    <script src="mongo.js"></script>
    
 </body>
 </html>

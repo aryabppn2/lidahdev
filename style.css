@@ -73,15 +73,12 @@
     margin:12px;
 }
 .search-container{
-    width:75.8%;
-    height: 34px;
-    border:9px;
-    border-color: blue;
-    background-color:lightgray;
-    color:blue
-    
+   width:800px;
+   height:34px;
 
 }
+
+
 .search-btn{
     background-color: aqua;
     border:0px;
@@ -112,7 +109,12 @@
     height: 90px;
     margin-top:12px;
 }
+.editor{
+    width:1000px;
+    height:360px;
+    color:aqua;
 
+}
 
 .btn-upload{
     border-color:lightblue;
@@ -161,95 +163,39 @@
     width:97.2%;
     height:300px;
 }
-.money-container{
-    width:92.2%;
-    height: 34px;
-    margin-bottom: 12px;
-}
 
-
-.editor{
-    width:98.5%;
-    height:400px;
-    
-}
-.editor-bar{
-    margin-left: 100px;
-    border:0px;
-}
-.rditor-bar-post{
-    width:50%;
-    border:0px;
-    height:34px;
-    background-color: aqua;
-    color:blue
-}
-.sizing-border{
-    margin-left: 12px;
-}
 .chat-container{
-    width:270px;
+    width:230px;
     height:34px;
     border:0px;
 }
-.chat-wrapper{
-    height:350px;
-    overflow-y: auto;
-}
-.chat-input-container{
-    width:76.2%;
-    border:0;
-    color:aqua;
-
-}
-.groupt-text{
-    width:578px;
-    height:45px;
-    border:0px;
-
-}
-.bar-groupt-container{
-    width:289px;
-    height:45px;
+.chat-hreff{
+    width:50%;
+    height:34px;
     border:0px;
 }
 
-.call-address{
-    width:90%;
-    height:100px;
-    background-color:black;
-    text-align: center;
-
-}
-
-
-.call-bar{
-    width:30%;
-    height: 50%;
-
-
-}
 .select_dataInformation{
     width:300px;
     height: 45px;
     border:0px;
 
 }
-.name-container{
-    width:85.2%;
-    height:46px;
-}
-.number-container{
-    width:42.6%;
-    height:46px;
-}
 .dat-post{
-    height: 400px;
-    overflow-y:outo;
-}
-.private-btn{
-    width:98px;
-    height: 34px;
-    border-color: cadetblue;
+    width:1000px;
+    height:360px;
     color:aqua;
+
+}
+
+.chat-input-container{
+    width:670px;
+    height:30px;
+    border-color:aquamarine;
+
+}
+.chat-wrapper{
+    width:97.2%;
+    height:430px;
+    overflow-y: auto;
 }

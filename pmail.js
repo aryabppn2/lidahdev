@@ -19,6 +19,8 @@ function Registered_account(){
    }
 }
 
+
+
 function toBeranda(){
     const pageNull=[document.getElementById('search-container'),document.getElementById('data-input'),document.getElementById('groupt-bar')]
     for(var i=0; i<=pageNull.length; i++){
@@ -71,6 +73,7 @@ function loggin_out(){
    dataUser.databaseaddress.innerHTML +='<div id='+dataUser.dataaadrees.innerHTML+'@pmail>'+
    '<fieldset style=border-color:'+dataUser.style.borderColor+' class=private-database>'+
   '<legend style=color:'+dataUser.style.color+' onclick=followMore()>'+dataUser.dataaadrees.innerHTML+'</legend>'+
+  dataUser.databefore.innerHTML
 '</fieldset>';
  connect_pmailDatabase(dataUser.dataaadrees)
 
