@@ -29,8 +29,12 @@ function connect_uploaderDatabase(useraddress,dataaddress,location,time,value,da
        dis:document.createElement('br')
      },
      textValue:{
-        el:document.createElement('span'),
-        val:document.createTextNode(value)
+        el:document.createElement('fieldset'),
+        val:document.createTextNode(value[0])
+     },
+     textValue1:{
+      el:document.createElement('fieldset'),
+      val:document.createTextNode(value[1])
      }
   };
 call_uploaderDataBase.Host.setAttribute('id',dataaddress);
@@ -55,6 +59,8 @@ call_uploaderDataBase.field.appendChild(call_uploaderDataBase.dataadress.dis);
 ///data value//
 call_uploaderDataBase.field.appendChild(call_uploaderDataBase.textValue.el);
 call_uploaderDataBase.textValue.el.appendChild(call_uploaderDataBase.textValue.val)
+call_uploaderDataBase.field.appendChild(call_uploaderDataBase.textValue1.el);
+call_uploaderDataBase.textValue1.el.appendChild(call_uploaderDataBase.textValue1.val)
 
 style_data(call_uploaderDataBase.dataadress.select)
 

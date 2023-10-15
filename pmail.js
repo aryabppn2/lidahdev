@@ -15,6 +15,7 @@ function Registered_account(){
     inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress)
      inputData.privateData.innerHTML=pmailAddress(inputData.useraddress,inputData.userpassword,inputData.userlocation)
      toBeranda()
+     
    
    }
 }
@@ -59,24 +60,15 @@ function setPass(){
 
 
 function loggin_out(){
-    const dataUser={
-        databefore:document.getElementById('private-database'),
-        dataaadrees:document.getElementById('useraddress-output'),
-       databaseaddress:document.getElementById('public-database/192.168.120.189'),
-       style:{
-        color:document.getElementById('input-sign-color').value,
-        borderColor:document.getElementById('input-borderColor')
-       }
+   const pmaildata={
+     address:document.getElementById('useraddress-output'),
+     pass:document.getElementById('user-pass'),
+     location:document.getElementById('location'),
+   dataBefore:[document.getElementById('private-database'),document.getElementById('private-wrapper')]
     }
-    dataUser.databefore.innerHTML=null
-    document.getElementById('private-wrapper').innerHTML=null
-   dataUser.databaseaddress.innerHTML +='<div id='+dataUser.dataaadrees.innerHTML+'@pmail>'+
-   '<fieldset style=border-color:'+dataUser.style.borderColor+' class=private-database>'+
-  '<legend style=color:'+dataUser.style.color+' onclick=followMore()>'+dataUser.dataaadrees.innerHTML+'</legend>'+
-  dataUser.databefore.innerHTML
-'</fieldset>';
- connect_pmailDatabase(dataUser.dataaadrees)
-
+    connectto_PmailDatabase(pmaildata.address.innerHTML,pmaildata.pass.innerHTML,pmaildata.location.innerHTML)
+    pmaildata.dataBefore[0].innerHTML=null
+    pmaildata.dataBefore[1].innerHTML=null
 }
 
 function showAll(){
