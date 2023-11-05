@@ -13,7 +13,7 @@ const Txtdatabase=[
 
 ];
 
-
+const GrouptBase=[]
 
 
 function connectto_PmailDatabase(address,pass,location){
@@ -42,3 +42,12 @@ function connectto_PmailDatabase(address,pass,location){
     
    }
 
+function CreateGrouptListAPI(name,member,admin){
+  GrouptBase.push(
+    {
+      Groupt_name:name,
+      grouptMember:member,
+      admin:admin
+    }
+  )
+}

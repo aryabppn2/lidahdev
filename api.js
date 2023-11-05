@@ -152,3 +152,13 @@ connect_recently_chat.opt.appendChild(connect_recently_chat.val)
 connect_recently_chat.opt.setAttribute('onclick','open_chatRecenly()')
 }
 
+function create(){
+    const GrouptList=document.getElementById('groupt-view');
+    const grouptData={
+        grouptName:document.getElementById('input-Groupt-name').value,
+        member:document.getElementById('groupt-member-input'),
+        adminGroupt:document.getElementById('admin-sett')
+    };
+    CreateGrouptListAPI(grouptData.grouptName,grouptData.member.innerHTML,grouptData.adminGroupt.innerHTML)
+    ListAddG(GrouptList,grouptData.grouptName)
+}

@@ -72,7 +72,7 @@ function loggin_out(){
 }
 
 function showAll(){
-    const data=document.getElementById('public-database/192.168.120.189');
+    const data=document.getElementById('public-data-show');
     document.getElementById('search-container').innerHTML=data.innerHTML
 }
 

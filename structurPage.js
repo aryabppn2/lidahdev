@@ -39,6 +39,9 @@ function pmailAddress(address,pass,location){
     <select id=visitor-view class=chat-hreff style=color:lightgreen>
     <option onclick=addFriendsChat()>kenalan</option>
     </select>
+    <select id=groupt-view class=chat-hreff style=color:lightgreen>
+    <option onclick=addGroupt() style=color:orange>komunitas</option>
+    </select>
     <div id=groupt-bar></div>`
 
 }
@@ -110,8 +113,48 @@ function dataRespont(useraddress,title,location,time,datVal,datVal1){
     `
 }
 
+function addGroupt(){
+    const interface={
+        datainput:document.getElementById('data-input'),
+        address:document.getElementById('useraddress-output')
+    };
+    interface.datainput.innerHTML=CreateGrouptPage(interface.address.innerHTML)
+}
 
+function CreateGrouptPage(useraddress){
+    return`<input type=text id=input-Groupt-name class=input-groupt-container placeholder=nama groupt>
+    <select id=groupt-member-input class=member-container>
+    <option onclick=addMember()>${useraddress}</option>
+    </select>
+    <span id=admin-sett onclick=settAdmin() style=color:lightgreen>admin group</span><br>
+    <button onclick=CreateFail() class=btn-create id=create-groupt>buat groupt</button>
+    `
+}
 
+function CreateFail(){
+    alert('maaf anggota belum ada')
+}
+function settAdmin(){
+    const admin={
+        adminOld:document.getElementById('admin-sett'),
+        adminNew:document.getElementById('groupt-member-input').value
+    }
+    admin.adminOld.innerHTML=admin.adminNew
+}
+
+function addMember(){
+    const member={
+        list:document.getElementById('groupt-member-input'),
+        add:prompt('nama orang')
+    };
+    const add={
+        opt:document.createElement('option'),
+        val:document.createTextNode(member.add)
+    }
+    member.list.appendChild(add.opt);
+    add.opt.appendChild(add.val)
+    document.getElementById('create-groupt').setAttribute('onclick','create()')
+}
 
 
 

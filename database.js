@@ -65,7 +65,14 @@ call_uploaderDataBase.textValue1.el.appendChild(call_uploaderDataBase.textValue1
 style_data(call_uploaderDataBase.dataadress.select)
 
 }
-
+function ListAddG(dataList,name){
+   const add={
+      opt:document.createElement('option'),
+      val:document.createTextNode(name)
+   }
+   dataList.appendChild(add.opt)
+   add.opt.appendChild(add.val)
+}
 
 
 
