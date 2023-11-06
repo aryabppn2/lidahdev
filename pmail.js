@@ -69,6 +69,7 @@ function loggin_out(){
     connectto_PmailDatabase(pmaildata.address.innerHTML,pmaildata.pass.innerHTML,pmaildata.location.innerHTML)
     pmaildata.dataBefore[0].innerHTML=null
     pmaildata.dataBefore[1].innerHTML=null
+    document.getElementById('data-input').innerHTML=logiageStructure()
 }
 
 function showAll(){
@@ -77,7 +78,47 @@ function showAll(){
 }
 
 
+function settAccount(){
+    const AccountData={
+        address:document.getElementById('useraddress-output'),
+        pass:document.getElementById('user-pass'),
+        location:document.getElementById('location')
+    }
+document.getElementById('data-input').innerHTML=structure_settAccount(AccountData.address.innerHTML,
+    AccountData.pass.innerHTML,AccountData.location.innerHTML)
+
+}
 
 
 
+function settAddress(){
+    const address={
+        old:[document.getElementById('address'),document.getElementById('useraddress-output'),
+        document.getElementById('address-config')],
+        new:prompt('username baru')
+    }
+    for(var i=1; i<=address.old.length; i++){
+        address.old[i].innerHTML=address.new;
+        address.old[0].innerHTML=`${address.new}@Pmai.com`
+    }
+}
 
+function settPass(){
+    const pass={
+        old:[document.getElementById('user-pass'),document.getElementById('pass-config')],
+        new:prompt('pasword baru')
+    }
+    for(var i=0; i<=pass.old.length; i++){
+        pass.old[i].innerHTML=pass.new
+    }
+}
+
+function settLoc(){
+    const pass={
+        old:[document.getElementById('location'),document.getElementById('loc')],
+        new:prompt('pasword baru')
+    }
+    for(var i=0; i<=pass.old.length; i++){
+        pass.old[i].innerHTML=pass.new
+    }
+}

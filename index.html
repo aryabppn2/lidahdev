@@ -12,7 +12,6 @@
             <img src="lidah.jpg"width='20px' height="20px">
             </logo>
          <input type="text" id="input-search-text" placeholder="cari apa" class="search-container" onkeyup="search()">
-        <button onclick="connect_loginPage()" style="background-color: lightblue;color:blue;width:100px;height:34px;border:0px">login</button>
         <span id="private-wrapper"></span>
         </div>
         <div class="dat-nav" id="data-input"></div>
@@ -26,6 +25,10 @@
     <script src="api.js"></script>
     <script src="database.js"></script>
     <script src="mongo.js"></script>
+    <script>
+document.getElementById('data-input').innerHTML=logiageStructure()
+
+    </script>
    
 </body>
 </html>

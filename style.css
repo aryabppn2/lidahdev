@@ -18,7 +18,7 @@
 }
 
 .input-text{
-    width:85.2%;
+    width:85.1%;
     height:46px;
     margin-bottom: 12px;
     border-color:green;
@@ -73,7 +73,7 @@
     margin:12px;
 }
 .search-container{
-   width:800px;
+   width:43%;
    height:34px;
 
 }
@@ -110,7 +110,7 @@
     margin-top:12px;
 }
 .editor{
-    width:1000px;
+    width:84.2%;
     height:360px;
     color:aqua;
     margin-bottom: 12px;
@@ -166,12 +166,12 @@
 }
 
 .chat-container{
-    width:255px;
+    width:32.1%;
     height:34px;
     border:0px;
 }
 .chat-hreff{
-    width:31.5%;
+    width:48.5%;
     height:34px;
     border:0px;
     margin-left: 0px;

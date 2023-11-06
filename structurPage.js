@@ -13,7 +13,7 @@ function connect_loginPage(){
 
 function structure_accountHeader(address){
     return'<fieldset id=data-field class=dat-private>'+
-    '<legend id=useraddress-output onclick=settinguseraddress()>'+address+'</legend>'+
+    '<legend id=useraddress-output onclick=settAccount()>'+address+'</legend>'+
 '<div id=uploader-database ></div>'+  
 '<div id=market-database></div>'+
 '</fieldset><div id=groupt-database-private></div>';
@@ -27,31 +27,11 @@ function structure_accountHeader(address){
 
 function pmailAddress(address,pass,location){
     return`<select class=chat-container id=user-data>
-    <option id=address>${address}Pmail.com</option>
-    <option id=user-pass style=background-color:light-gray onclick=setPass()>${pass}</option>
-    <option id=location style=color:lightgreen onclick=setLoc()>${location}</option>
-    <option onclick=connect_toAddNews() style=color:red; class=private-menu>berita</option>
-    <option onclick=loggin_out() class=btn-upload style=border-color:red; color:red>log out</option>
-    </select>
-    <select id=chat-recenly-list class=chat-hreff>
-    <option> barusan chat</option>
-    </select>
-    <select id=visitor-view class=chat-hreff style=color:lightgreen>
-    <option onclick=addFriendsChat()>kenalan</option>
-    </select>
-    <select id=groupt-view class=chat-hreff style=color:lightgreen>
-    <option onclick=addGroupt() style=color:orange>komunitas</option>
+    <option id=address >${address}@Pmail.com</option>
+    <option id=user-pass style=background-color:light-gray >${pass}</option>
+    <option id=location style=color:lightgreen >${location}</option>
     </select>
     <div id=groupt-bar></div>`
-
-}
-function chatFeature_structure(targetaddress){
-    return'<fieldset>'+
-'<legend style=color:lightblue onclick=restPrivateChat()() id=target-address>'+targetaddress+'</legend>'+
-'<div id=chat-database class=chat-wrapper></div>'+
-'<div id=input-chat><textarea id=input-chat-value class=chat-input-container placeholder=ketikan-sesuatu></textarea>'+
-    '<button onclick=Sent_ChatData() classs=btn-upload>kirim</button></div>'+
-'</fieldset>'
 
 }
 
@@ -113,45 +93,14 @@ function dataRespont(useraddress,title,location,time,datVal,datVal1){
     `
 }
 
-function addGroupt(){
-    const interface={
-        datainput:document.getElementById('data-input'),
-        address:document.getElementById('useraddress-output')
-    };
-    interface.datainput.innerHTML=CreateGrouptPage(interface.address.innerHTML)
-}
-
-function CreateGrouptPage(useraddress){
-    return`<input type=text id=input-Groupt-name class=input-groupt-container placeholder=nama groupt>
-    <select id=groupt-member-input class=member-container>
-    <option onclick=addMember()>${useraddress}</option>
-    </select>
-    <span id=admin-sett onclick=settAdmin() style=color:lightgreen>admin group</span><br>
-    <button onclick=CreateFail() class=btn-create id=create-groupt>buat groupt</button>
+function structure_settAccount(useraddress,pass,location){
+    return`<fieldset style=border-color:lightgreen;color:whitesmoke onclick=settAddress() id=address-config>
+    ${useraddress}</fieldset>
+    <fieldset id=pass-config style=border-color:lightblue;color:blue onclick=settPass()>${pass}</fieldset>
+    <fieldset style=color:orange onclick=settLoc() id=loc>${location}</fieldset>
+    <button onclick=connect_toAddNews() class=bar-account>berita</button>
+    <button onclick=connec_addGravity() class=bar-account>gravity</button><br>
+    <button onclick=loggin_out() class=LoginOut-container>log out</button>
     `
 }
 
-function CreateFail(){
-    alert('maaf anggota belum ada')
-}
-function settAdmin(){
-    const admin={
-        adminOld:document.getElementById('admin-sett'),
-        adminNew:document.getElementById('groupt-member-input').value
-    }
-    admin.adminOld.innerHTML=admin.adminNew
-}
-
-function addMember(){
-    const member={
-        list:document.getElementById('groupt-member-input'),
-        add:prompt('nama orang')
-    };
-    const add={
-        opt:document.createElement('option'),
-        val:document.createTextNode(member.add)
-    }
-    member.list.appendChild(add.opt);
-    add.opt.appendChild(add.val)
-    document.getElementById('create-groupt').setAttribute('onclick','create()')
-}
