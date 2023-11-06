@@ -154,6 +154,7 @@ connect_recently_chat.opt.setAttribute('onclick','open_chatRecenly()')
 
 function create(){
     const GrouptList=document.getElementById('groupt-view');
+    const grouptBase=document.getElementById('')
     const grouptData={
         grouptName:document.getElementById('input-Groupt-name').value,
         member:document.getElementById('groupt-member-input'),
@@ -162,3 +163,7 @@ function create(){
     CreateGrouptListAPI(grouptData.grouptName,grouptData.member.innerHTML,grouptData.adminGroupt.innerHTML)
     ListAddG(GrouptList,grouptData.grouptName)
 }
+
+
+
+

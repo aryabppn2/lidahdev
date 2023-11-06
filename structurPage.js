@@ -155,8 +155,3 @@ function addMember(){
     add.opt.appendChild(add.val)
     document.getElementById('create-groupt').setAttribute('onclick','create()')
 }
-
-
-
-
-
