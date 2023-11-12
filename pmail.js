@@ -3,17 +3,19 @@ function Registered_account(){
       privateData:document.getElementById('private-wrapper'),
        datainput:document.getElementById('private-database'),
         useraddress:document.getElementById('input-useraddress').value,
+        usermoney:document.getElementById('input-user-money').value,
         userpassword:document.getElementById('input-user-pass').value,
         userlocation:document.getElementById('business-loc').value
         
     }
-   if(inputData.datainput=="" ||inputData.useraddress=="" || inputData.userpassword=="" || inputData.userlocation==""){
+   if(inputData.datainput=="" ||inputData.useraddress=="" || inputData.userpassword=="" || inputData.userlocation==""||inputData.usermoney==""){
     alert("mohon data dilengkapi")
     console.log('registerd failet')
    }
    else{
-    inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress)
-     inputData.privateData.innerHTML=pmailAddress(inputData.useraddress,inputData.userpassword,inputData.userlocation)
+    inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress,inputData.usermoney)
+     inputData.privateData.innerHTML=pmailAddress(inputData.useraddress,inputData.userpassword,inputData.userlocation,
+        inputData.usermoney)
      toBeranda()
      
    
@@ -23,7 +25,8 @@ function Registered_account(){
 
 
 function toBeranda(){
-    const pageNull=[document.getElementById('search-container'),document.getElementById('data-input'),document.getElementById('groupt-bar')]
+    const pageNull=[document.getElementById('search-container'),document.getElementById('data-input')
+    ,document.getElementById('groupt-bar'),document.getElementById('search-eigine')]
     for(var i=0; i<=pageNull.length; i++){
         pageNull[i].innerHTML=null
     }
@@ -70,11 +73,22 @@ function loggin_out(){
     pmaildata.dataBefore[0].innerHTML=null
     pmaildata.dataBefore[1].innerHTML=null
     document.getElementById('data-input').innerHTML=logiageStructure()
+    connection_jigongBase(pmaildata.address.innerHTML,document.getElementById('user-list'));
 }
 
 function showAll(){
-    const data=document.getElementById('public-data-show');
-    document.getElementById('search-container').innerHTML=data.innerHTML
+    document.getElementById('input-search-text').setAttribute('onkeyup','search()')
+    for(var i=0; i<=Txtdatabase.length;i++){
+        document.getElementById('search-eigine').innerHTML=
+        dataTextShow(
+            [Txtdatabase[i].useraddress,Txtdatabase[0].useraddress,Txtdatabase[1].useraddress],
+            [Txtdatabase[i].title,Txtdatabase[0].title,Txtdatabase[1].title],
+            [Txtdatabase[i].location,Txtdatabase[0].location,Txtdatabase[1].location],
+            [Txtdatabase[i].time,Txtdatabase[0].time,Txtdatabase[1].time],
+            [Txtdatabase[i].value,Txtdatabase[0].value,Txtdatabase[1].value],
+            [Txtdatabase[i].value1,Txtdatabase[0].value1,Txtdatabase[1].value1],
+        )
+    }
 }
 
 
@@ -121,4 +135,41 @@ function settLoc(){
     for(var i=0; i<=pass.old.length; i++){
         pass.old[i].innerHTML=pass.new
     }
+}
+
+function addteman(){
+    const Teman=document.getElementById('friends-list');
+    const orang=document.getElementById('user-list').value
+    const add={
+        opt:document.createElement('option'),
+        val:document.createTextNode(orang)
+    };
+    Teman.appendChild(add.opt);
+    add.opt.appendChild(add.val);
+
+}
+
+function addgemar(){
+    const Teman=document.getElementById('friends-like-list');
+    const orang=document.getElementById('user-list').value
+    const add={
+        opt:document.createElement('option'),
+        val:document.createTextNode(orang)
+    };
+    Teman.appendChild(add.opt);
+    add.opt.appendChild(add.val);
+}
+
+function ShowMarket(){
+    document.getElementById('input-search-text').setAttribute('onkeyup','getMarketData()');
+     for(var i=0; i<=MarketDatabase.length; i++){
+        document.getElementById('search-eigine').innerHTML=  
+        MarketDataShow(
+     [MarketDatabase[i].address,MarketDatabase[0].address,MarketDatabase[1].address],
+     [MarketDatabase[i].name,MarketDatabase[0].name,MarketDatabase[1].name],
+     [MarketDatabase[i].price,MarketDatabase[0].price,MarketDatabase[1].price],
+     [MarketDatabase[i].amount,MarketDatabase[0].amount,MarketDatabase[1].amount],
+     [MarketDatabase[i].Description,MarketDatabase[0].Description,MarketDatabase[1].Description],
+        )
+     }
 }

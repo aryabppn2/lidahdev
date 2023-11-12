@@ -71,8 +71,124 @@ style_data(call_uploaderDataBase.dataadress.select)
 
 
 
+function CREATE_PRODUCT_DATA(
+  DATABASE,
+  ADDRESS,
+  PRODUCTNAME,
+  PRICE,
+  AMOUNT,
+  DESCRIPTION,
+
+)
+{
+const dataCreate={
+  Host:document.createElement('button'),
+  useraddress:{
+    el:document.createElement('legend'),
+    val:document.createTextNode(ADDRESS)
+  },
+  productNmae:{
+    el:document.createElement('h2'),
+    val:document.createTextNode(PRODUCTNAME)
+  },
+  price:{
+    el:document.createElement('span'),
+    val:document.createTextNode(`${PRICE}|`)
+  },
+  Amount:{
+    el:document.createElement('span'),
+    val:document.createTextNode(AMOUNT)
+  },
+  des:{
+    el:document.createElement('p'),
+    val:document.createTextNode(DESCRIPTION),
+    br:document.createElement('br')
+  },
+  btn:{
+    el:document.createElement('button'),
+    val:document.createTextNode('beli')
+  }
+
+}
+DATABASE.appendChild(dataCreate.Host);
+dataCreate.Host.appendChild(dataCreate.productNmae.el);
+dataCreate.productNmae.el.appendChild(dataCreate.productNmae.val);
+dataCreate.Host.appendChild(dataCreate.price.el);
+dataCreate.price.el.appendChild(dataCreate.price.val);
+dataCreate.Host.appendChild(dataCreate.Amount.el);
+dataCreate.Amount.el.appendChild(dataCreate.Amount.val);
+dataCreate.Host.appendChild(dataCreate.des.el);
+dataCreate.des.el.appendChild(dataCreate.des.val)
+dataCreate.Host.appendChild(dataCreate.des.br);
+dataCreate.Host.appendChild(dataCreate.btn.el);
+dataCreate.btn.el.appendChild(dataCreate.btn.val)
+
+dataCreate.Host.classList='data-market-post'
+dataCreate.btn.el.addEventListener('click',function(){
+  GATEWAY_transactionSelling(
+   prompt(`nama pembeli${PRODUCTNAME}`),
+   prompt('alamat sekarang'),
+   prompt('jumlah'),
+   PRODUCTNAME,
+   PRICE,
+   document.getElementById('trasnsaction-list')
+  )
+})
+
+}
 
 
 
+function BuyyingTransaction_gateway(
+  SELLERADDRESS,
+  PRODUCTNAME,
+  PRICE,
+  AMOUNT,
+  TRANSACTIONLIST
 
+
+)
+{
+const total=Number(PRICE)*Number(AMOUNT)
+const settingMoneyData={
+  out:[document.getElementById('user-money-dynamicly'),
+  document.getElementById('money')],
+  add:document.getElementById('money-out')
+  
+
+}
+settingMoneyData.out[0].innerHTML=Number(settingMoneyData.out[0].innerHTML)-Number(total);
+settingMoneyData.out[1].innerHTML=Number(settingMoneyData.out[1].innerHTML)-Number(total);
+settingMoneyData.add.innerHTML=Number(settingMoneyData.add.innerHTML)+Number(total)
+
+
+const createdat={
+  Host:{
+    el:document.createElement('option'),
+    val:document.createTextNode(SELLERADDRESS)
+  },
+  PrductName:{
+    el:document.createElement('option'),
+    val:document.createTextNode(PRODUCTNAME)
+  },
+  price:{
+    el:document.createElement('option'),
+    val:document.createTextNode(PRICE)
+  },
+  Amount:{
+    el:document.createElement('option'),
+    val:document.createTextNode(AMOUNT)
+  }
+};
+createdat.Host.el.style.color='lightgray'
+TRANSACTIONLIST.appendChild(createdat.Host.el);
+createdat.Host.el.appendChild(createdat.Host.val)
+TRANSACTIONLIST.appendChild(createdat.PrductName.el);
+createdat.PrductName.el.appendChild(createdat.PrductName.val);
+TRANSACTIONLIST.appendChild(createdat.price.el);
+createdat.price.el.appendChild(createdat.price.val);
+TRANSACTIONLIST.appendChild(createdat.Amount.el);
+createdat.Amount.el.appendChild(createdat.Amount.val)
+
+}
 

@@ -13,7 +13,7 @@ const Txtdatabase=[
 
 ];
 
-const GrouptBase=[]
+const MarketDatabase=[]
 
 
 function connectto_PmailDatabase(address,pass,location){
@@ -39,5 +39,17 @@ function connectto_PmailDatabase(address,pass,location){
          value1:value[1]
        }
      )
-    
+   }
+
+
+   function INSERT_DATAFROM(useraddress,productname,productPrice,amount,Description){
+    MarketDatabase.push(
+      {
+        address:useraddress,
+        name:productname,
+        price:productPrice,
+        amount:amount,
+        Description:Description,
+      }
+    )
    }

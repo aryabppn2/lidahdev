@@ -42,10 +42,194 @@ function search(){
 }
 
 
+function connection_jigongBase(address,place){
+    const createList={
+        opt:document.createElement('option'),
+        val:document.createTextNode(address)
+    }
+    place.appendChild(createList.opt);
+    createList.opt.appendChild(createList.val)
+}
+
+
+
+function POST_PRODUCTDATA(){
+    const dataInput={
+        address:document.getElementById('useraddress-output'),
+        text:{
+            productname:document.getElementById('input-product-name').value,
+            description:document.getElementById('input-product-description').value
+        },
+        num:{
+            price:parseInt(document.getElementById('input-product-price').value),
+            amount:parseInt(document.getElementById('input-product-amount').value)
+        },
+    };
+    document.getElementById('data-input').innerHTML=null
+    INSERT_DATAFROM(
+        dataInput.address.innerHTML,
+        dataInput.text.productname,
+        dataInput.num.price,
+        dataInput.num.amount,
+        dataInput.text.description,
+        );
+       CREATE_PRODUCT_DATA(
+        document.getElementById('market-database'),
+        dataInput.address.innerHTML,
+        dataInput.text.productname,
+        dataInput.num.price,
+        dataInput.num.amount,
+        dataInput.text.description,
+       
+       ) 
+}
+
+function getMarketData(){
+    const Input=document.getElementById('input-search-text').value
+    const MarketdataFilter=Array.from(MarketDatabase.filter(dataF=>dataF.name.includes(Input)))
+    for(var i=0; i<=MarketdataFilter.length; i++){
+       document.getElementById('search-eigine').innerHTML=
+       MarketDataShow(
+        [MarketdataFilter[i].address,MarketdataFilter[0].address],
+        [MarketdataFilter[i].name,MarketdataFilter[0].name],
+        [MarketdataFilter[i].price,MarketdataFilter[0].price],
+        [MarketdataFilter[i].amount,MarketdataFilter[0].amount],
+        [MarketdataFilter[i].Description,MarketdataFilter[0].Description]
+
+
+       )
+    }
+
+
+}
+
+
+function GATEWAY_transactionSelling(
+ ADDRESS,
+ LOCATION,
+ AMOUNT,
+ PRODUCTNAME,
+ PRODUCTPRICE,
+ DATALIST
+
+
+)
+{ 
+
+const total=Number(PRODUCTPRICE)*Number(AMOUNT)
+const el={
+    usermoey:document.getElementById('user-money-dynamicly'),
+    money:document.getElementById('money'),
+    in:document.getElementById('money-in')
+}
+el.usermoey.innerHTML=Number(el.usermoey.innerHTML)+Number(total);
+el.money.innerHTML=Number(el.money.innerHTML)+Number(total);
+el.in.innerHTML=Number(el.in.innerHTML)+Number(total)
+    const createList={
+      address:{
+        el:document.createElement('option'),
+        val:document.createTextNode(ADDRESS)
+      },
+      productname:{
+        el:document.createElement('option'),
+        val:document.createTextNode(PRODUCTNAME)
+      },
+      productPrice:{
+        el:document.createElement('option'),
+        val:document.createTextNode(PRODUCTPRICE)
+      },
+      amount:{
+        el:document.createElement('option'),
+        val:document.createTextNode(AMOUNT)
+      },
+      total:{
+      el:document.createElement('option'),
+      val:document.createTextNode(total)
+      },
+      location:{
+        el:document.createElement('option'),
+        val:document.createTextNode(LOCATION)
+      }
+
+
+}
+createList.address.label=ADDRESS;
+createList.address.el.style.color='lightgreen'
+DATALIST.appendChild(createList.address.el);
+createList.address.el.appendChild(createList.address.val)
+DATALIST.appendChild(createList.productname.el);
+createList.productname.el.appendChild(createList.productname.val);
+DATALIST.appendChild(createList.productPrice.el);
+createList.productPrice.el.appendChild(createList.productPrice.val)
+DATALIST.appendChild(createList.amount.el);
+createList.amount.el.appendChild(createList.amount.val);
+DATALIST.appendChild(createList.total.el);
+createList.total.el.appendChild(createList.total.val);
+DATALIST.appendChild(createList.location.el);
+createList.location.el.appendChild(createList.location.val)
 
 
 
 
 
 
+}
 
+function buyProduct(){
+    const productData={
+        sellerName:document.getElementById('seller1-name'),
+        productname:document.getElementById('product1-name'),
+        price:document.getElementById('product1-price'),
+        Amount:prompt('berapa jumlah'),
+    }
+
+    BuyyingTransaction_gateway(
+      productData.sellerName.innerHTML,
+     productData.productname.innerHTML,
+      productData.price.innerHTML,
+      productData.Amount,
+      document.getElementById('trasnsaction-list')
+
+    )
+  
+
+
+}
+
+function buyProduct1(){
+    const productData={
+        sellerName:document.getElementById('seller2-name'),
+        productname:document.getElementById('product2-name'),
+        price:document.getElementById('product2-price'),
+        Amount:prompt('berapa jumlah'),
+    }
+
+    BuyyingTransaction_gateway(
+      productData.sellerName.innerHTML,
+      productData.productname.innerHTML,
+      productData.price.innerHTML,
+      productData.Amount,
+      document.getElementById('trasnsaction-list')
+
+    )
+  
+}
+
+function buyProduct3(){
+    const productData={
+        sellerName:document.getElementById('seller3-name'),
+        productname:document.getElementById('product3-name'),
+        price:document.getElementById('product3-price'),
+        Amount:prompt('berapa jumlah'),
+    }
+
+    BuyyingTransaction_gateway(
+      productData.sellerName.innerHTML,
+      productData.productname.innerHTML,
+      productData.price.innerHTML,
+      productData.Amount,
+      document.getElementById('trasnsaction-list')
+
+    )
+  
+}
