@@ -254,3 +254,40 @@
     width:400px;
     height: 34px;
 }
+.chat-body-container{
+    height:371px;
+    overflow-y: auto;
+}
+.messeage-container{
+    width:560px;
+    border-color:chartreuse;
+    color:burlywood
+}
+.btn-chat{
+    color:aquamarine;
+    width:100px;
+    line-height-step: 34px;
+    height: 34px;
+    border: 0px;
+
+}
+.btn-chat:hover{
+    color:bisque;
+    font-family: monospace;
+}
+.input-market-text{
+    width:410px;
+    height: 34px;
+    color:blanchedalmond;
+    border-color: aqua;
+}
+.input-market-num{
+    width:199px;
+    height: 34px;
+    color:orange;
+    border-color:orangered;
+}
+.market-textarea{
+    width:410px;
+    height: 100px;
+}

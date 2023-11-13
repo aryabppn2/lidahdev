@@ -49,6 +49,9 @@ function connection_jigongBase(address,place){
     }
     place.appendChild(createList.opt);
     createList.opt.appendChild(createList.val)
+    createList.opt.addEventListener('click',function(){
+        addFriends(place,address)
+    })
 }
 
 
@@ -169,7 +172,19 @@ DATALIST.appendChild(createList.location.el);
 createList.location.el.appendChild(createList.location.val)
 
 
+createList.address.el.addEventListener('click',function(){
+    document.getElementById('data-input').innerHTML=
+    ChatFiturApp(ADDRESS)
+const addFiendList={
+    el:document.createElement('option'),
+    val:document.createTextNode(ADDRESS)
+}
+document.getElementById('chat-recently').appendChild(addFiendList.el);
+addFiendList.el.appendChild(addFiendList.val);
+addFiendList.el.style.color='lightblue';
+addFiendList.el.setAttribute('onclick','open_RECENTLY()')
 
+})
 
 
 
@@ -215,7 +230,7 @@ function buyProduct1(){
   
 }
 
-function buyProduct3(){
+function buyProduct2(){
     const productData={
         sellerName:document.getElementById('seller3-name'),
         productname:document.getElementById('product3-name'),
@@ -232,4 +247,37 @@ function buyProduct3(){
 
     )
   
+}
+
+
+function open_RECENTLY(){
+    const address_list=document.getElementById('chat-recently').value;
+    ChatFiturApp(address_list)
+}
+
+
+function ChatRes(){
+    const messeage_input={
+        address:document.getElementById('target-address'),
+        messeage_value:document.getElementById('input-messeage-text').value
+    }
+
+    messeageDataPost(messeage_input.address.innerHTML,messeage_input.messeage_value,'lightblue')
+
+}
+
+function SENT_MESSEAGE_DATA(){
+    const messeage={
+        address:'saya',
+        messeage_value:document.getElementById('input-messeage-text').value
+    }
+messeageDataPost(messeage.address,messeage.messeage_value,'lightgreen')
+
+}
+
+
+function addgemar(){
+    const name=prompt('nama teman mu');
+    const lis=document.getElementById('friends-like-list');
+    addFriends(name,lis)
 }

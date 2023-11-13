@@ -35,7 +35,8 @@ function connect_uploaderDatabase(useraddress,dataaddress,location,time,value,da
      textValue1:{
       el:document.createElement('fieldset'),
       val:document.createTextNode(value[1])
-     }
+     },
+     
   };
 call_uploaderDataBase.Host.setAttribute('id',dataaddress);
 call_uploaderDataBase.textValue.el.setAttribute('id','isi-'+dataaddress)
@@ -178,6 +179,10 @@ const createdat={
   Amount:{
     el:document.createElement('option'),
     val:document.createTextNode(AMOUNT)
+  },
+  total:{
+    el:document.createElement('option'),
+    val:document.createTextNode(total)
   }
 };
 createdat.Host.el.style.color='lightgray'
@@ -189,6 +194,55 @@ TRANSACTIONLIST.appendChild(createdat.price.el);
 createdat.price.el.appendChild(createdat.price.val);
 TRANSACTIONLIST.appendChild(createdat.Amount.el);
 createdat.Amount.el.appendChild(createdat.Amount.val)
+TRANSACTIONLIST.appendChild(createdat.total.el);
+createdat.total.el.appendChild(createdat.total.val)
+createdat.Host.el.addEventListener('click',function(){
+  document.getElementById('data-input').innerHTML=
+  ChatFiturApp(SELLERADDRESS)
+  const addFiendList={
+    el:document.createElement('option'),
+    val:document.createTextNode(SELLERADDRESS)
+}
+document.getElementById('chat-recently').appendChild(addFiendList.el);
+addFiendList.el.appendChild(addFiendList.val);
+addFiendList.el.style.color='lightblue';
+addFiendList.el.setAttribute('onclick','open_RECENTLY()')
+})
 
 }
 
+function messeageDataPost(address,value,color){
+  const addMesseagge={
+     field:document.createElement('fieldset'),
+     address:{
+      el:document.createElement('legend'),
+      val:document.createTextNode(address)
+     },
+     messeageVal:{
+       el:document.createElement('span'),
+       val:document.createTextNode(value)
+     }
+  };
+  addMesseagge.field.style.borderColor=color;
+  addMesseagge.messeageVal.el.style.color=color;
+  addMesseagge.address.el.style.color=color;
+  document.getElementById('chat-body-page').appendChild(addMesseagge.field);
+  addMesseagge.field.appendChild(addMesseagge.address.el);
+  addMesseagge.address.el.appendChild(addMesseagge.address.val);
+  addMesseagge.field.appendChild(addMesseagge.messeageVal.el);
+  addMesseagge.messeageVal.el.appendChild(addMesseagge.messeageVal.val)
+}
+
+function addFriends(address,list){
+   const add={
+    el:document.createElement('option'),
+    val:document.createTextNode(address)
+   }
+   list.appendChild(add.el);
+   add.el.appendChild(add.val);
+   add.el.addEventListener('click',function(){
+    const open= list.value
+    document.getElementById('data-input').innerHTML=
+    ChatFiturApp(open)
+   })
+}

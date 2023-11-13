@@ -8,6 +8,8 @@ function logiageStructure(){
 }
 function connect_loginPage(){
     document.getElementById('data-input').innerHTML=logiageStructure()
+    document.getElementById('search-eigine').innerHTML=null;
+    document.getElementById('search-container').innerHTML=null
     
 }
 
@@ -248,11 +250,31 @@ function MarketDataShow(
 
 function ChatFiturApp(TargetAddress){
     return`<fieldset style=border-color:green >
-    <legend style=color:lightblue onclick=ChatRes()>${TargetAddress}</legend>
+    <legend style=color:lightblue onclick=ChatRes() id=target-address>${TargetAddress}</legend>
     <div id=chat-body-page class=chat-body-container></div>
     <textarea id=input-messeage-text class=messeage-container placeholder='masukan pesan'></textarea>
     <button onclick=SENT_MESSEAGE_DATA() class=btn-chat>kirim</button>
     </fieldset>
     
+    `
+}
+
+
+function ithers_userApp(address,location){
+    return`<fieldset>
+    <legend>${address}</legend>
+    <select class=chat-container>
+   <option>${address}@pmail.com</option>
+   <option>${location}</option>
+    </select>
+    <div>
+
+
+    </div>
+    <div>
+
+
+    </div>
+    </fieldset>
     `
 }

@@ -8,6 +8,7 @@ function Registered_account(){
         userlocation:document.getElementById('business-loc').value
         
     }
+   document.getElementById('logo-this').setAttribute('onclick','toBeranda()') 
    if(inputData.datainput=="" ||inputData.useraddress=="" || inputData.userpassword=="" || inputData.userlocation==""||inputData.usermoney==""){
     alert("mohon data dilengkapi")
     console.log('registerd failet')
