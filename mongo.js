@@ -8,53 +8,39 @@ location:'jl bima sakti no 119'
 
 
  ];
-const Txtdatabase=[
-
-
-];
-
-const MarketDatabase=[]
+const database_berita=[];
 
 
 function connectto_PmailDatabase(address,pass,location){
   pmaildatabase.push(
 
     {
-      id:`${address}-Lid&81${pass}`,
+      id:address,
       useraddress:`${address}@pmail.com`,
       pass:pass,
       location:location
     }
   )
 }
+function connect_database(
+    address,
+    title,
+    location,
+    time,
+    text1,
+    text2
+)
+{
+  database_berita.push(
+    {
+      useraddress:address,
+      title:title,
+      location:location,
+      time:time,
+      tx1:text1,
+      tx2:text2
+    }
+  )
+}
    
-   function connect_database(useraddress,dataaddress,location,time,value){
-     Txtdatabase.push(
-       {
-         useraddress:useraddress,
-         title:dataaddress,
-         location:location,
-         time:time,
-         value:value[0],
-         value1:value[1]
-       }
-     )
-   }
-
-
-   function INSERT_DATAFROM(useraddress,productname,productPrice,amount,Description){
-    MarketDatabase.push(
-      {
-        address:useraddress,
-        name:productname,
-        price:productPrice,
-        amount:amount,
-        Description:Description,
-      }
-    )
-   }
-
-
-
-
    
