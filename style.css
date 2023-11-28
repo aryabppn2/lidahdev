@@ -29,10 +29,14 @@
     width:42.6%;
     height:46px;
     border-color:green;
-    color:green;
+    color:rgb(157, 243, 157);
     border:0px;
 }
-
+.input-text-login{
+    width:360px;
+    height: 34px;
+    margin: 12px;
+}
 .input-prg-data{
     width:85.2%;
     height:440px;
@@ -64,10 +68,18 @@
 }
 
 .txt-loc{
-    width:92.3%;
+    width:350px;
     height: 100px;
+    margin: 12px;
     border-color:chartreuse;
     color:chartreuse
+}
+.input-body{
+    width:500px;
+    height:400px;
+    background-image:url('pancingpil.jpeg');
+    text-align: center;
+    margin-left: 380px;
 }
 .dat-nav{
     margin:12px;

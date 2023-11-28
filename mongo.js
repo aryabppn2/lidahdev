@@ -15,7 +15,7 @@ function connectto_PmailDatabase(address,pass,location){
   pmaildatabase.push(
 
     {
-      id:address,
+      ip:address,
       useraddress:`${address}@pmail.com`,
       pass:pass,
       location:location

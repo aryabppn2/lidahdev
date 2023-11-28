@@ -1,9 +1,18 @@
 function logiageStructure(){
-    return'<h2 style=color:lightblue>login sekarang</h2>'+
-'<input type=text id=input-useraddress class=input-text-loggin placeholder=username style=color:green><br>'+
-'<input type=password id=input-user-pass class=pass-container placeholder=password style=color:red><br>'+
-'<textarea id=business-loc class=txt-loc placeholder=lokasi></textarea>'+
-'<br><button onclick=Registered_account() class=btn-upload>daftar</button>'
+    return`<div class=input-body><h1>login sekarang</h1>
+   <input type=text id=input-useraddress class=input-text-login placeholder="username"
+    style=boder-color:lightblue;color:lightblue><br>
+    <input type=password id=input-user-pass 
+    class=input-text-login placeholder=password style=border-color:lightgreen;color:lightgreen><br>
+    <textarea id=business-loc class=txt-loc placeholder=lokasi></textarea><br>
+    <button onclick=Registered_account() class=btn-upload>daftar</button>
+    </div>    
+    
+    
+    
+    
+    
+    `
 }
 function connect_loginPage(){
     document.getElementById('data-input').innerHTML=logiageStructure()
@@ -21,7 +30,7 @@ function structure_accountHeader(address,money){
     <select id=friends-list class=menu-navigation-private>
     <option onclick=addteman()>panutan</option>
     </select>
-    <select id=friends-like-list class=menu-navigation-private>
+    <select id=friends-like-list class=menu-navigation-private style=color:lightgreen>
    <option onclick=addgemar()>penggemar</option> 
     </select>
 <button onclick=connect_toAddNews() class=menu-navigation-private>+</button>
@@ -71,21 +80,6 @@ function ChatFiturApp(TargetAddress){
 
 
 
-function structure_othersUser(address,location){
-    return`<fieldset style=border-color:lightblue>
-    <legend id=address>${address}</legend>
-    <select class=bar-account>
-    <option>${location}</option>
-    <option onclick=chatHim() style=color:lightgreen>chat</option>
-    </select>
-    <button onclick=others_market() class=bar-account>pasar</button>
-    <button onclick=others_Jasa() class=bar-account>jasa</button>
-    <button onclick=others_rent() class=bar-account>sewa</button>
-    <div id=chat-app></div>
-    <div id=data-others-navigation></div>
-    </fieldset>
-    `
-}
 
 
 
@@ -105,7 +99,7 @@ function connect_toAddNews(){
     <textarea id=input-text-value class=editor placeholder=isi-pembicaraan-${address}></textarea>
     <textarea id=input-text1-value class=editor placeholder=inti pembahasan></textarea> 
     <div class= news-uploader-wrapper>
-    <button onclick=Post_PublicNews() id=btn-public-news  classbtn-upload>posting</button>
+    <button onclick=Post_PublicNews() id=btn-public-news  class=btn-upload>posting</button>
        </div></fieldset>
        
        `
@@ -135,8 +129,6 @@ function connect_toAddNews(){
         `
     }
     
-
-
 
     
     function dataTextShow(useraddress,title,location,time,datVal,datVal1){
@@ -176,3 +168,18 @@ function connect_toAddNews(){
         `
     }
      
+
+function others_interface(address,location){
+    return`<fieldset>
+    <legend>${address}</legend>
+    
+    
+    
+    
+    
+    
+    </fieldset>
+    `
+}
+
+

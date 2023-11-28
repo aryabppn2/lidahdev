@@ -52,13 +52,13 @@ function backHome(){
 
 
 function loggin_out(){
+     CreateDataList(
+        document.getElementById('useraddress-output'),
+        document.getElementById('others-list')
+     )
      document.getElementById('private-database').innerHTML=null
      document.getElementById('logo-this').setAttribute('onclick','toBeranda()')
      document.getElementById('data-input').innerHTML=logiageStructure()
-     createDataList(
-        document.getElementById('user-list')
-     )
-   
 }
 
 
@@ -122,4 +122,12 @@ function showAll(){
             [database_berita[i].tx2,database_berita[0].tx2,database_berita[1].tx2],
         )
     }
+}
+
+
+function others_open(){
+    const Taeget_address=document.getElementById('others-list').value
+    const T_filter=Array.from(database_berita.filter(data=>data.useraddress.includes(Taeget_address)))
+    console.log(T_filter[0].ip)
+
 }

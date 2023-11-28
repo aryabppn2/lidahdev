@@ -111,3 +111,12 @@ function createList(address){
   add.el.setAttribute('onclick','open_RECENTLY()')
 }
 
+function CreateDataList(address,list){
+  const create={
+    el:document.createElement('option'),
+    val:document.createTextNode(address.innerHTML)
+  }
+  list.appendChild(create.el);
+  create.el.appendChild(create.val)
+  create.el.setAttribute('onclick','others_open()')
+}
