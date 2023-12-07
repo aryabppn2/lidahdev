@@ -114,7 +114,7 @@ function showAll(){
     for(var i=0; i<=database_berita.length;i++){
         document.getElementById('search-eigine').innerHTML=
         dataTextShow(
-            [database_berita[i].database_berita,database_berita[0].useraddress,database_berita[1].useraddress],
+            [database_berita[i].useraddress,database_berita[0].useraddress,database_berita[1].useraddress],
             [database_berita[i].title,database_berita[0].title,database_berita[1].title],
             [database_berita[i].location,database_berita[0].location,database_berita[1].location],
             [database_berita[i].time,database_berita[0].time,database_berita[1].time],
@@ -125,9 +125,48 @@ function showAll(){
 }
 
 
-function others_open(){
-    const Taeget_address=document.getElementById('others-list').value
-    const T_filter=Array.from(database_berita.filter(data=>data.useraddress.includes(Taeget_address)))
-    console.log(T_filter[0].ip)
 
+function others_open(){
+    const ip_call={
+        address:document.getElementById('others-list').value,
+        dataInput:document.getElementById('data-input')
+    }
+
+    const call_host=pmaildatabase.filter(host=>host.ip.includes(ip_call.address))
+    ip_call.dataInput.innerHTML=
+    others_interface(
+        call_host[0].ip,
+        call_host[0].location
+    )
+
+
+}
+
+function chatOpened(){
+    const address_target={
+        ip:document.getElementById('others-list').value,
+        chatBody:document.getElementById('chat-body')
+    }
+    address_target.chatBody.innerHTML=
+    ChatFiturApp(address_target.ip)
+}
+
+
+function visitingAddress(){
+    const target={
+        ip:document.getElementById('others-list').value,
+        access:document.getElementById('content-place')
+    }
+    const respont_call=Array.from(database_berita.filter(address=>address.useraddress.includes(target.ip)))
+    for(var i=0; i<=respont_call.length; i++){
+        target.access.innerHTML=
+        dataPmailRespont(
+            respont_call[i].useraddress,
+            respont_call[i].title,
+            respont_call[i].location,
+            respont_call[i].time,
+            respont_call[i].tx1,
+            respont_call[i].tx2
+        )
+    }
 }

@@ -77,7 +77,7 @@
 .input-body{
     width:500px;
     height:400px;
-    background-image:url('pancingpil.jpeg');
+    background-image:url('lidah.jpg');
     text-align: center;
     margin-left: 380px;
 }
@@ -166,7 +166,7 @@
 }
 .num-input{
     width: 46%;
-    height:45px;
+    height:45px; 
     border-color:antiquewhite;
     margin-bottom:12px;
 }
@@ -247,14 +247,16 @@
     border-color:aqua;
 }
 .menu-navigation-container{
-    width:48.2%;
+    width:31.2%;
     height: 34px;
-    border-color:aqua
+    border-color:aqua;
+    border:0px
 }
 
 .menu-navigation-private{
-    width:23.1%;
+    width:17.1%;
     height: 34px;
+
 }
 
 .data-market-post{

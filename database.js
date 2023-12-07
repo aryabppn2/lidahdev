@@ -1,7 +1,7 @@
 
-function connect_uploaderDatabase(useraddress,dataaddress,location,time,value,database){
+function connect_uploaderDatabase(useraddress,dataaddress,location,time,value){
 
-  
+  const database=document.getElementById('uploader-database')
   const call_uploaderDataBase={
   
       Host:document.createElement('div'),

@@ -1,13 +1,4 @@
-const  pmaildatabase=[
-{
-id:'lidajkja s',  
-useraddress:'lidah@pmail.com',
-pass:'P512783Ty',
-location:'jl bima sakti no 119'
-}
-
-
- ];
+const  pmaildatabase=[];
 const database_berita=[];
 
 
@@ -27,8 +18,7 @@ function connect_database(
     title,
     location,
     time,
-    text1,
-    text2
+    text
 )
 {
   database_berita.push(
@@ -37,8 +27,8 @@ function connect_database(
       title:title,
       location:location,
       time:time,
-      tx1:text1,
-      tx2:text2
+      tx1:text[0],
+      tx2:text[1]
     }
   )
 }

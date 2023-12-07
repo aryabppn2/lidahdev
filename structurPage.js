@@ -33,8 +33,16 @@ function structure_accountHeader(address,money){
     <select id=friends-like-list class=menu-navigation-private style=color:lightgreen>
    <option onclick=addgemar()>penggemar</option> 
     </select>
-<button onclick=connect_toAddNews() class=menu-navigation-private>+</button>
-<div id=uploader-database ></div>
+  <select class=menu-navigation-private style=background-color:green;color:aqua>
+  <option>grup</option>
+  
+  </select>
+<select  class=menu-navigation-private style=background-color:lightblue;color:blue>
+<option onclick=connect_toAddNews() style=color:orange>berita</option>
+<option onclick=connect_addGroupt() style=color:lightgreen>groupt</option>
+
+</select>
+<div id=uploader-database></div>
 <div id=market-database></div>
 <div id=jasa-database></div>
 </fieldset><div id=groupt-database-private></div>`;
@@ -108,7 +116,7 @@ function connect_toAddNews(){
     function dataRespont(useraddress,title,location,time,datVal,datVal1){
         return`<fieldset class=dat-post>
         <legend>${useraddress[0]}</legend>
-        <select class=select_dataInformation>
+        <select class=data-editor>
        <option>${title[0]}</option>
        <option>${location[0]}</option>
        <option>${time[0]}</option>
@@ -118,7 +126,7 @@ function connect_toAddNews(){
         </fieldset>
         <fieldset class=dat-post>
         <legend>${useraddress[1]}</legend>
-        <select class=select_dataInformation>
+        <select class=data-editor>
        <option>${title[1]}</option>
        <option>${location[1]}</option>
        <option>${time[1]}</option>
@@ -171,15 +179,66 @@ function connect_toAddNews(){
 
 function others_interface(address,location){
     return`<fieldset>
-    <legend>${address}</legend>
+    <select class=menu-navigation-container>
+   <option>${address}</option>
+   <option>${location}</option>
+   <option onclick=visitingAddress()>postingan</option>  
+    </select>
+    <button onclick=chatOpened() class=menu-navigation-container>chat</button>
     
-    
-    
-    
-    
+    <div id=chat-body></div>
+    <div id=content-place></div>
     
     </fieldset>
     `
 }
 
+function dataPmailRespont(address,title,location,time,text,text1){
+    return`<fieldset class=dat-post>
+    <legend>${address}</legend>
+    <select class=select_dataInformation>
+   <option>${title}</option>
+   <option>${location}</option>
+   <option>${time}</option>
+   </select>
+   <fieldset>${text} </fieldset>
+   <fieldset>${text1}</fieldset>
+    </fieldset>
 
+
+
+
+
+    `
+}
+
+
+function connect_addGroupt(){
+    const user={
+        address:document.getElementById('useraddress-output'),
+        page:document.getElementById('data-input')
+    }
+    user.page.innerHTML=
+    createGrup_app(user.address.innerHTML)
+}
+
+function  createGrup_app(ip){
+    return`<fieldset style=border-color:green>
+    <legend>${ip}</legend>
+    <input type=text id=input-groupt=name placeholder='nama komunitas'><br>
+    <select id=admin-list-container>
+    <option>admin </option>
+    <option onclick=setAdmin1()>${ip}</option>
+    <option onclick=setAdmin2()>anyone</option>
+    <option onclick=Reaseon()>alasan mereka jdi admin</option>
+    </select>
+    <select id=membert-list>
+    <option>anggota</option>
+    <option onclick=addmember()>${ip}</option>
+    </select><br>
+    <textarea id=input-description placeholder='deskripsi pengundangan'></textarea><br>
+    <button onclick=CreateGroup()>buat groupt</button>
+    </fieldset>
+
+    `
+}

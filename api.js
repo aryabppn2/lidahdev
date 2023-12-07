@@ -1,5 +1,4 @@
 function Post_PublicNews(){
-    const database=document.getElementById('uploader-database');
     const dataInput={
         address:document.getElementById('useraddress-output'),
         title:document.getElementById('input-title').value,
@@ -10,8 +9,10 @@ function Post_PublicNews(){
             st2:document.getElementById('input-text1-value').value
         }
     };
-    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,[dataInput.textValue.st1,dataInput.textValue.st2],database)
-    connect_database(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,[dataInput.textValue.st1,dataInput.textValue.st2])
+    connect_uploaderDatabase(dataInput.address.innerHTML,dataInput.title,
+        dataInput.userlocation,dataInput.time,[dataInput.textValue.st1,dataInput.textValue.st2])
+    connect_database(dataInput.address.innerHTML,dataInput.title,dataInput.userlocation,dataInput.time,
+        [dataInput.textValue.st1,dataInput.textValue.st2])
     document.getElementById('data-input').innerHTML=null
 }
   function search(){
