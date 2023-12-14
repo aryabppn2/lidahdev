@@ -27,11 +27,11 @@ function connect_uploaderDatabase(useraddress,dataaddress,location,time,value){
        dis:document.createElement('br')
      },
      textValue:{
-        el:document.createElement('fieldset'),
+        el:document.createElement('div'),
         val:document.createTextNode(value[0])
      },
      textValue1:{
-      el:document.createElement('fieldset'),
+      el:document.createElement('div'),
       val:document.createTextNode(value[1])
      },
      
@@ -119,4 +119,64 @@ function CreateDataList(address,list){
   list.appendChild(create.el);
   create.el.appendChild(create.val)
   create.el.setAttribute('onclick','others_open()')
+}
+
+
+
+
+function insert_todataList(dataList,ip,text){
+  const createElement={
+    btn:document.createElement('fieldset'),
+    ipaddress:{
+      el:document.createElement('legend'),
+      val:document.createTextNode(ip)
+    },
+    h1:{
+      el:document.createElement('h2'),
+      val:document.createTextNode(text[0])
+    },
+    h2:{
+      el:document.createElement('h2'),
+      val:document.createTextNode(text[1])
+    },
+    h3:{
+      el:document.createElement('h2'),
+      val:document.createTextNode(text[2])
+    },
+    h4:{
+      el:document.createElement('h2'),
+      val:document.createTextNode(text[3])
+    },
+    h5:{
+      el:document.createElement('h2'),
+      val:document.createTextNode(text[4])
+    },
+    h6:{
+      el:document.createElement('h2'),
+      val:document.createTextNode(text[5])
+    }
+  };
+  dataList.appendChild(createElement.btn);
+createElement.btn.appendChild(createElement.ipaddress.el);
+createElement.ipaddress.el.appendChild(createElement.ipaddress.val);
+createElement.btn.appendChild(createElement.h1.el);
+createElement.h1.el.appendChild(createElement.h1.val);
+createElement.btn.appendChild(createElement.h2.el);
+createElement.h2.el.appendChild(createElement.h2.val);
+createElement.btn.appendChild(createElement.h3.el);
+createElement.h3.el.appendChild(createElement.h3.val);
+createElement.btn.appendChild(createElement.h4.el);
+createElement.h4.el.appendChild(createElement.h4.val);
+createElement.btn.appendChild(createElement.h5.el);
+createElement.h5.el.appendChild(createElement.h5.val);
+createElement.btn.appendChild(createElement.h6.el);
+createElement.h6.el.appendChild(createElement.h6.val);
+
+createElement.h1.el.style.color='lightgreen';
+createElement.h2.el.style.color='whitesmoke';
+createElement.h3.el.style.color='lightgray';
+createElement.h4.el.style.color='orange';
+createElement.h5.el.style.color='aqua'
+createElement.btn.classList='this-short-container'
+
 }

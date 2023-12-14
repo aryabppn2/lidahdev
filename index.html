@@ -15,14 +15,13 @@
         <span id="private-wrapper"></span>
         </div>
         <div class="menu-navigation">
-            <button class="menu-navigation-container" onclick="showAll()"  style="color:green;background-color: burlywood;">berita</button>
-          <select class="menu-navigation-container" style="background-color: green;color:azure" id="others-list">
+            <button class="menu-navigation-container" onclick="showAll()"  style="color:lightblue;background-color:blue">berita</button>
+            <button class='menu-navigation-container'onclick='show_ShortText()' style='color:aqua;background-color:blueviolet'>short</button>
+          <select class="menu-navigation-container" style="background-color:darkorchid;color:azure" id="others-list">
           <option>orang lain</option>
         
         </select>
-        <select id="groupt-others" style="background-color: aquamarine;color:blue"class="menu-navigation-container">
-        <option>grup lain</option>
-        </select>
+        
         </div>
         <div class="dat-nav" id="data-input"></div>
         <div id="data-others"></div>
@@ -37,6 +36,7 @@
     <script src="database.js"></script>
     <script src="mongo.js"></script>
     <script>
+       
 document.getElementById('data-input').innerHTML=logiageStructure()
 
     </script>

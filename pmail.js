@@ -3,22 +3,23 @@ function Registered_account(){
        datainput:document.getElementById('private-database'),
         useraddress:document.getElementById('input-useraddress').value,
         userpassword:document.getElementById('input-user-pass').value,
-        userlocation:document.getElementById('business-loc').value
+        userlocation:document.getElementById('business-loc').value,
         
     }
    document.getElementById('logo-this').setAttribute('onclick','toBeranda()') 
    if(inputData.datainput=="" ||inputData.useraddress=="" || inputData.userpassword=="" || inputData.userlocation==""){
     alert("mohon data dilengkapi")
+   
     console.log('registerd failet')
    }
    else{
-    inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress)
+    inputData.datainput.innerHTML=structure_accountHeader(inputData.useraddress,inputData.usermoney)
         document.getElementById('data-input').innerHTML=null
         document.getElementById('logo-this').setAttribute('onclick','backHome()')
         connectto_PmailDatabase(
             inputData.useraddress,
             inputData.userpassword,
-            inputData.userlocation
+            inputData.userlocation,
         )
      
      
@@ -170,3 +171,23 @@ function visitingAddress(){
         )
     }
 }
+
+function show_ShortText(){
+    document.getElementById('input-search-text').setAttribute('onkeyup','search_short()');
+    for(var i=0; i<=short_databases.length; i++){
+        document.getElementById('search-eigine').innerHTML=
+        show_shortData(
+       [short_databases[i].ip,short_databases[0].ip],
+       [short_databases[i].text1,short_databases[0].text1],
+       [short_databases[i].text2,short_databases[0].text2],
+       [short_databases[i].text3,short_databases[0].text3],
+       [short_databases[i].text4,short_databases[0].text4],
+       [short_databases[i].text5,short_databases[0].text5],
+       [short_databases[i].text6,short_databases[0].text6]
+
+
+          )
+        
+    }
+}
+

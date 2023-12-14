@@ -75,11 +75,10 @@
     color:chartreuse
 }
 .input-body{
-    width:500px;
+    width:94.2%;
     height:400px;
     background-image:url('lidah.jpg');
     text-align: center;
-    margin-left: 380px;
 }
 .dat-nav{
     margin:12px;
@@ -108,7 +107,7 @@
     border-color:blue
 }
 .pass-container{
-    width:46.15%;
+    width:67.15%;
     height:34px;
     margin:0px;
     border-color:red;
@@ -306,3 +305,17 @@
     width:410px;
     height: 100px;
 }
+
+
+
+.this-short-container{
+   width:92.1%;
+
+   height:270px;
+   overflow-x: auto;
+   overflow-y: auto;
+
+
+}
+  
+  

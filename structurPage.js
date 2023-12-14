@@ -3,7 +3,7 @@ function logiageStructure(){
    <input type=text id=input-useraddress class=input-text-login placeholder="username"
     style=boder-color:lightblue;color:lightblue><br>
     <input type=password id=input-user-pass 
-    class=input-text-login placeholder=password style=border-color:lightgreen;color:lightgreen><br>
+    class=pass-container placeholder=password style=border-color:lightgreen;color:lightgreen>
     <textarea id=business-loc class=txt-loc placeholder=lokasi></textarea><br>
     <button onclick=Registered_account() class=btn-upload>daftar</button>
     </div>    
@@ -24,27 +24,21 @@ function connect_loginPage(){
 function structure_accountHeader(address,money){
     return`<fieldset id=data-field class=dat-private>
     <legend id=useraddress-output onclick=settAccount()>${address}</legend>
-    <select id=chat-recently class=menu-navigation-private style=border-color:gray>
-   <option>pesan baru</option>
+    <select id=recently-list class=menu-navigation-private style=border-color:gold>
+     <option>barusan chat</option>
     </select>
     <select id=friends-list class=menu-navigation-private>
-    <option onclick=addteman()>panutan</option>
+    <option onclick=addteman()>pelanggan</option>
     </select>
     <select id=friends-like-list class=menu-navigation-private style=color:lightgreen>
-   <option onclick=addgemar()>penggemar</option> 
+   <option onclick=addgemar()>langganan</option> 
     </select>
-  <select class=menu-navigation-private style=background-color:green;color:aqua>
-  <option>grup</option>
-  
-  </select>
 <select  class=menu-navigation-private style=background-color:lightblue;color:blue>
 <option onclick=connect_toAddNews() style=color:orange>berita</option>
-<option onclick=connect_addGroupt() style=color:lightgreen>groupt</option>
-
+<option onclick=route_inputShort() style=color:lightgreen>pesan singkat</option>
 </select>
+<div id=uploader-Shorttext></div>
 <div id=uploader-database></div>
-<div id=market-database></div>
-<div id=jasa-database></div>
 </fieldset><div id=groupt-database-private></div>`;
 
     
@@ -88,9 +82,6 @@ function ChatFiturApp(TargetAddress){
 
 
 
-
-
-
 function connect_toAddNews(){
     const address=document.getElementById('useraddress-output');
     document.getElementById('data-input').innerHTML=addNews_structure(address.innerHTML)
@@ -121,8 +112,8 @@ function connect_toAddNews(){
        <option>${location[0]}</option>
        <option>${time[0]}</option>
        </select>
-       <fieldset>${datVal[0]} </fieldset>
-       <fieldset>${datVal1[0]}</fieldset>
+       <div>${datVal[0]} </div>
+       <div>${datVal1[0]}</div>
         </fieldset>
         <fieldset class=dat-post>
         <legend>${useraddress[1]}</legend>
@@ -131,8 +122,8 @@ function connect_toAddNews(){
        <option>${location[1]}</option>
        <option>${time[1]}</option>
        </select>
-       <fieldset>${datVal[1]} </fieldset>
-       <fieldset>${datVal1[1]}</fieldset>
+       <div>${datVal[1]} </div>
+       <div>${datVal1[1]}</div>
         </fieldset>
         `
     }
@@ -147,8 +138,8 @@ function connect_toAddNews(){
        <option>${location[0]}</option>
        <option>${time[0]}</option>
        </select>
-       <fieldset>${datVal[0]} </fieldset>
-       <fieldset>${datVal1[0]}</fieldset>
+       <div>${datVal[0]} </div>
+       <div>${datVal1[0]}</div>
         </fieldset>
         <fieldset class=dat-post>
         <legend>${useraddress[1]}</legend>
@@ -157,8 +148,8 @@ function connect_toAddNews(){
        <option>${location[1]}</option>
        <option>${time[1]}</option>
        </select>
-       <fieldset>${datVal[1]} </fieldset>
-       <fieldset>${datVal1[1]}</fieldset>
+       <div>${datVal[1]} </div>
+       <div>${datVal1[1]}</div>
         </fieldset>
         <fieldset class=dat-post>
         <legend>${useraddress[2]}</legend>
@@ -167,8 +158,8 @@ function connect_toAddNews(){
        <option>${location[2]}</option>
        <option>${time[2]}</option>
        </select>
-       <fieldset>${datVal[2]} </fieldset>
-       <fieldset>${datVal1[2]}</fieldset>
+       <div>${datVal[2]} </div>
+       <div>${datVal1[2]}</div>
         </fieldset>
         
         
@@ -212,33 +203,82 @@ function dataPmailRespont(address,title,location,time,text,text1){
     `
 }
 
-
-function connect_addGroupt(){
-    const user={
-        address:document.getElementById('useraddress-output'),
+function route_inputShort(){
+    const address={
+        ip:document.getElementById('useraddress-output'),
         page:document.getElementById('data-input')
     }
-    user.page.innerHTML=
-    createGrup_app(user.address.innerHTML)
+    address.page.innerHTML=shortText_input(address.ip.innerHTML)
 }
 
-function  createGrup_app(ip){
-    return`<fieldset style=border-color:green>
-    <legend>${ip}</legend>
-    <input type=text id=input-groupt=name placeholder='nama komunitas'><br>
-    <select id=admin-list-container>
-    <option>admin </option>
-    <option onclick=setAdmin1()>${ip}</option>
-    <option onclick=setAdmin2()>anyone</option>
-    <option onclick=Reaseon()>alasan mereka jdi admin</option>
-    </select>
-    <select id=membert-list>
-    <option>anggota</option>
-    <option onclick=addmember()>${ip}</option>
-    </select><br>
-    <textarea id=input-description placeholder='deskripsi pengundangan'></textarea><br>
-    <button onclick=CreateGroup()>buat groupt</button>
-    </fieldset>
 
+function shortText_input(address){
+    return`<fieldset>
+<legend id=ip>${address}</legend>
+<input tyoe=text id=input-short1-varChar class=input-text-login placeholder='masukan teks 1' style=color:lightgreen><br>
+<input type=text id=input-short2-varChar class=input-text-login placeholder='masukan teks 2' style=color:whitesmoke><br>
+<input type=text id=input-short3-varChar class=input-text-login placeholder='masukan teks 3' style=color:lightgray><br>
+<input type=text id=input-short4-varChar class=input-text-login placeholder='masukan teks 4' style=color:orange><br>
+<input type=text id=input-short5-varChar class=input-text-login placeholder='masukan teks 5' style=color:aqua><br>
+<input type=text id=input-short6-varChar class=input-text-login placeholder='masukan teks 6' style=color:yellow><br>
+<button onclick=POST_shortdata()> posting short</button>
+</fieldset>
+
+    `
+}
+
+
+function show_shortData(ipaddress,text1,text2,text3,text4,text5,text6){
+return`<fieldset class=this-short-container>
+<legend>${ipaddress[0]}</legend>
+<h2 style=color:lightgreen>${text1[0]}</h2>
+<h2 style=color:whitesmoke>${text2[0]}</h2>
+<h2 style=color:lightgray>${text3[0]}</h2>
+<h2 style=color:orange>${text4[0]}</h2>
+<h2 style=color:aqua>${text5[0]}</h2>
+<h2 style=color:yellow>${text6[0]}</h2>
+</fieldset>
+<fieldset class=this-short-container>
+<legend>${ipaddress[1]}</legend>
+<h2 style=color:lightgreen>${text1[1]}</h2>
+<h2 style=color:whitesmoke>${text2[1]}</h2>
+<h2 style=color:lightgray>${text3[1]}</h2>
+<h2 style=color:orange>${text4[1]}</h2>
+<h2 style=color:aqua>${text5[1]}</h2>
+<h2 style=color:yellow>${text6[1]}</h2>
+</fieldset>
+`
+    
+}
+
+function show_filterDataShort(ip,txt1,txt2,txt3,txt4,txt5,txt6){
+    return`<fieldset class=this-short-container>
+    <legend>${ip[0]}</legend>
+    <h2 style=color:lightgreen>${txt1[0]}</h2>
+    <h2 style=color:whitesmoke>${txt2[0]}</h2>
+    <h2 style=color:lightgray>${txt3[0]}</h2>
+    <h2 style=color:orange>${txt4[0]}</h2>
+    <h2 style=color:aqua>${txt5[0]}</h2>
+    <h2 style=color:yellow>${txt6[0]}</h2>
+    </fieldset>
+    <fieldset class=this-short-container>
+<legend>${ip[1]}</legend>
+<h2 style=color:lightgreen>${txt1[1]}</h2>
+<h2 style=color:whitesmoke>${txt2[1]}</h2>
+<h2 style=color:lightgray>${txt3[1]}</h2>
+<h2 style=color:orange>${txt4[1]}</h2>
+<h2 style=color:aqua>${txt5[1]}</h2>
+<h2 style=color:yellow>${txt6[1]}</h2>
+</fieldset>
+<fieldset class=this-short-container>
+<legend>${ip[2]}</legend>
+<h2 style=color:lightgreen>${txt1[2]}</h2>
+<h2 style=color:whitesmoke>${txt2[2]}</h2>
+<h2 style=color:lightgray>${txt3[2]}</h2>
+<h2 style=color:orange>${txt4[2]}</h2>
+<h2 style=color:aqua>${txt5[2]}</h2>
+<h2 style=color:yellow>${txt6[2]}</h2>
+
+</fieldset>
     `
 }
