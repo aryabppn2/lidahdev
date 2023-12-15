@@ -3,7 +3,7 @@ function logiageStructure(){
    <input type=text id=input-useraddress class=input-text-login placeholder="username"
     style=boder-color:lightblue;color:lightblue><br>
     <input type=password id=input-user-pass 
-    class=pass-container placeholder=password style=border-color:lightgreen;color:lightgreen>
+    class=pass-container placeholder=password style=border-color:lightgreen;color:lightgreen><br>
     <textarea id=business-loc class=txt-loc placeholder=lokasi></textarea><br>
     <button onclick=Registered_account() class=btn-upload>daftar</button>
     </div>    
@@ -24,19 +24,17 @@ function connect_loginPage(){
 function structure_accountHeader(address,money){
     return`<fieldset id=data-field class=dat-private>
     <legend id=useraddress-output onclick=settAccount()>${address}</legend>
-    <select id=recently-list class=menu-navigation-private style=border-color:gold>
-     <option>barusan chat</option>
-    </select>
     <select id=friends-list class=menu-navigation-private>
-    <option onclick=addteman()>pelanggan</option>
+    <option onclick=addFriends()>teman</option>
+
+
     </select>
-    <select id=friends-like-list class=menu-navigation-private style=color:lightgreen>
-   <option onclick=addgemar()>langganan</option> 
-    </select>
-<select  class=menu-navigation-private style=background-color:lightblue;color:blue>
-<option onclick=connect_toAddNews() style=color:orange>berita</option>
-<option onclick=route_inputShort() style=color:lightgreen>pesan singkat</option>
-</select>
+    <button onclick=connect_toAddNews() class=menu-navigation-private>tambah berita </button>
+    <button onclick=route_inputShort() class=menu-navigation-private>tambah short</button>
+    <select class=menu-navigation-private>
+   <option>groupt</option>
+     </select>
+
 <div id=uploader-Shorttext></div>
 <div id=uploader-database></div>
 </fieldset><div id=groupt-database-private></div>`;
@@ -45,7 +43,17 @@ function structure_accountHeader(address,money){
 }
 
 
+function addGrouptApp(ip){
+    return`<fieldset>
+ <legend>${ip}</legend>
+<input type=text id=input-groupt-name class=input-text-login placeholder='nama groupt'><br>
 
+
+
+
+</fieldset>
+    `
+}
 
 
 
@@ -58,9 +66,8 @@ function structure_settAccount(useraddress,pass,location){
    <option>${useraddress}</option>
    <option>${pass}</option>
    <option>${location}</option>
-   <option onclick=loggin_out() style=color:lightgray>log out</option>
    </select>
-
+ <button onclick=loggin_out() style=color:lightgray>log out</button>
     </fieldset>
     `
 }
@@ -68,7 +75,7 @@ function structure_settAccount(useraddress,pass,location){
 
 
 function ChatFiturApp(TargetAddress){
-    return`<fieldset style=border-color:green >
+    return`<fieldset style=border-color:green>
     <legend style=color:lightblue onclick=ChatRes() id=target-address>${TargetAddress}</legend>
     <div id=chat-body-page class=chat-body-container></div>
     <textarea id=input-messeage-text class=messeage-container placeholder='masukan pesan'></textarea>

@@ -33,9 +33,12 @@
     border:0px;
 }
 .input-text-login{
-    width:360px;
-    height: 34px;
-    margin: 12px;
+    width:92.3%;
+    height:34px;
+    margin:0px;
+    color:lightblue;
+    margin:10px;
+    border-color:red;
 }
 .input-prg-data{
     width:85.2%;
@@ -68,11 +71,12 @@
 }
 
 .txt-loc{
-    width:350px;
-    height: 100px;
-    margin: 12px;
-    border-color:chartreuse;
-    color:chartreuse
+    width:92.3%;
+    height:200px;
+    margin:10px;
+    border-color:aqua;
+
+
 }
 .input-body{
     width:94.2%;
@@ -100,14 +104,9 @@
     margin-top: 0px;
     text-align: center;
 }
-.input-text-loggin{
-    width:92.3%;
-    height:34px;
-    margin:11px;
-    border-color:blue
-}
+
 .pass-container{
-    width:67.15%;
+    width:92.3%;
     height:34px;
     margin:0px;
     border-color:red;
@@ -269,11 +268,12 @@
     height: 34px;
 }
 .chat-body-container{
-    height:371px;
+    height:93.6%;
+    height:400px;
     overflow-y: auto;
 }
 .messeage-container{
-    width:560px;
+    width:90.1%;
     border-color:chartreuse;
     color:burlywood
 }
@@ -317,5 +317,4 @@
 
 
 }
-  
   
