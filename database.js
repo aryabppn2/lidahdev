@@ -180,3 +180,26 @@ createElement.h5.el.style.color='aqua'
 createElement.btn.classList='this-short-container'
 
 }
+
+function connect_targetHost(address,chatValue,dataList,color){
+  const chat_sent={
+      host:document.createElement('fieldset'),
+      address:{
+        el:document.createElement('legend'),
+        val:document.createTextNode(address)
+      },
+      chatVal:{
+        el:document.createElement('span'),
+        val:document.createTextNode(chatValue)
+      }
+  };
+ dataList.appendChild(chat_sent.host);
+ chat_sent.host.appendChild(chat_sent.address.el);
+ chat_sent.address.el.appendChild(chat_sent.address.val);
+ chat_sent.host.appendChild(chat_sent.chatVal.el);
+ chat_sent.chatVal.el.appendChild(chat_sent.chatVal.val)
+  chat_sent.host.style.borderColor=color;
+  chat_sent.address.el.style.color=color;
+  chat_sent.chatVal.el.style.coloe=color
+
+}

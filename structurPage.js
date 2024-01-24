@@ -24,16 +24,10 @@ function connect_loginPage(){
 function structure_accountHeader(address,money){
     return`<fieldset id=data-field class=dat-private>
     <legend id=useraddress-output onclick=settAccount()>${address}</legend>
-    <select id=friends-list class=menu-navigation-private>
-    <option onclick=addFriends()>teman</option>
-
-
-    </select>
+    <button onclick=recently_chatShow() class=menu-navigation-private>barusan </button>
+    <button onclick=Show_friends() class=menu-navigation-private>teman</button>
     <button onclick=connect_toAddNews() class=menu-navigation-private>tambah berita </button>
     <button onclick=route_inputShort() class=menu-navigation-private>tambah short</button>
-    <select class=menu-navigation-private>
-   <option>groupt</option>
-     </select>
 
 <div id=uploader-Shorttext></div>
 <div id=uploader-database></div>
@@ -71,20 +65,6 @@ function structure_settAccount(useraddress,pass,location){
     </fieldset>
     `
 }
-
-
-
-function ChatFiturApp(TargetAddress){
-    return`<fieldset style=border-color:green>
-    <legend style=color:lightblue onclick=ChatRes() id=target-address>${TargetAddress}</legend>
-    <div id=chat-body-page class=chat-body-container></div>
-    <textarea id=input-messeage-text class=messeage-container placeholder='masukan pesan'></textarea>
-    <button onclick=SENT_MESSEAGE_DATA() class=btn-chat>kirim</button>
-    </fieldset>
-    
-    `
-}
-
 
 
 
@@ -287,5 +267,89 @@ function show_filterDataShort(ip,txt1,txt2,txt3,txt4,txt5,txt6){
 <h2 style=color:yellow>${txt6[2]}</h2>
 
 </fieldset>
+    `
+}
+
+
+function others_interfaceList(event_open,class_this,pmailData){
+    return`
+   <input type=text id=input-others-search placeholder='cari orang ' onkeyup=search_others()><br>
+   <div id=others-get></div>
+   <select id=others-select class=${class_this}>
+   <option>${pmailData[0].ip}</option>
+   <option>${pmailData[1].ip}</option>
+   <option>${pmailData[2].ip}</option>
+   <option>${pmailData[3].ip}</option>
+   <optgroupt label= hasil pencarian>
+
+   </optgroupt>
+   </select>
+<button onclick=${event_open} class=btn-upload>buka</button>
+
+
+    `
+  
+    
+
+
+
+
+
+}
+
+
+
+
+function Target_pageInterface(terget_address,target_location){
+     return`
+     <fieldset style=border-color:aqua class=chat-page>
+    <legend id=target-name onclick=show_targetInfo()>${terget_address}</legend>
+    <select class=menu-navigation-private>
+    <option>${terget_address}</option>
+    <option>${target_location}</option>
+    </select>
+   <button onclick=show_content() class=menu-navigation-private>lihat postingan</button>
+   <button onclick=open_chat() class=menu-navigation-private>chat</button>
+   <button onclick=open_call() class=menu-navigation-private>panggil</button>
+    <div id=connection-container></div>
+    </fieldset>
+   
+
+
+
+
+     `
+}
+
+
+
+function Call_page(ip_target){
+    return`
+    <fieldset style=border-color:lightblue>
+    <h1>${ip_target}</h1>
+    </fieldset>
+    <button onclick=MIC_ON() class=menu-navigation-private style=border-color:lightgreen;color:lightgreen>mic(off)</button>
+    <button onclick=END_CALL() class=menu-navigation-private style=border-color:red;color:red>akhiri</button>
+    <button onclick=RECORD_ON() class=menu-navigation-private style=color:lightgreen;color:lightgreen>screen(off)</button>
+    
+
+
+
+    `
+}
+
+
+
+
+
+function Chat_page(ip_target){
+    return`
+<fieldset style=border-color:lghtgreen;background-image:url(lidah.jpg)>
+<legend id=target-address onclick=REST_CHAT()>${ip_target}</legend>
+<div id=chat-body-place class=chat-wrapper></div>
+<input type=text id=input-text-chat class=chat-input-container placeholder='masukan text chat'>
+<button onclick=SENT_CHAT() class=btn-upload>kirim</button>
+</fieldset>
+
     `
 }

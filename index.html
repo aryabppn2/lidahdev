@@ -17,10 +17,10 @@
         <div class="menu-navigation">
             <button class="menu-navigation-container" onclick="showAll()"  style="color:lightblue;background-color:blue">berita</button>
             <button class='menu-navigation-container'onclick='show_ShortText()' style='color:aqua;background-color:blueviolet'>short</button>
-          <select class="menu-navigation-container" style="background-color:darkorchid;color:azure" id="others-list">
-          <option>orang lain</option>
+          <button class="menu-navigation-container" style="background-color:darkorchid;color:azure" id="others-list" onclick='othersPmailList()'>
+          orang lain
         
-        </select>
+        </button>
         
         </div>
         <div class="dat-nav" id="data-input"></div>
@@ -30,11 +30,12 @@
         <div class="dat-nav" id="private-database"></div>
         <div id="grup-wrapper" class="dat-nav"></div>
         <div id="public-data-show"></div>
+     <script src="mongo.js"></script>
+    <script src="crud.js"></script>   
     <script src="structurPage.js"></script>
     <script src="Pmail.js"></script>
     <script src="api.js"></script>
     <script src="database.js"></script>
-    <script src="mongo.js"></script>
     <script>
        
 document.getElementById('data-input').innerHTML=logiageStructure()

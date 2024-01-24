@@ -53,10 +53,6 @@ function backHome(){
 
 
 function loggin_out(){
-     CreateDataList(
-        document.getElementById('useraddress-output'),
-        document.getElementById('others-list')
-     )
      document.getElementById('private-database').innerHTML=null
      document.getElementById('logo-this').setAttribute('onclick','toBeranda()')
      document.getElementById('data-input').innerHTML=logiageStructure()
@@ -84,29 +80,6 @@ function settAccount(){
 
 
 
-
-function addteman(){
-    const Teman=document.getElementById('friends-list');
-    const orang=document.getElementById('user-list').value
-    const add={
-        opt:document.createElement('option'),
-        val:document.createTextNode(orang)
-    };
-    Teman.appendChild(add.opt);
-    add.opt.appendChild(add.val);
-
-}
-
-function addgemar(){
-    const Teman=document.getElementById('friends-like-list');
-    const orang=document.getElementById('user-list').value
-    const add={
-        opt:document.createElement('option'),
-        val:document.createTextNode(orang)
-    };
-    Teman.appendChild(add.opt);
-    add.opt.appendChild(add.val);
-}
 
 
 
@@ -141,15 +114,6 @@ function others_open(){
     )
 
 
-}
-
-function chatOpened(){
-    const address_target={
-        ip:document.getElementById('others-list').value,
-        chatBody:document.getElementById('chat-body')
-    }
-    address_target.chatBody.innerHTML=
-    ChatFiturApp(address_target.ip)
 }
 
 
@@ -191,3 +155,25 @@ function show_ShortText(){
     }
 }
 
+function SENT_CHAT(){
+    const input_chat={
+        useraddress:document.getElementById('useraddress-output'),
+        targetaddress:document.getElementById('target-address'),
+        chat_value:document.getElementById('input-text-chat').value
+    }
+    insert_toDb(input_chat.targetaddress.innerHTML,input_chat.useraddress.innerHTML,input_chat.chat_value)
+     connect_targetHost(input_chat.useraddress.innerHTML,input_chat.chat_value,
+        document.getElementById('chat-body-place'),'lightgreen')
+}
+
+
+function REST_CHAT(){
+    const input_chat={
+        useraddress:document.getElementById('useraddress-output'),
+        targetaddress:document.getElementById('target-address'),
+        chat_value:document.getElementById('input-text-chat').value
+    }
+    insert_toDb(input_chat.useraddress.innerHTML,input_chat.targetaddress.innerHTML,input_chat.chat_value)
+     connect_targetHost(input_chat.targetaddress.innerHTML,input_chat.chat_value,
+        document.getElementById('chat-body-place'),'lightblue')
+}

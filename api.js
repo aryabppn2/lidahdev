@@ -36,138 +36,6 @@ function Post_PublicNews(){
   }
 
 
-function connection_jigongBase(address,place){
-    const createList={
-        opt:document.createElement('option'),
-        val:document.createTextNode(address)
-    }
-    place.appendChild(createList.opt);
-    createList.opt.appendChild(createList.val)
-    createList.opt.addEventListener('click',function(){
-        addFriends(place,address)
-    })
-}
-
-
-
-
-function open_RECENTLY(){
-    const address_list=document.getElementById('chat-recently').value;
-    document.getElementById('data-input').innerHTML=
-    ChatFiturApp(address_list)
-}
-
-
-function ChatRes(){
-    const messeage_input={
-        address:document.getElementById('target-address'),
-        messeage_value:document.getElementById('input-messeage-text').value
-    }
-
-    messeageDataPost(messeage_input.address.innerHTML,messeage_input.messeage_value,'lightblue')
-
-}
-
-function SENT_MESSEAGE_DATA(){
-    const messeage={
-        address:'saya',
-        messeage_value:document.getElementById('input-messeage-text').value
-    }
-messeageDataPost(messeage.address,messeage.messeage_value,'lightgreen')
-
-}
-
-
-
-
-function setAdmin1(){
-    const admin_address={
-        new_ip:document.getElementById('membert-list').value,
-        old_ip:document.getElementById('admin1-ip')
-    }
-    settingAdmin(admin_address.new_ip,admin_address.old_ip)
-}
-
-function setAdmin2(){
-    const admin_address={
-        new_ip:document.getElementById('membert-list').value,
-        old_ip:document.getElementById('admin2-ip')
-    }
-    settingAdmin(admin_address.new_ip,admin_address.old_ip)
-}
-
-
-
-
-function settingAdmin(new_address,old){
- old.innerHTML=new_address
-}
-
-
-
-
-function addmember(){
-    const member={
-        address:prompt('siapa nama anggota'),
-        page:document.getElementById('membert-list'),
-    }
-const add={
-    opt:document.createElement('option'),
-    val:document.createTextNode(member.address)
-}
-member.page.appendChild(add.opt);
-add.opt.appendChild(add.val)
-
-}
-
-
-function CreateGroup(){
-    const  getDataFrom={
-        grouptname:document.getElementById('input-groupt=name').value,
-        grouptMember:document.getElementById('membert-list'),
-        grouptAdmin:[
-         document.getElementById('admin1-ip'),
-         document.getElementById('admin2-ip')
-
-            ]
-    };
-    Insert_grouptData(
-        getDataFrom.grouptname,
-        getDataFrom.grouptMember.innerHTML,
-        getDataFrom.grouptAdmin
-
-        )
-
-    create_GrouptList(
-        document.getElementById('groupt-list'),
-        getDataFrom.grouptname,
-       'openGroupt()'
-
-    )    
-}
-
-
-
-function openGroupt(){
-    const call_address={
-        page:document.getElementById('data-input'),
-        ip:document.getElementById('groupt-list').value
-    }
-    const grouptdata_res=Array.from(grouptDatabase.filter(host=>host.grouptIp.includes(call_address.ip)))
-    call_address.page.innerHTML= 
-    groupt_interface(
-         grouptdata_res[0].grouptIp,
-         grouptdata_res[0].Member,
-         grouptdata_res[0].adminIp1,
-         grouptdata_res[0].adminIp2
-
-        )
-
-
-    
-
-}
-
 
 
 function POST_shortdata(){
@@ -218,4 +86,36 @@ function search_short(){
 
            )
     }
+}
+
+function open_chat(){
+    const address={
+        target:document.getElementById('target-name'),
+        page:document.getElementById('connection-container')
+    }
+    address.page.innerHTML=Chat_page(address.target.innerHTML)
+}
+
+
+function open_call(){
+    const address={
+        target:document.getElementById('target-name'),
+        page:document.getElementById('connection-container')
+    };
+    address.page.innerHTML=Call_page(address.target.innerHTML)
+}
+
+
+
+function System_setting(System,setting_system,interface_setting){
+    System.style.color=interface_setting[0];
+    System.style.borderColor=interface_setting[0];
+    System.innerHTML=interface_setting[1]
+    System.setAttribute('onclick','setting_system()')
+}
+
+
+function END_CALL(){
+    document.getElementById('data-input').innerHTML=logiageStructure()
+
 }
