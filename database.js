@@ -87,40 +87,6 @@ function messeageDataPost(address,value,color){
   addMesseagge.messeageVal.el.appendChild(addMesseagge.messeageVal.val)
 }
 
-function addFriends(address,list){
-   const add={
-    el:document.createElement('option'),
-    val:document.createTextNode(address)
-   }
-   list.appendChild(add.el);
-   add.el.appendChild(add.val);
-   add.el.addEventListener('click',function(){
-    createList(address)
-    const open= list.value
-    document.getElementById('data-input').innerHTML=
-    ChatFiturApp(open)
-   })
-}
-function createList(address){
-  const add={
-      el:document.createElement('option'),
-      val:document.createTextNode(address)
-  }
-  document.getElementById('chat-recently').appendChild(add.el);
-  add.el.appendChild(add.val)
-  add.el.setAttribute('onclick','open_RECENTLY()')
-}
-
-function CreateDataList(address,list){
-  const create={
-    el:document.createElement('option'),
-    val:document.createTextNode(address.innerHTML)
-  }
-  list.appendChild(create.el);
-  create.el.appendChild(create.val)
-  create.el.setAttribute('onclick','others_open()')
-}
-
 
 
 
@@ -202,4 +168,14 @@ function connect_targetHost(address,chatValue,dataList,color){
   chat_sent.address.el.style.color=color;
   chat_sent.chatVal.el.style.coloe=color
 
+}
+
+
+function ddToList(friend,friends){
+  const friends={
+    el:document.createElement('option'),
+    val:document.createTextNode(friend)
+  }
+  friends.appendChild(friends.el);
+  friends.el.appendChild(friends.va)
 }

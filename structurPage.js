@@ -299,6 +299,22 @@ function others_interfaceList(event_open,class_this,pmailData){
 
 
 
+function Show_friends(){
+    document.getElementById('data-input').innerHTML=friends_interfaceList()
+}
+function friends_interfaceList(){
+    return`
+<button onclick=openFriends() class=btn-upload>buka</button>
+  <select id=friends-list class=menu-navigation-container>
+  <option> teman </option>
+  </select>
+  <button onclick=addFriends() class=btn-upload>tambah teman</button>
+
+    `
+}
+
+
+
 
 function Target_pageInterface(terget_address,target_location){
      return`
@@ -328,9 +344,9 @@ function Call_page(ip_target){
     <fieldset style=border-color:lightblue>
     <h1>${ip_target}</h1>
     </fieldset>
-    <button onclick=MIC_ON() class=menu-navigation-private style=border-color:lightgreen;color:lightgreen>mic(off)</button>
+    <button onclick=MIC_ON() class=menu-navigation-private style=border-color:lightgreen;color:lightgreen id=mic-system>mic(off)</button>
     <button onclick=END_CALL() class=menu-navigation-private style=border-color:red;color:red>akhiri</button>
-    <button onclick=RECORD_ON() class=menu-navigation-private style=color:lightgreen;color:lightgreen>screen(off)</button>
+    <button onclick=RECORD_ON() class=menu-navigation-private style=color:lightgreen;color:lightgreen id=record-system>screen(off)</button>
     
 
 

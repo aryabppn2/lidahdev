@@ -107,15 +107,60 @@ function open_call(){
 
 
 
-function System_setting(System,setting_system,interface_setting){
-    System.style.color=interface_setting[0];
-    System.style.borderColor=interface_setting[0];
-    System.innerHTML=interface_setting[1]
-    System.setAttribute('onclick','setting_system()')
+function System_setting(system,setting_system,interface_setting){
+    system.style.color=interface_setting[0];
+    system.style.borderColor=interface_setting[0];
+    system.innerHTML=interface_setting[1]
+    system.setAttribute('onclick',setting_system)
 }
 
 
 function END_CALL(){
     document.getElementById('data-input').innerHTML=logiageStructure()
 
+}
+
+
+
+
+
+function MIC_ON(){
+    const mic_system=document.getElementById('mic-system');
+    System_setting(mic_system,'MIC_OFF()',['red','mic(on)'])
+}
+
+
+function MIC_OFF(){
+    const mic_system=document.getElementById('mic-system')
+    System_setting(mic_system,'MIC_ON()',['lightgreen','mic(off)'])
+}
+
+
+
+
+function RECORD_ON(){
+    const record_system=document.getElementById('record-system');
+    System_setting(record_system,'RECORD_OFF()',['red','record(on)'])
+}
+
+
+function RECORD_OFF(){
+    const record_system=document.getElementById('record-system');
+    System_setting(record_system,'RECORD_ON()',['lightgreen','record(off)'])
+}
+
+
+function addFriends(){
+    const add={
+        friend:prompt('nama teman mu'),
+        friends:document.getElementById('friends-list')
+    }
+    const hosy={
+        opt:document.getElementById('option'),
+        val:document.createTextNode(add.friend)
+    }
+
+
+    add.friends.appendChild(hosy.opt);
+    hosy.opt.appendChild(hosy.val)
 }
