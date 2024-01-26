@@ -30,20 +30,13 @@ function Registered_account(){
 
 
 function toBeranda(){
-    const pageNull=[document.getElementById('search-container')
-    ,document.getElementById('groupt-bar'),document.getElementById('search-eigine')]
-   document.getElementById('data-input').innerHTML=logiageStructure()
-    for(var i=0; i<=pageNull.length; i++){
-        pageNull[i].innerHTML=null
-    }
+    
+  document.getElementById('data-input').innerHTML=logiageStructure()
 }
 
 function backHome(){
-    const pageNull=[document.getElementById('search-container')
-    ,document.getElementById('data-input'),document.getElementById('search-eigine')]
-    for(var i=0; i<=pageNull.length; i++){
-        pageNull[i].innerHTML=null
-    }
+    document.getElementById('data-input').innerHTML=null
+    
 }
 
     
@@ -62,12 +55,12 @@ function loggin_out(){
 
 function settAccount(){
     const address_sel=document.getElementById('useraddress-output');
-    const account_setdata=Array.from(pmaildatabase.filter(address=>address.useraddress.
+    const account_setdata=Array.from(pmaildatabase.filter(address=>address.ip.
         includes(address_sel.innerHTML)))
     for(var i=0;i<=account_setdata.length; i++){
      document.getElementById('data-input').innerHTML=
      structure_settAccount(
-         account_setdata[0].useraddress,
+         account_setdata[0].ip,
          account_setdata[0].pass,
          account_setdata[0].location
      )   
@@ -86,7 +79,7 @@ function settAccount(){
 function showAll(){
     document.getElementById('input-search-text').setAttribute('onkeyup','search()')
     for(var i=0; i<=database_berita.length;i++){
-        document.getElementById('search-eigine').innerHTML=
+        document.getElementById('data-input').innerHTML=
         dataTextShow(
             [database_berita[i].useraddress,database_berita[0].useraddress,database_berita[1].useraddress],
             [database_berita[i].title,database_berita[0].title,database_berita[1].title],
@@ -139,7 +132,7 @@ function visitingAddress(){
 function show_ShortText(){
     document.getElementById('input-search-text').setAttribute('onkeyup','search_short()');
     for(var i=0; i<=short_databases.length; i++){
-        document.getElementById('search-eigine').innerHTML=
+        document.getElementById('data-input').innerHTML=
         show_shortData(
        [short_databases[i].ip,short_databases[0].ip],
        [short_databases[i].text1,short_databases[0].text1],
@@ -176,4 +169,14 @@ function REST_CHAT(){
     insert_toDb(input_chat.useraddress.innerHTML,input_chat.targetaddress.innerHTML,input_chat.chat_value)
      connect_targetHost(input_chat.targetaddress.innerHTML,input_chat.chat_value,
         document.getElementById('chat-body-place'),'lightblue')
+}
+
+
+function openFriends(){
+    const ip={
+      targetaddress:document.getElementById('friends-list').value,
+      page:document.getElementById('data-input')
+    }
+    ip.page.innerHTML=Target_pageInterface(ip.targetaddress,'Balikpapan')
+        
 }

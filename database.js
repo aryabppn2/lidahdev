@@ -171,11 +171,12 @@ function connect_targetHost(address,chatValue,dataList,color){
 }
 
 
-function ddToList(friend,friends){
-  const friends={
-    el:document.createElement('option'),
+function get_friends(friend,friends){
+  const host={
+    opt:document.createElement('option'),
     val:document.createTextNode(friend)
   }
-  friends.appendChild(friends.el);
-  friends.el.appendChild(friends.va)
+
+  friends.appendChild(host.opt);
+  host.opt.appendChild(host.val)
 }

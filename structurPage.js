@@ -1,7 +1,7 @@
 function logiageStructure(){
     return`<div class=input-body><h1>login sekarang</h1>
    <input type=text id=input-useraddress class=input-text-login placeholder="username"
-    style=boder-color:lightblue;color:lightblue><br>
+    style=boder-color:lightblue;color:lightblue ><br>
     <input type=password id=input-user-pass 
     class=pass-container placeholder=password style=border-color:lightgreen;color:lightgreen><br>
     <textarea id=business-loc class=txt-loc placeholder=lokasi></textarea><br>
@@ -79,9 +79,9 @@ function connect_toAddNews(){
     function addNews_structure(address){
         return `<fieldset>
     <legend>${address}</legend>
-    <input type=text id=input-title class=input-text placeholder=judul-pengumuman><br>
-    <input type=text id=location-input class=input-set-text placeholder=dimana>
-    <input type=date id=input-date-release class=input-set-text><br>
+    <input type=text id=input-title class=input-text placeholder=judul-pengumuman required><br>
+    <input type=text id=location-input class=input-set-text placeholder=dimana required>
+    <input type=date id=input-date-release class=input-set-text required><br>
     <textarea id=input-text-value class=editor placeholder=isi-pembicaraan-${address}></textarea>
     <textarea id=input-text1-value class=editor placeholder=inti pembahasan></textarea> 
     <div class= news-uploader-wrapper>
@@ -276,10 +276,10 @@ function others_interfaceList(event_open,class_this,pmailData){
    <input type=text id=input-others-search placeholder='cari orang ' onkeyup=search_others()><br>
    <div id=others-get></div>
    <select id=others-select class=${class_this}>
-   <option>${pmailData[0].ip}</option>
-   <option>${pmailData[1].ip}</option>
-   <option>${pmailData[2].ip}</option>
-   <option>${pmailData[3].ip}</option>
+    <option>${pmailData[0].ip}</option>
+    <option>${pmailData[1].ip}</option>
+    <option>${pmailData[2].ip}</option>
+    <option>${pmailData[3].ip}</option>
    <optgroupt label= hasil pencarian>
 
    </optgroupt>
@@ -299,14 +299,15 @@ function others_interfaceList(event_open,class_this,pmailData){
 
 
 
-function Show_friends(){
-    document.getElementById('data-input').innerHTML=friends_interfaceList()
-}
-function friends_interfaceList(){
-    return`
-<button onclick=openFriends() class=btn-upload>buka</button>
+function friends_interfaceList(friends){
+        return`
+<button onclick=openFriends() class=btn-upload>tambah</button>
   <select id=friends-list class=menu-navigation-container>
-  <option> teman </option>
+  <option>teman</option>
+  <option>${friends[0].name}</option>
+  <option>${friends[1].name}</option>
+  <option>${friends[2].name}</option>
+  <option>${friends[4].name}</option>
   </select>
   <button onclick=addFriends() class=btn-upload>tambah teman</button>
 

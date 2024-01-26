@@ -7,7 +7,30 @@ function connectto_PmailDatabase(address,pass,location,money){
         useraddress:`${address}@pmail.com`,
         pass:pass,
         location:location,
-        money:money
+        teman:[
+{
+  name:"indra",
+  location:"balikpapan"
+},
+{
+  name:"jaka",
+  location:"balikpapan"
+},
+{
+  name:"kana",
+  location:"samarinda"
+},
+{
+  name:"indah",
+  location:"balikpapan"
+},
+{
+  name:"suzana",
+  location:"balikpapan"
+}
+
+
+  ]
       }
     )
     console.log(pmaildatabase)
@@ -87,3 +110,16 @@ function insert_toDb(targetaddress,user_address,chat_value){
 
 
 
+function add_friends(friend,useraddress,city){
+   const get_address=pmaildatabase.filter(ip=>ip.ip.includes(useraddress))
+   get_address[0].teman.push(
+   {
+    name:friend,
+    location:city
+   }
+
+
+    )
+   console.log(pmaildatabase)
+
+}

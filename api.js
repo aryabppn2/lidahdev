@@ -19,7 +19,7 @@ function Post_PublicNews(){
     const searchInput=document.getElementById('input-search-text').value
     const dataFilter=Array.from(database_berita.filter(data=>data.title.includes(searchInput)));
    for(var i=0; i<=dataFilter.length;i++){
-        document.getElementById('search-container').innerHTML=
+        document.getElementById('data-input').innerHTML=
     dataRespont(
         [dataFilter[i].useraddress,dataFilter[0].useraddress],
         [dataFilter[i].title,dataFilter[0].title],
@@ -34,8 +34,6 @@ function Post_PublicNews(){
         
    }
   }
-
-
 
 
 function POST_shortdata(){
@@ -67,11 +65,16 @@ insert_todataList(
    document.getElementById('data-input').innerHTML=null
 
 }
+
+
+
+
+
 function search_short(){
     const input_search=document.getElementById('input-search-text').value;
     const getData={
           filter:Array.from(short_databases.filter(data=>data.text1.includes(input_search))),
-          page:document.getElementById('search-container')
+          page:document.getElementById('data-input')
     }
     for(var i=0; i<=getData.filter.length; i++){
         getData.page.innerHTML=
@@ -91,16 +94,17 @@ function search_short(){
 function open_chat(){
     const address={
         target:document.getElementById('target-name'),
-        page:document.getElementById('connection-container')
+        page:document.getElementById('data-input')
     }
     address.page.innerHTML=Chat_page(address.target.innerHTML)
+
 }
 
 
 function open_call(){
     const address={
         target:document.getElementById('target-name'),
-        page:document.getElementById('connection-container')
+        page:document.getElementById('data-input')
     };
     address.page.innerHTML=Call_page(address.target.innerHTML)
 }
@@ -116,7 +120,7 @@ function System_setting(system,setting_system,interface_setting){
 
 
 function END_CALL(){
-    document.getElementById('data-input').innerHTML=logiageStructure()
+    document.getElementById('data-input').innerHTML=null
 
 }
 
@@ -153,14 +157,22 @@ function RECORD_OFF(){
 function addFriends(){
     const add={
         friend:prompt('nama teman mu'),
-        friends:document.getElementById('friends-list')
+        friends:document.getElementById('friends-list'),
+        useraddress:document.getElementById('useraddress-output')
     }
-    const hosy={
-        opt:document.getElementById('option'),
-        val:document.createTextNode(add.friend)
+   get_friends(add.friend,add.friends)
+   add_friends(add.friend,add.useraddress.innerHTML,'Balikpapan')
+
+}
+
+function Show_friends(){
+    const address={
+        user:document.getElementById('useraddress-output'),
+        page:document.getElementById('data-input')
     }
+    const dataFilter=pmaildatabase.filter(ip=>ip.ip.includes(address.user.innerHTML))
+    const get_friends=dataFilter[0].teman
 
+    address.page.innerHTML=friends_interfaceList(get_friends)
 
-    add.friends.appendChild(hosy.opt);
-    hosy.opt.appendChild(hosy.val)
 }
