@@ -90,25 +90,86 @@ function search_short(){
            )
     }
 }
-
-function open_chat(){
+// bagian chatting
+function open_chat1(){
     const address={
-        target:document.getElementById('target-name'),
-        page:document.getElementById('data-input')
+        target:document.getElementById('others-name1'),
+        page:document.getElementById('data-input'),
     }
-    address.page.innerHTML=Chat_page(address.target.innerHTML)
+   address.page.innerHTML=Chat_page(address.target.innerHTML) 
+    
 
 }
 
 
-function open_call(){
+function open_chat2(){
     const address={
-        target:document.getElementById('target-name'),
+        target:document.getElementById('others-name2'),
+        page:document.getElementById('data-input'),
+        useraddress:document.getElementById('useraddress-output')
+    }
+     address.page.innerHTML=Chat_page(address.target.innerHTML)
+    
+}
+
+function open_chat3(){
+    const address={
+        target:document.getElementById('others-name3'),
+        page:document.getElementById('data-input'),
+        useraddress:document.getElementById('useraddress-output')
+    }
+     address.page.innerHTML=Chat_page(address.target.innerHTML)
+
+}
+function open_chat4(){
+    const address={
+        target:document.getElementById('others-name4'),
+        page:document.getElementById('data-input'),
+        useraddress:document.getElementById('useraddress-output')
+    }
+     
+    address.page.innerHTML=Chat_page(address.target.innerHTML)
+    
+
+}
+
+// bagian call//
+
+
+
+
+function open_call1(){
+    const address={
+        target:document.getElementById('others-name1'),
         page:document.getElementById('data-input')
     };
     address.page.innerHTML=Call_page(address.target.innerHTML)
 }
 
+
+function open_call2(){
+    const address={
+        target:document.getElementById('others-name2'),
+        page:document.getElementById('data-input')
+    };
+    address.page.innerHTML=Call_page(address.target.innerHTML)
+}
+
+function open_call3(){
+    const address={
+        target:document.getElementById('others-name2'),
+        page:document.getElementById('data-input')
+    };
+    address.page.innerHTML=Call_page(address.target.innerHTML)
+}
+
+function open_call4(){
+const address={
+        target:document.getElementById('others-name4'),
+        page:document.getElementById('data-input')
+    };
+    address.page.innerHTML=Call_page(address.target.innerHTML)
+}
 
 
 function System_setting(system,setting_system,interface_setting){
@@ -157,7 +218,7 @@ function RECORD_OFF(){
 function addFriends(){
     const add={
         friend:prompt('nama teman mu'),
-        friends:document.getElementById('friends-list'),
+        friends:document.getElementById('others-get-friends'),
         useraddress:document.getElementById('useraddress-output')
     }
    get_friends(add.friend,add.friends)
@@ -165,14 +226,10 @@ function addFriends(){
 
 }
 
-function Show_friends(){
-    const address={
-        user:document.getElementById('useraddress-output'),
-        page:document.getElementById('data-input')
+function recently_chatShow(){
+    for(var i=0; i<=chat_db.length; i++){
+   document.getElementById('data-input').innerHTML=chat_recently_open(chat_db[i].targetaddress)
+
+
     }
-    const dataFilter=pmaildatabase.filter(ip=>ip.ip.includes(address.user.innerHTML))
-    const get_friends=dataFilter[0].teman
-
-    address.page.innerHTML=friends_interfaceList(get_friends)
-
 }

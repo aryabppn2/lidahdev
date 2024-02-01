@@ -7,6 +7,35 @@ location: "jl kandilo no 110 rt 043",
 money: "89000",
 pass: "Kandilo^7182",
 useraddress: "aryakandilo110@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+
+
+
+	]
+
+
+
 
 },
 {
@@ -16,6 +45,32 @@ location: "jl kandilo",
 money: "78000",
 pass: "Cahya7812",
 useraddress: "RitoruCahya@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+
+
+
+	]
 },
 {
 	encription: "KEY_PetShopCat/@pmail(Cat51627293.192.189.12.1)",
@@ -24,6 +79,31 @@ location: "jl pipit",
 money: "89000",
 pass: "Cat51627293",
 useraddress: "PetShopCat@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+
+
+	]
 },
 {
 	encription: "KEY_sayur pipit/@pmail(PIPIT110.192.189.12.1)",
@@ -32,6 +112,29 @@ location: "jl pipit no 80",
 money: "780000",
 pass: "PIPIT110",
 useraddress: "sayur pipit@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+	]
 },
 {
 encription:"KEY_ArfanDI/@pmail(17829333.192.189.12.1)",
@@ -39,7 +142,30 @@ ip: "ArfanDI",
 location: "jl kandilo",
 money: undefined,
 pass: "17829333",
-useraddress: "ArfanDI@pmail.com"
+useraddress: "ArfanDI@pmail.com",
+teman:[
+ {
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+	]
 },
 {
 encription:"KEY_IsnaXli/@pmail(Isn2012Setukpa.192.189.12.1)",
@@ -48,6 +174,29 @@ location: "jl kandilo no 110 rt 043",
 money: undefined,
 pass: "Isn2012Setukpa",
 useraddress: "IsnaXli@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+	]
 },
 {
 encription: "KEY_DharmaPTR/@pmail(PTR2003284.192.189.12.1)",
@@ -55,7 +204,30 @@ ip: "DharmaPTR",
 location: "depan smp negeri 2",
 money: undefined,
 pass: "PTR2003284",
-useraddress: "DharmaPTR@pmail.com"
+useraddress: "DharmaPTR@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+	]
 },
 {
 encription: "KEY_Ashanty_pu/@pmail(Pu718266373.192.189.12.1)",
@@ -63,7 +235,31 @@ ip: "Ashanty_pu",
 location: "depan benakutai",
 money: undefined,
 pass: "Pu718266373",
-useraddress: "Ashanty_pu@pmail.com"
+useraddress: "Ashanty_pu@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+
+	]
 },
 {
 	encription: "KEY_LAKSAMANA/@pmail(pws51627233.192.189.12.1)",
@@ -72,6 +268,28 @@ location: "jl kandilo no 110 rt 043",
 money: undefined,
 pass: "pws51627233",
 useraddress: "LAKSAMANA@pmail.com",
+teman:[
+	{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+]
 },
 {
 	encription: "KEY_dunia_lain/@pmail(LAIN562TGAGAHAJUA.192.189.12.1)",
@@ -80,14 +298,137 @@ location: "alam gaib",
 money: undefined,
 pass: "LAIN562TGAGAHAJUA",
 useraddress: "dunia_lain@pmail.com",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
 }
+
+	]
+},
+{
+encription: "KEY_FarhanRivaldy/@pmail(Far56712.192.189.12.1)",
+ip: "FarhanRivaldy",
+location: "Universitas mulia",
+pass: "Far56712",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+
+	]
+
+
+},
+{
+	encription: "KEY_aryabalikpapand/@pmail(ddddddd.192.189.12.1)",
+ip: "aryabalikpapand",
+location: "jl kandilo",
+pass: "ddddddd",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+
+	]
+
+},
+
+{
+
+encription: "KEY_Ghina/@pmail(G6008Yt.192.189.12.1)",
+ip: "Ghina",
+location: "jl sungai berntas no 98",
+pass: "G6008Yt",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
+}
+
+
+	]
+
+
+
+
+}
+
 
 	]
    
 
 const database_berita=[
 {
-	id: "VAL_BalikpapanPos/Libur Idulfitri, Objek Wisata di Paser Dipadati Wisatawan/pmail.com",
+id: "VAL_BalikpapanPos/Libur Idulfitri, Objek Wisata di Paser Dipadati Wisatawan/pmail.com",
 location: "Paser",
 time: "2024-01-17",
 title: "Libur Idulfitri, Objek Wisata di Paser Dipadati Wisatawan",
@@ -96,7 +437,7 @@ tx2: '"Yang tak kalah penting yakni memperhatikan perubahan cuaca dan informasi 
 useraddress: "BalikpapanPos",
 },
 {
-	id: "VAL_BalikpapanPos/IKN Belum Berdampak kepada Pengusaha Lokal/pmail.com",
+id: "VAL_BalikpapanPos/IKN Belum Berdampak kepada Pengusaha Lokal/pmail.com",
 location: "Ikn",
 time: "2024-01-17",
 title: "IKN Belum Berdampak kepada Pengusaha Lokal",
@@ -105,7 +446,7 @@ tx2: "Setelah itu, lanjutnya, baru ada kemungkinan bagi pengusaha lokal untuk bi
 useraddress: "BalikpapanPos",
 },
 {
-	id: "VAL_BalikpapanPos/Pj Gubernur: Revitalisasi Stadion Palaran Terkendala Status Kepemilikan/pmail.com",
+id: "VAL_BalikpapanPos/Pj Gubernur: Revitalisasi Stadion Palaran Terkendala Status Kepemilikan/pmail.com",
 location: "Stadion",
 time: "",
 title: "Pj Gubernur: Revitalisasi Stadion Palaran Terkendala Status Kepemilikan",
@@ -114,7 +455,7 @@ tx2: "“Namun, yang utama kita akan pikirkan dulu status dan bagaimana pengelol
 useraddress: "BalikpapanPos",
 },
 {
-	id: "VAL_sayur pipit/sayur bayam/pmail.com",
+id: "VAL_sayur pipit/sayur bayam/pmail.com",
 location: "",
 time: "",
 title: "sayur bayam",
@@ -202,6 +543,22 @@ title: "Hantu di Ruang CLDS",
 tx1: 'Pada suatu malam, seorang mahasiswa bernama Andi sedang mengerjakan tugas akhir di Ruang CLDS (Centre for Local Law Development Studies) di Fakultas Hukum Universitas Indonesia. Ruang itu berada di lantai 4 gedung fakultas hukum, dan terkenal angker.\n\nAndi sudah mengerjakan tugasnya selama berjam-jam, dan dia mulai merasa lelah. Dia memutuskan untuk istirahat sebentar dan pergi ke toilet.\n\nKetika Andi kembali ke ruang CLDS, dia melihat sesosok perempuan cantik sedang duduk di kursi di pojok ruangan. Perempuan itu mengenakan gaun panjang berwarna putih, dan rambutnya panjang dan hitam.\n\nAndi tidak menyangka ada orang lain di ruangan itu. Dia bertanya pada perempuan itu siapa dia, tetapi perempuan itu tidak menjawab.\n\nAndi mulai merasa takut. Dia mencoba untuk pergi, tetapi perempuan itu menghalanginya.\n\nPerempuan itu berkata, "Jangan pergi. Aku ingin bicara denganmu."\n\nAndi ketakutan. Dia tidak tahu apa yang harus dilakukan.\n\nPerempuan itu berkata, "Aku adalah Fitri. Aku adalah mahasiswa Fakultas Hukum UI yang meninggal karena kecelakaan mobil beberapa tahun yang lalu."\n\nAndi terkejut. Dia tidak menyangka bahwa perempuan itu adalah hantu.\n\nFitri berkata, "Aku ingin kau membantuku. Aku ingin kau menyelesaikan tugas akhirku."\n\nAndi tidak tahu harus menjawab apa. Dia tidak ingin membantu hantu, tetapi dia juga tidak ingin menyakiti perasaannya.\n\nAkhirnya, Andi berkata, "Baiklah, aku akan membantumu."\n\nAndi dan Fitri bekerja sama untuk menyelesaikan tugas akhir Fitri. Mereka bekerja sampai pagi, dan akhirnya tugas akhir itu selesai.\n\nKetika tugas akhir itu selesai, Fitri tersenyum. Dia berkata, "Terima kasih telah membantuku. Aku sekarang bisa tenang."',
 tx2: "Fitri kemudian menghilang. Andi tidak pernah melihatnya lagi.\n\nAndi tidak tahu apakah dia benar-benar membantu Fitri atau tidak. Namun, dia yakin bahwa pengalaman itu tidak akan pernah dia lupakan.\n\nThe End\n\nCerita Horor: Penunggu Jembatan Teksas\n\nJembatan Teksas adalah sebuah jembatan yang menghubungkan antara Fakultas Teknik dan Fakultas Sastra di kampus Universitas Indonesia. Jembatan ini terkenal angker, dan sering terjadi kecelakaan di sana.\n\nSalah satu kisah horor yang terkenal di Jembatan Teksas adalah kisah penunggu jembatan. Konon, di jembatan itu terdapat seorang penunggu yang sangat jahat. Penunggu itu akan menghukum siapa saja yang berani mengganggunya.\n\nSuatu malam, sekelompok mahasiswa sedang berjalan melewati Jembatan Teksas. Mereka sedang dalam perjalanan pulang dari pesta ulang tahun salah satu teman mereka.\n\nMereka berjalan sambil mengobrol dan tertawa. Mereka tidak menyadari bahwa mereka sedang mengganggu penunggu jembatan.\n\nTiba-tiba, mereka mendengar suara langkah kaki di belakang mereka. Mereka menoleh ke belakang, tetapi tidak ada siapa-siapa.\n\nMereka melanjutkan perjalanan mereka, tetapi suara langkah kaki itu terus mengikuti mereka.\n\nMereka mulai merasa takut. Mereka mempercepat langkah mereka, tetapi suara langkah kaki itu tetap mengikuti mereka.\n\nMereka menengok ke belakang lagi, dan kali ini mereka melihat bayangan hitam mengikuti mereka.\n\nMereka ketakutan dan berlari sekencang-kencangnya. Mereka tidak peduli lagi ke mana mereka pergi, yang penting mereka bisa melarikan diri dari bayangan hitam itu.\n\nMereka berlari sampai mereka tidak bisa berlari lagi. Mereka berhenti di depan sebuah pohon besar dan terengah-engah. Mereka menoleh ke belakang, tetapi bayangan hitam itu sudah tidak ada lagi.\n\nMereka bernapas lega. Mereka merasa aman, tetapi mereka tidak tahu apakah bayangan hitam itu benar-benar hilang.\n\nMereka memutuskan untuk melanjutkan perjalanan mereka. Mereka berhati-hati untuk tidak melewati Jembatan Teksas lagi.\n\nKetika mereka sampai di rumah, mereka menceritakan pengalaman mereka kepada teman-teman mereka. Teman-teman mereka tidak percaya pada mereka, tetapi mereka yakin bahwa apa yang mereka alami itu nyata.\n\nMereka tidak pernah tahu apakah bayangan hitam itu benar-benar hantu atau bukan. Namun, mereka tidak akan pernah melupakan pengalaman itu.\n\nThe End\n\nItulah dua cerita horor yang terjadi di kampus universitas. Cerita-cerita ini hanyalah mitos, tetapi tetap saja bisa membuat bulu kuduk berdiri.",
 useraddress: "dunia_lain",
+},
+{
+	location: "hotel",
+time: "2024-01-08",
+title: "Hiii! Penampakan Pelayan Restoran Tanpa Kepala, Berjalan Menyusuri Koridor Hotel ",
+tx1: "Belakangan hal-hal mistis kerap terekam oleh kamera pengawas atau CCTV. Baik aktivitas manusia maupun hal-hal yang tak masuk akal sekalipun masuk ke kamera pengawas tersebut. \n\nSeperti yang baru-baru ini terekam kamera pengawas, terlihat sebuah penampakan yang memperlihatkan seorang pelayan restoran di sebuah hotel. ",
+tx2: "Diunggah oleh akun Instagram @say.viideo, penamakan pelayan restoran tersebut bukanlah biasa, melainkan tampak menyeramkan. Pelayan restoran tersebut terlihat tanpa kepala dan berjalan menyusuri koridor hotel. \n\nTampak seorang pelayan tersebut membawa makanan yang ia tutupi dengan tudung saji. Pelayan tanpa kepala tersebut pun berjalan cukup cepat dan membuat orang-orang yang menontonnya histeris ketakutan. \n\nPelayan restoran tersebut pun terlihat mengenakan pakaian rapi dengan kemeja berwarna putih dan dilengkapi dengan rompi berwarna hitam. \nWarganet yang melihat video tersebut pun memberikan tanggapannya. Dimana banyak netizen yang mengatakan jika video tersebut hanyalah settingan. \n\nTak sedikit warganet menyebut jika video itu merupakan video untuk menakut-nakuti penonton saja",
+useraddress: "dunia_lain"
+},
+{
+	location: "",
+time: "",
+title: "mba indah",
+tx1: "mba indah dimana ini aku sudah mencarinya api gak ketemu",
+tx2: "",
+useraddress: "Ghina",
 }
  
 	];
@@ -368,8 +725,13 @@ console.log(short_databases)
 chat: "hallo bro",
 chat_id: "from_PetShopCat/toaryabalikpapand",
 targetaddress: "PetShopCat",
-useaddress: "aryabalikpapand",
+useraddress: "aryabalikpapand",
 }
 
 
  	]
+
+
+
+
+ const recently_chat=[]

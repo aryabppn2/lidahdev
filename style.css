@@ -81,7 +81,7 @@
 .input-body{
     width:94.2%;
     height:400px;
-    background-image:url('lidah.jpg');
+    background-image:url('lidah.png');
     text-align: center;
 }
 .dat-nav{
@@ -178,12 +178,7 @@
     height:300px;
 }
 
-.chat-wrapper{
-    width:32.1%;
-    height:34px;
-    border:0px;
-    background-image:url('pancingpil.jpeg');
-}
+.
 .chat-hreff{
     width:48.5%;
     height:34px;
@@ -319,3 +314,8 @@
 
 }
   
+.call-container{
+    width:97,4%;
+    height:400px;
+    
+}

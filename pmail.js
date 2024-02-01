@@ -156,10 +156,9 @@ function SENT_CHAT(){
     }
     insert_toDb(input_chat.targetaddress.innerHTML,input_chat.useraddress.innerHTML,input_chat.chat_value)
      connect_targetHost(input_chat.useraddress.innerHTML,input_chat.chat_value,
-        document.getElementById('chat-body-place'),'lightgreen')
+        document.getElementById('chat-body-place'),'lightblue')
+
 }
-
-
 function REST_CHAT(){
     const input_chat={
         useraddress:document.getElementById('useraddress-output'),
@@ -169,8 +168,8 @@ function REST_CHAT(){
     insert_toDb(input_chat.useraddress.innerHTML,input_chat.targetaddress.innerHTML,input_chat.chat_value)
      connect_targetHost(input_chat.targetaddress.innerHTML,input_chat.chat_value,
         document.getElementById('chat-body-place'),'lightblue')
-}
 
+}
 
 function openFriends(){
     const ip={
@@ -180,3 +179,7 @@ function openFriends(){
     ip.page.innerHTML=Target_pageInterface(ip.targetaddress,'Balikpapan')
         
 }
+
+
+
+

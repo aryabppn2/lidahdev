@@ -76,34 +76,19 @@ function connectto_PmailDatabase(address,pass,location,money){
 
      function othersPmailList(){
        for(var i=0; i<=pmaildatabase.length; i++){
-          document.getElementById('data-input').innerHTML= others_interfaceList('open_list()','menu-navigation-container',pmaildatabase)
+          document.getElementById('data-input').innerHTML= others_interfaceList('menu-navigation-container',
+
+           [pmaildatabase[i].ip,pmaildatabase[0].ip,pmaildatabase[1].ip,pmaildatabase[2].ip],
+           [pmaildatabase[i].location,pmaildatabase[0].location,pmaildatabase[1].location,pmaildatabase[2].location]
+            )
        }
      }
 
 
-function open_list(){
-  const select_ip=document.getElementById('others-select').value;
-  const ip={
-    address:pmaildatabase.filter(host=>host.ip.includes(select_ip)),
-    page:document.getElementById('data-input')
-  };
-  ip.page.innerHTML=Target_pageInterface(ip.address[0].ip,ip.address[0].location)
-}
+f
 
 
-function insert_toDb(targetaddress,user_address,chat_value){
-  chat_db.push(
-  {
-    chat_id:`from_${targetaddress}/to${user_address}`,
-    useaddress:user_address,
-    targetaddress:targetaddress,
-    chat:chat_value
-  }
-  )
-  console.log(chat_db)
 
-    
-}
 
 
 
@@ -123,3 +108,24 @@ function add_friends(friend,useraddress,city){
    console.log(pmaildatabase)
 
 }
+
+function Show_friends(){
+    const address={
+        user:document.getElementById('useraddress-output'),
+        page:document.getElementById('data-input')
+    }
+    const dataFilter=pmaildatabase.filter(ip=>ip.ip.includes(address.user.innerHTML))
+    const get_friends=dataFilter[0].teman
+
+    for(var i=0; i<=get_friends.length; i++){
+      address.page.innerHTML=friends_interfaceList(
+        [get_friends[i].name,get_friends[0].name,get_friends[1].name,get_friends[2].name],
+     [get_friends[i].location,get_friends[0].location,get_friends[1].location,get_friends[2].location]
+
+      )
+
+    }
+}
+
+
+

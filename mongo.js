@@ -384,7 +384,44 @@ teman:[
 
 	]
 
+},
+
+{
+
+encription: "KEY_Ghina/@pmail(G6008Yt.192.189.12.1)",
+ip: "Ghina",
+location: "jl sungai berntas no 98",
+pass: "G6008Yt",
+teman:[
+{
+	name:"indra",
+	location:"balikpapan"
+},
+{
+	name:"jaka",
+	location:"balikpapan"
+},
+{
+	name:"kana",
+	location:"samarinda"
+},
+{
+	name:"indah",
+	location:"balikpapan"
+},
+{
+	name:"suzana",
+	location:"balikpapan"
 }
+
+
+	]
+
+
+
+
+}
+
 
 	]
    
@@ -514,6 +551,14 @@ title: "Hiii! Penampakan Pelayan Restoran Tanpa Kepala, Berjalan Menyusuri Korid
 tx1: "Belakangan hal-hal mistis kerap terekam oleh kamera pengawas atau CCTV. Baik aktivitas manusia maupun hal-hal yang tak masuk akal sekalipun masuk ke kamera pengawas tersebut. \n\nSeperti yang baru-baru ini terekam kamera pengawas, terlihat sebuah penampakan yang memperlihatkan seorang pelayan restoran di sebuah hotel. ",
 tx2: "Diunggah oleh akun Instagram @say.viideo, penamakan pelayan restoran tersebut bukanlah biasa, melainkan tampak menyeramkan. Pelayan restoran tersebut terlihat tanpa kepala dan berjalan menyusuri koridor hotel. \n\nTampak seorang pelayan tersebut membawa makanan yang ia tutupi dengan tudung saji. Pelayan tanpa kepala tersebut pun berjalan cukup cepat dan membuat orang-orang yang menontonnya histeris ketakutan. \n\nPelayan restoran tersebut pun terlihat mengenakan pakaian rapi dengan kemeja berwarna putih dan dilengkapi dengan rompi berwarna hitam. \nWarganet yang melihat video tersebut pun memberikan tanggapannya. Dimana banyak netizen yang mengatakan jika video tersebut hanyalah settingan. \n\nTak sedikit warganet menyebut jika video itu merupakan video untuk menakut-nakuti penonton saja",
 useraddress: "dunia_lain"
+},
+{
+	location: "",
+time: "",
+title: "mba indah",
+tx1: "mba indah dimana ini aku sudah mencarinya api gak ketemu",
+tx2: "",
+useraddress: "Ghina",
 }
  
 	];
@@ -680,8 +725,12 @@ console.log(short_databases)
 chat: "hallo bro",
 chat_id: "from_PetShopCat/toaryabalikpapand",
 targetaddress: "PetShopCat",
-useaddress: "aryabalikpapand",
+useraddress: "aryabalikpapand",
 }
 
 
  	]
+
+
+
+

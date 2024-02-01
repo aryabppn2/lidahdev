@@ -37,17 +37,7 @@ function structure_accountHeader(address,money){
 }
 
 
-function addGrouptApp(ip){
-    return`<fieldset>
- <legend>${ip}</legend>
-<input type=text id=input-groupt-name class=input-text-login placeholder='nama groupt'><br>
 
-
-
-
-</fieldset>
-    `
-}
 
 
 
@@ -271,20 +261,38 @@ function show_filterDataShort(ip,txt1,txt2,txt3,txt4,txt5,txt6){
 }
 
 
-function others_interfaceList(event_open,class_this,pmailData){
+function others_interfaceList(class_this,ip,location){
     return`
-   <input type=text id=input-others-search placeholder='cari orang ' onkeyup=search_others()><br>
-   <div id=others-get></div>
-   <select id=others-select class=${class_this}>
-    <option>${pmailData[0].ip}</option>
-    <option>${pmailData[1].ip}</option>
-    <option>${pmailData[2].ip}</option>
-    <option>${pmailData[3].ip}</option>
-   <optgroupt label= hasil pencarian>
-
-   </optgroupt>
+   <div id=others-get>
+   <fieldset class=others-item-container >
+   <legend id=others-name1>${ip[0]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[0]}</option>
    </select>
-<button onclick=${event_open} class=btn-upload>buka</button>
+<button onclick=Show_detail1() class=btn-show-container>lihat</button>
+</fieldset>
+<fieldset class=others-item-container >
+   <legend id=others-name2>${ip[1]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[1]}</option>
+   </select>
+<button onclick=Show_detail2() class=btn-show-container>lihat</button>
+</fieldset>
+<fieldset class=others-item-container >
+   <legend id=others-name3>${ip[2]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[2]}</option>
+   </select>
+<button onclick=Show_detail2() class=btn-show-container>lihat</button>
+</fieldset>
+<fieldset class=others-item-container >
+   <legend id=others-name4>${ip[3]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[4]}</option>
+   </select>
+<button onclick=Show_detail4() class=btn-show-container>lihat</button>
+</fieldset>
+   </div>
 
 
     `
@@ -299,74 +307,47 @@ function others_interfaceList(event_open,class_this,pmailData){
 
 
 
-function friends_interfaceList(friends){
+function friends_interfaceList(address,location){
         return`
-<button onclick=openFriends() class=btn-upload>tambah</button>
-  <select id=friends-list class=menu-navigation-container>
-  <option>teman</option>
-  <option>${friends[0].name}</option>
-  <option>${friends[1].name}</option>
-  <option>${friends[2].name}</option>
-  <option>${friends[4].name}</option>
-  </select>
   <button onclick=addFriends() class=btn-upload>tambah teman</button>
-
-    `
-}
-
-
-
-
-function Target_pageInterface(terget_address,target_location){
-     return`
-     <fieldset style=border-color:aqua class=chat-page>
-    <legend id=target-name onclick=show_targetInfo()>${terget_address}</legend>
-    <select class=menu-navigation-private>
-    <option>${terget_address}</option>
-    <option>${target_location}</option>
-    </select>
-   <button onclick=show_content() class=menu-navigation-private>lihat postingan</button>
-   <button onclick=open_chat() class=menu-navigation-private>chat</button>
-   <button onclick=open_call() class=menu-navigation-private>panggil</button>
-    <div id=connection-container></div>
-    </fieldset>
-   
-
-
-
-
-     `
-}
-
-
-
-function Call_page(ip_target){
-    return`
-    <fieldset style=border-color:lightblue>
-    <h1>${ip_target}</h1>
-    </fieldset>
-    <button onclick=MIC_ON() class=menu-navigation-private style=border-color:lightgreen;color:lightgreen id=mic-system>mic(off)</button>
-    <button onclick=END_CALL() class=menu-navigation-private style=border-color:red;color:red>akhiri</button>
-    <button onclick=RECORD_ON() class=menu-navigation-private style=color:lightgreen;color:lightgreen id=record-system>screen(off)</button>
-    
-
-
-
-    `
-}
-
-
-
-
-
-function Chat_page(ip_target){
-    return`
-<fieldset style=border-color:lghtgreen;background-image:url(lidah.jpg)>
-<legend id=target-address onclick=REST_CHAT()>${ip_target}</legend>
-<div id=chat-body-place class=chat-wrapper></div>
-<input type=text id=input-text-chat class=chat-input-container placeholder='masukan text chat'>
-<button onclick=SENT_CHAT() class=btn-upload>kirim</button>
+<div id=others-get-friends>
+   <fieldset class=others-item-container >
+   <legend id=others-name1>${address[0]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[0]}</option>
+   </select>
+<button onclick=Show_detail1() class=btn-show-container>lihat</button>
 </fieldset>
+<fieldset class=others-item-container >
+   <legend id=others-name2>${address[1]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[1]}</option>
+   </select>
+<button onclick=Show_detail2() class=btn-show-container>lihat</button>
+</fieldset>
+<fieldset class=others-item-container >
+   <legend id=others-name3>${address[2]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[2]}</option>
+   </select> 
+<button onclick=Show_detail2() class=btn-show-container>lihat</button>
+</fieldset>
+<fieldset class=others-item-container >
+   <legend id=others-name4>${address[3]}</legend>
+   <select class=menu-navigation-private>
+   <option>${location[3]}</option>
+   </select>
+<button onclick=Show_detail4() class=btn-show-container>lihat</button>
+</fieldset>
+   </div>
 
     `
 }
+
+
+
+
+
+
+
+
